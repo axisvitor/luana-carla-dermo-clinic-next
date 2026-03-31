@@ -451,16 +451,16 @@ export function FaqSection({
   return (
     <section className={sectionClass}>
       <SectionIntro eyebrow={eyebrow} title={title} narrow />
-      <div className="xl:col-span-12 grid gap-4">
+      <div className="xl:col-span-12 grid gap-3 md:gap-4">
         {items.map((item) => (
-          <details key={item.title} className="border-t border-black/10 pt-4">
-            <summary className="grid cursor-pointer grid-cols-[1fr_auto] items-start gap-4 list-none font-display text-[clamp(1.65rem,2.8vw,2.4rem)] leading-[1.02] tracking-[-0.04em] text-ink [&::-webkit-details-marker]:hidden">
-              <span>{item.title}</span>
-              <span className="grid h-9 w-9 place-items-center rounded-[12px] border border-black/10 bg-white/72 font-sans text-base font-semibold text-accent-deep">
+          <details key={item.title} className="group rounded-[22px] border border-black/8 bg-white/52 px-5 py-4 shadow-[0_12px_30px_rgba(16,24,24,0.04)] transition duration-200 open:bg-white open:shadow-[0_18px_42px_rgba(16,24,24,0.06)] md:px-6 md:py-5">
+            <summary className="grid cursor-pointer grid-cols-[1fr_auto] items-center gap-4 list-none font-sans text-[1.02rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.12rem] md:leading-[1.42] [&::-webkit-details-marker]:hidden">
+              <span className="max-w-[42ch]">{item.title}</span>
+              <span className="grid h-9 w-9 place-items-center rounded-full border border-accent-deep/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,242,236,0.94))] font-sans text-[1.05rem] font-medium text-accent-deep transition duration-200 group-open:rotate-45 group-open:border-accent-deep/22 group-open:bg-accent-deep group-open:text-white">
                 +
               </span>
             </summary>
-            <p className="mt-3 max-w-[66ch] text-sm leading-7 text-ink-soft">{item.body}</p>
+            <p className="mt-3 max-w-[68ch] pr-12 text-[0.98rem] leading-7 text-ink-soft md:mt-4 md:text-[1rem] md:leading-8">{item.body}</p>
           </details>
         ))}
       </div>
