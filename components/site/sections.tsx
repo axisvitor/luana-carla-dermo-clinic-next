@@ -29,9 +29,9 @@ const primaryButtonClass =
 const secondaryButtonClass =
   "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white sm:w-auto";
 const sectionHeadingClass =
-  "font-display text-balance text-[clamp(2.25rem,6vw,4.1rem)] leading-[0.97] tracking-[-0.045em] text-ink";
+  "font-display text-balance text-[clamp(1.95rem,5.2vw,3.45rem)] leading-[0.99] tracking-[-0.042em] text-ink";
 const mediumHeadingClass =
-  "font-display text-balance text-[clamp(1.72rem,4vw,2.7rem)] leading-[0.99] tracking-[-0.04em] text-ink";
+  "font-display text-balance text-[clamp(1.48rem,3.2vw,2.25rem)] leading-[1.02] tracking-[-0.035em] text-ink";
 const itemHeadingClass =
   "text-pretty text-[1.04rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.12rem]";
 const leadClass =
@@ -102,14 +102,21 @@ export function HeroSection({
   const dark = tone === "dark";
 
   const overlay = dark
-    ? "linear-gradient(180deg, rgba(15,20,20,0.24) 0%, rgba(15,20,20,0.82) 100%)"
+    ? "linear-gradient(180deg, rgba(15,20,20,0.3) 0%, rgba(15,20,20,0.86) 100%)"
     : "linear-gradient(180deg, rgba(250,246,241,0.72) 0%, rgba(255,255,255,0.92) 74%)";
 
   return (
-    <section className={cn(sectionClass, "relative overflow-hidden pt-8 md:pt-14 xl:pt-20")}> 
+    <section className={cn(sectionClass, "relative isolate overflow-hidden pt-8 md:pt-14 xl:pt-20")}> 
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[-12%] top-[-4%] h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,rgba(220,196,162,0.42)_0%,rgba(220,196,162,0.18)_32%,transparent_72%)] blur-3xl md:h-[28rem] md:w-[28rem]" />
+        <div className="absolute left-[16%] top-[26%] h-[15rem] w-[15rem] rounded-full bg-[radial-gradient(circle,rgba(15,95,99,0.14)_0%,rgba(15,95,99,0.06)_36%,transparent_74%)] blur-3xl md:h-[22rem] md:w-[22rem]" />
+        <div className="absolute right-[22%] top-[10%] h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.16)_34%,transparent_76%)] blur-3xl md:h-[24rem] md:w-[24rem]" />
+        <div className="absolute inset-0 opacity-[0.05] [background-image:radial-gradient(rgba(24,35,34,0.85)_0.6px,transparent_0.6px)] [background-size:9px_9px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.92),rgba(0,0,0,0.58),transparent)]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(15,95,99,0.18),transparent)]" />
+      </div>
       <div className="relative z-10 xl:col-span-7 xl:pr-6">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[11ch] font-display text-balance text-[clamp(2.7rem,8.4vw,5rem)] leading-[0.94] tracking-[-0.05em] text-ink sm:max-w-[10.5ch]">
+        <h1 className="mt-4 max-w-[13ch] font-display text-balance text-[clamp(2.22rem,6.35vw,3.95rem)] leading-[0.98] tracking-[-0.042em] text-ink sm:max-w-[12.4ch]">
           <span className="sm:hidden">{mobileTitle ?? title}</span>
           <span className="hidden sm:inline">{title}</span>
         </h1>
@@ -132,7 +139,7 @@ export function HeroSection({
           <div className={cn("pointer-events-none absolute -left-[12%] bottom-[-14%] h-56 w-56 rounded-[45%_55%_58%_42%/42%_40%_60%_58%] border", dark ? "border-white/10 shadow-[0_0_0_20px_rgba(255,255,255,0.03),0_0_0_52px_rgba(255,255,255,0.015)]" : "border-accent-deep/15 shadow-[0_0_0_20px_rgba(15,95,99,0.04),0_0_0_52px_rgba(15,95,99,0.02)]")} />
           <div className="relative z-10">
             <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
-            <h2 className={cn("mt-3 max-w-[12ch] font-display text-balance text-[clamp(1.75rem,5vw,3rem)] leading-[0.98] tracking-[-0.045em]", dark ? "text-white" : "text-ink")}>
+            <h2 className={cn("mt-3 max-w-[13ch] font-display text-balance text-[clamp(1.5rem,4vw,2.35rem)] leading-[1.01] tracking-[-0.035em]", dark ? "text-white" : "text-ink")}>
               <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
               <span className="hidden sm:inline">{panelTitle}</span>
             </h2>
@@ -164,7 +171,7 @@ export function HeroSection({
             ) : null}
 
             {quote ? (
-              <blockquote className={cn("mt-5 border-t pt-4 font-display text-balance text-[clamp(1.65rem,4.4vw,2.45rem)] leading-[1.02] tracking-[-0.04em]", dark ? "border-white/12 text-white" : "border-black/10 text-ink")}> 
+              <blockquote className={cn("mt-5 border-t pt-4 font-display text-balance text-[clamp(1.4rem,3.4vw,1.95rem)] leading-[1.06] tracking-[-0.03em]", dark ? "border-white/12 text-white" : "border-black/10 text-ink")}> 
                 {quote}
               </blockquote>
             ) : null}
@@ -434,7 +441,7 @@ export function DarkBand({
         <p className={eyebrowInverseClass}>
           {eyebrow}
         </p>
-        <h2 className="mt-4 max-w-[12ch] font-display text-balance text-[clamp(2.3rem,4vw,4rem)] leading-[0.97] tracking-[-0.045em] text-white">
+        <h2 className="mt-4 max-w-[13ch] font-display text-balance text-[clamp(1.95rem,3.5vw,3.15rem)] leading-[1.01] tracking-[-0.04em] text-white">
           {title}
         </h2>
       </div>
@@ -491,7 +498,7 @@ export function FaqSection({
       <section className={cn(sectionClass, "items-start")}>
         <div className={cn(cardClass, "xl:col-span-4 self-start p-6 md:p-7")}>
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 className="mt-4 max-w-[9ch] font-display text-balance text-[clamp(2.05rem,4vw,3.25rem)] leading-[0.97] tracking-[-0.045em] text-ink">
+          <h2 className="mt-4 max-w-[10ch] font-display text-balance text-[clamp(1.78rem,3.2vw,2.7rem)] leading-[1.01] tracking-[-0.04em] text-ink">
             {title}
           </h2>
           {description ? (
