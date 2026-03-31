@@ -8,12 +8,11 @@ import { cn } from "@/lib/cn";
 import { navItems, siteConfig } from "@/lib/site";
 
 const primaryCtaClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-4 text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-[1.02rem] text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_48px_rgba(15,95,99,0.24)] active:translate-y-0";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -30,7 +29,7 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-30 border-b border-black/5 bg-[linear-gradient(180deg,rgba(253,251,247,0.92),rgba(253,251,247,0.8))] px-5 py-5 backdrop-blur md:px-8 xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-6 2xl:px-[60px]">
+    <header className="sticky top-0 z-30 border-b border-black/6 bg-[linear-gradient(180deg,rgba(253,251,247,0.94),rgba(253,251,247,0.84))] px-5 py-5 shadow-[0_10px_28px_rgba(24,35,34,0.035)] backdrop-blur md:px-8 xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-6 2xl:px-[60px]">
       <div className="flex items-center justify-between gap-4 xl:contents">
         <Link href="/" aria-label={`${siteConfig.name}, voltar para a página inicial`} className="min-w-0">
           <span className="block font-display text-[clamp(1.68rem,2.2vw,2.18rem)] leading-[0.96] tracking-[-0.04em] text-ink">
@@ -47,7 +46,7 @@ export function SiteHeader() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="inline-flex h-12 w-12 flex-col items-center justify-center gap-[5px] rounded-[12px] border border-black/10 bg-white/90 shadow-[0_10px_24px_rgba(24,35,34,0.04)] transition duration-200 xl:hidden"
+          className="inline-flex h-12 w-12 flex-col items-center justify-center gap-[5px] rounded-[12px] border border-black/12 bg-white/92 shadow-[0_12px_28px_rgba(24,35,34,0.05)] transition duration-200 xl:hidden"
         >
           <span className={cn("h-px w-4 rounded-full bg-ink transition duration-200", open && "translate-y-[6px] rotate-45")} />
           <span className={cn("h-px w-4 rounded-full bg-ink transition duration-200", open && "opacity-0")} />
@@ -56,7 +55,7 @@ export function SiteHeader() {
         </button>
       </div>
 
-      <nav className="hidden flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.95rem] font-medium tracking-[0.01em] text-ink/78 xl:flex" aria-label="Principal">
+      <nav className="hidden flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.94rem] font-medium tracking-[0.01em] text-ink/76 xl:flex" aria-label="Principal">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -72,7 +71,7 @@ export function SiteHeader() {
         ))}
       </nav>
 
-      <Link href="/agendamento" className={cn(primaryCtaClass, "hidden xl:inline-flex")}>
+      <Link href="/agendamento" className={cn(primaryCtaClass, "hidden xl:inline-flex") }>
         Falar no WhatsApp
         <span aria-hidden>↗</span>
       </Link>

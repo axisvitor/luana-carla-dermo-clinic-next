@@ -25,9 +25,9 @@ type ImageTone = "dark" | "light";
 const sectionClass =
   "grid grid-cols-1 gap-6 px-5 py-14 md:px-8 md:py-20 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
 const primaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5 sm:w-auto";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_46px_rgba(15,95,99,0.24)] active:translate-y-0 sm:w-auto";
 const secondaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/28 bg-white/82 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep shadow-[0_12px_28px_rgba(15,95,99,0.06)] transition duration-200 hover:border-accent-deep/42 hover:bg-white sm:w-auto";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/28 bg-white/82 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep shadow-[0_12px_28px_rgba(15,95,99,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-accent-deep/42 hover:bg-white hover:shadow-[0_16px_32px_rgba(15,95,99,0.08)] active:translate-y-0 sm:w-auto";
 const sectionHeadingClass =
   "font-display text-balance text-[clamp(1.95rem,5.2vw,3.45rem)] leading-[0.99] tracking-[-0.042em] text-ink";
 const mediumHeadingClass =
