@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f4ef;
+  --paper: #fffdfa;
+  --surface: rgba(255, 252, 248, 0.82);
+  --ink: #182322;
+  --ink-soft: rgba(24, 35, 34, 0.74);
+  --ink-faint: rgba(24, 35, 34, 0.56);
+  --line: rgba(110, 129, 127, 0.18);
+  --line-strong: rgba(110, 129, 127, 0.3);
+  --accent: #1a767a;
+  --accent-deep: #0f5f63;
+  --champagne: #bda58b;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-champagne: var(--champagne);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-bodoni-moda);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(189, 165, 139, 0.1), transparent 30%),
+    linear-gradient(180deg, #fcfbf8 0%, var(--background) 58%, #efede7 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(24, 35, 34, 0.015) 0, rgba(24, 35, 34, 0.015) 1px, transparent 1px, transparent 128px),
+    linear-gradient(180deg, rgba(24, 35, 34, 0.012) 0, rgba(24, 35, 34, 0.012) 1px, transparent 1px, transparent 128px);
+  opacity: 0.28;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 88%);
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+summary::-webkit-details-marker {
+  display: none;
 }

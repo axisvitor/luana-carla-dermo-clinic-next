@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luana Carla Dermo Clinic — Website Next.js
 
-## Getting Started
+Stack atual:
+- Next.js 16 (App Router)
+- React 19
+- Tailwind CSS 4
+- TypeScript
 
-First, run the development server:
+Projeto preparado para deploy na Vercel.
 
+## Estrutura
+- `app/` — rotas e metadata
+- `components/site/` — header, footer, seções e formulário
+- `lib/` — config do site e helpers
+- `public/brand/` — favicon, OG e ícones
+- `public/generated/` — imagens refinadas e assets vindos do Stitch
+
+## Scripts
+- `pnpm dev`
+- `pnpm lint`
+- `pnpm build`
+- `pnpm start`
+
+## Desenvolvimento local
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+cp .env.example .env.local
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra:
+- `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy na Vercel
+1. Suba esta pasta para um repositório Git.
+2. Na Vercel, importe o repositório.
+3. Se este projeto estiver em monorepo, defina o Root Directory como:
+   - `website-next-v1`
+4. Configure a variável opcional:
+   - `NEXT_PUBLIC_SITE_URL=https://seu-dominio.com`
+5. Faça o deploy.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+A build local já foi validada com:
+- `pnpm lint`
+- `pnpm build`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Observações
+- O fluxo de primeiro contato continua orientado para WhatsApp pela equipe da clínica.
+- Quando o link oficial do WhatsApp estiver definido, o CTA pode ser conectado diretamente ao canal real.
+- Ainda vale trocar imagens por fotos próprias da clínica quando disponíveis, principalmente laser e retratos institucionais.
