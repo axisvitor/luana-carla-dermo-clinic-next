@@ -12,7 +12,7 @@ import { createPageMetadata } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "Estética corporal com continuidade",
   description:
-    "Plano, constância e manutenção para quem quer cuidado corporal com mais previsibilidade e menos lógica de sessão solta.",
+    "Continuidade corporal com plano de cuidado, constância e acompanhamento para quem quer tratar o corpo com mais coerência ao longo do tempo.",
   path: "/continuidade-corporal",
 });
 
@@ -21,76 +21,78 @@ export default function ContinuidadeCorporalPage() {
     <>
       <HeroSection
         eyebrow="Continuidade corporal"
-        title="Corpo não responde bem à lógica de sessão solta."
-        description="Continuidade corporal faz sentido quando existe plano, leitura de resposta e constância. Aqui, o cuidado deixa de ser uma soma de sessões e passa a funcionar como uma jornada com avaliação, manutenção e próxima etapa definida."
-        primary={{ label: "Falar no WhatsApp", href: "/agendamento" }}
-        secondary={{ label: "Ler FAQ", href: "/faq" }}
+        title="Cuidado corporal faz mais sentido quando existe constância."
+        description="A continuidade corporal é indicada para quem quer sair de decisões isoladas e seguir um cuidado mais organizado. A clínica avalia o momento, entende o objetivo e orienta um plano que faça sentido na vida real."
+        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
+        secondary={{ label: "Ver perguntas frequentes", href: "/faq" }}
         panelLabel="Continuidade corporal"
-        panelTitle="Menos sessão solta. Mais plano, constância e leitura."
+        panelTitle="Mais constância, mais acompanhamento e menos decisões soltas."
         image="/generated/stitch/stitch-continuity-1.jpg"
         tone="dark"
         list={[
-          "Plano acima do impulso",
-          "Constância acima do espetáculo",
-          "Rebook como parte do cuidado",
-          "Próximo passo como experiência",
+          "Plano de cuidado com mais clareza",
+          "Ritmo possível para a rotina",
+          "Acompanhamento ao longo do processo",
+          "Próximo passo definido com calma",
         ]}
       />
 
       <TrustStrip
         items={[
-          { title: "Plano acima de sessão", body: "Continuidade corporal pede lógica de jornada, não compra fragmentada." },
-          { title: "Previsibilidade acima de improviso", body: "Quando a paciente entende a próxima etapa, o cuidado ganha consistência." },
-          { title: "Valor acima de pressão", body: "Mais clareza, menos urgência artificial e menos venda empurrada no impulso." },
+          { title: "Plano de cuidado", body: "A proposta é organizar o tratamento com começo, continuidade e próximos passos bem entendidos." },
+          { title: "Ritmo que cabe na vida real", body: "A constância só faz sentido quando o plano conversa com a rotina e a disponibilidade da paciente." },
+          { title: "Acompanhamento que dá continuidade", body: "Retornos, ajustes e manutenção ajudam o cuidado a não se perder no meio do caminho." },
         ]}
       />
 
       <EditorialFeatureSection
-        eyebrow="Por que esta linha existe"
-        title="Resultado corporal consistente raramente nasce de uma única sessão bem vendida."
-        body="Cuidado corporal consistente pede leitura de objetivo, frequência possível e resposta do corpo ao longo do tempo. Por isso a clínica trata continuidade como plano — e não como impulso."
-        calloutTitle="Direção desta página"
-        calloutBody="Apresentar cuidado corporal como plano de evolução, e não como coleção de sessões soltas."
+        eyebrow="Por que essa linha existe"
+        title="Resultados mais consistentes costumam nascer de processo, não de pressa."
+        body="Quando o cuidado corporal acontece com frequência possível, leitura de resposta e ajustes ao longo do tempo, a experiência fica mais coerente. A proposta desta linha é justamente transformar intenção em continuidade."
+        calloutTitle="O que esta página deixa claro"
+        calloutBody="Aqui, o corpo não é tratado por impulso. Ele é acompanhado com plano, constância e revisão ao longo do processo."
       />
 
       <TripleArticleSection
-        eyebrow="Três princípios da continuidade corporal"
-        title="O que esta página precisa deixar óbvio para a paciente."
+        eyebrow="Como essa linha funciona"
+        title="Três bases para uma continuidade corporal mais bem conduzida."
         muted
         items={[
-          { title: "Começa entendendo o objetivo", body: "Antes de qualquer proposta, a clínica precisa ler o momento, a expectativa e o nível de constância possível." },
-          { title: "Segue com plano e leitura de resposta", body: "A continuidade só faz sentido quando a paciente entende por que está seguindo e o que vem depois." },
-          { title: "Termina sempre em próxima ação", body: "Rebook, revisão e manutenção fazem parte do valor percebido da experiência." },
+          { title: "Começa pelo seu objetivo", body: "A clínica entende o que a paciente busca, o momento do corpo e o tipo de acompanhamento que faz sentido." },
+          { title: "Segue com constância possível", body: "O plano precisa caber na vida real para que o cuidado seja sustentado com mais coerência." },
+          { title: "Avança com revisão e próximos passos", body: "Ao longo do processo, a paciente entende o que manter, o que ajustar e como seguir com mais clareza." },
         ]}
       />
 
       <SplitSection
-        eyebrow="Para quem esta linha faz sentido"
-        title="Para pacientes que querem previsibilidade, constância e mais honestidade no processo."
+        eyebrow="Para quem essa linha costuma funcionar melhor"
+        title="Para quem quer previsibilidade, manutenção e uma rotina de cuidado mais organizada."
         items={[
-          { title: "Quem cansou de tentar pedaços desconectados", body: "A página foi escrita para quem sente que o cuidado corporal nunca ganha continuidade real." },
-          { title: "Quem precisa de um plano que caiba na vida real", body: "Organizar frequência, manutenção e expectativa reduz frustração e aumenta percepção de valor." },
-          { title: "Quem prefere método a espetáculo", body: "Mais verdade, menos sedução vazia. Esse é um dos filtros centrais desta linha de cuidado." },
+          { title: "Quem cansou de tentar pedaços desconectados", body: "Quando cada decisão acontece isoladamente, o cuidado perde continuidade e fica mais difícil perceber consistência." },
+          { title: "Quem quer um plano possível", body: "A proposta é construir um caminho que faça sentido para a rotina, a expectativa e o momento da paciente." },
+          { title: "Quem valoriza acompanhamento", body: "Constância não depende só do procedimento. Ela também depende de acompanhamento e orientação ao longo do tempo." },
         ]}
       />
 
       <FaqSection
         eyebrow="FAQ"
-        title="Objeções comuns na continuidade corporal."
+        title="Perguntas frequentes sobre continuidade corporal."
         items={[
-          { title: "Vocês trabalham com sessão avulsa?", body: "A clínica pode começar por uma avaliação, mas a lógica mais forte aqui é plano com continuidade e próxima etapa definida." },
-          { title: "Como saber se essa linha faz sentido para mim?", body: "O primeiro passo é entender seu objetivo, seu momento e sua disponibilidade real para manter o processo." },
-          { title: "O resultado depende só do procedimento?", body: "Não. Constância, leitura correta e acompanhamento pesam mais do que espetáculo na venda." },
+          { title: "Vocês atendem apenas com sessão avulsa?", body: "A clínica pode começar pela avaliação, mas a proposta mais forte desta linha é organizar um plano com continuidade." },
+          { title: "Como saber se continuidade corporal faz sentido para mim?", body: "O primeiro passo é entender seu objetivo, o momento do corpo e a constância que você consegue sustentar." },
+          { title: "Preciso já saber exatamente o que quero fazer?", body: "Não. A equipe ajuda a orientar o melhor caminho a partir da sua necessidade principal." },
+          { title: "O acompanhamento faz parte da proposta?", body: "Sim. Quando a paciente segue em processo, os próximos passos são organizados com mais clareza."
+          },
         ]}
       />
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Se você busca continuidade, comece por clareza."
-        body="Falar com a clínica no WhatsApp é a forma mais segura de entender se o seu caso pede entrada, ajuste ou manutenção."
-        highlight="Jornada corporal"
-        detail="Estética corporal com continuidade"
-        primary={{ label: "Quero falar sobre meu caso", href: "/agendamento" }}
+        title="Se você busca continuidade, comece por um plano mais claro."
+        body="No WhatsApp, a equipe pode entender seu momento e orientar se esta linha faz sentido para o seu caso agora."
+        highlight="Continuidade corporal"
+        detail="Plano • constância • acompanhamento"
+        primary={{ label: "Falar sobre meu caso", href: "/agendamento" }}
         secondary={{ label: "Ver perguntas frequentes", href: "/faq" }}
       />
     </>

@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "Perguntas frequentes",
   description:
-    "Respostas mais claras para dúvidas comuns antes do primeiro contato com a clínica.",
+    "Respostas claras para dúvidas comuns antes do primeiro contato com a clínica.",
   path: "/faq",
 });
 
@@ -13,41 +13,41 @@ export default function FaqPage() {
     <>
       <HeroSection
         eyebrow="Perguntas frequentes"
-        title="Dúvidas comuns merecem respostas mais claras."
-        description="Aqui estão as perguntas que costumam aparecer antes do primeiro contato. A ideia é reduzir ansiedade e ajudar você a chegar com mais contexto para a conversa."
-        primary={{ label: "Falar no WhatsApp", href: "/agendamento" }}
-        secondary={{ label: "Preparar mensagem", href: "/agendamento" }}
+        title="As dúvidas mais comuns antes da primeira conversa."
+        description="Se você quer entender melhor como a clínica atende, esta página reúne respostas simples para ajudar no primeiro contato."
+        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
+        secondary={{ label: "Ver contato", href: "/contato" }}
         panelLabel="FAQ geral"
-        panelTitle="Dúvidas que costumam aparecer antes mesmo da primeira conversa."
+        panelTitle="Respostas rápidas sobre pós-operatório, continuidade, laser e primeiro contato."
         image="/generated/stitch/stitch-continuity-2.jpg"
         tone="light"
         list={[
           "Pós-operatório",
           "Continuidade corporal",
           "Depilação a laser",
-          "Contato e avaliação",
+          "Contato e atendimento",
         ]}
       />
 
       <FaqSection
         eyebrow="FAQ"
-        title="Respostas mais claras para dúvidas comuns da paciente."
+        title="Respostas para dúvidas que costumam aparecer antes do primeiro contato."
         items={[
-          { title: "Vocês indicam qualquer procedimento logo no primeiro contato?", body: "Não. A prioridade é entender a fase do corpo e explicar o que faz sentido agora com mais critério." },
-          { title: "Meu caso é sensível. Vou falar só com automação?", body: "Não. A entrada pode ser organizada digitalmente, mas casos sensíveis pedem leitura humana quando necessário." },
-          { title: "Faço pós-operatório aqui mesmo tendo operado em outra cidade?", body: "Sim. A clínica pode acolher quem operou fora e precisa de continuidade local em Canaã." },
-          { title: "Como saber se continuidade corporal faz sentido para mim?", body: "Começa entendendo objetivo, constância possível e o tipo de acompanhamento que o corpo pede." },
-          { title: "A depilação a laser aqui funciona como commodity?", body: "Não. A proposta é oferecer uma entrada mais organizada, coerente com o restante da experiência da clínica." },
+          { title: "Vocês atendem pós-operatório de quem operou em outra cidade?", body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás." },
+          { title: "Como saber qual atendimento faz mais sentido para mim?", body: "O primeiro passo é explicar seu momento e sua principal necessidade. A equipe ajuda a orientar o melhor caminho." },
+          { title: "Posso explicar meu caso pelo WhatsApp antes de marcar?", body: "Sim. O contato inicial acontece justamente para isso: entender sua necessidade e orientar o próximo passo." },
+          { title: "A depilação a laser pode ser minha porta de entrada?", body: "Sim. Para muitas pacientes, ela funciona como a forma mais leve de começar o atendimento na clínica." },
+          { title: "Quando existe continuidade entre sessões?", body: "Quando o caso pede acompanhamento, a clínica organiza retorno, reavaliação e orientação entre etapas com mais clareza." },
         ]}
       />
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Se você ainda tem dúvidas, a conversa inicial pode organizar o caminho."
-        body="A equipe recebe o primeiro contato via WhatsApp e ajuda a orientar qual trilha faz mais sentido para o seu caso."
+        title="Se a sua dúvida não apareceu aqui, a equipe pode orientar seu primeiro passo."
+        body="No WhatsApp, a clínica ajuda a entender qual caminho faz mais sentido para o seu momento."
         highlight="Primeiro contato"
-        detail="Perguntas reais • Triagem • Orientação"
-        primary={{ label: "Preparar mensagem", href: "/agendamento" }}
+        detail="Perguntas reais • orientação • clareza"
+        primary={{ label: "Preparar minha mensagem", href: "/agendamento" }}
         secondary={{ label: "Ver canais de contato", href: "/contato" }}
       />
     </>

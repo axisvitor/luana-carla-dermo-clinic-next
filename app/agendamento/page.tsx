@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/site";
 export const metadata = createPageMetadata({
   title: "Falar no WhatsApp",
   description:
-    "Organize sua mensagem antes do primeiro contato com a Luana Carla Dermo Clinic e chegue ao WhatsApp com mais clareza.",
+    "Organize sua mensagem antes do primeiro contato com a Luana Carla Dermo Clinic e fale com a equipe pelo WhatsApp oficial com mais clareza.",
   path: "/agendamento",
 });
 
@@ -14,28 +14,28 @@ export default function AgendamentoPage() {
     <>
       <HeroSection
         eyebrow="Primeiro contato e WhatsApp"
-        title="A clínica agenda pelo WhatsApp. Esta página te ajuda a chegar com mais clareza."
-        mobileTitle="A clínica agenda pelo WhatsApp. Chegue com mais clareza."
-        description="O agendamento é conduzido pela equipe da clínica no WhatsApp oficial. Use esta página para organizar sua mensagem antes do contato, reduzir ruído e facilitar a leitura do caso."
-        primary={{ label: "Gerar mensagem abaixo", href: "#mensagem" }}
+        title="O primeiro contato é pelo WhatsApp. Esta página ajuda você a chegar com a mensagem certa."
+        mobileTitle="O primeiro contato é pelo WhatsApp. Chegue com a mensagem certa."
+        description="A equipe da clínica conduz a conversa inicial e a marcação pelo WhatsApp oficial. Aqui você escolhe seu assunto, organiza a mensagem e chega com mais clareza."
+        primary={{ label: "Montar minha mensagem", href: "#mensagem" }}
         secondary={{ label: "Ver contato", href: "/contato" }}
         panelLabel="WhatsApp"
-        panelTitle="Escolha sua trilha e leve uma mensagem melhor para a equipe."
-        mobilePanelTitle="Escolha a trilha e chegue com uma mensagem melhor."
+        panelTitle="Escolha seu assunto e leve uma mensagem melhor para a equipe."
+        mobilePanelTitle="Escolha seu assunto e chegue com uma mensagem melhor."
         image="/generated/whatsapp-contact-v2.jpg"
         tone="light"
         points={[
           { badge: "1", title: "Escolha", body: "Pós-operatório, continuidade, laser ou cursos." },
           { badge: "2", title: "Explique", body: "Seu momento e o que você gostaria de entender primeiro." },
-          { badge: "3", title: "Envie", body: "Copie a mensagem e leve para o WhatsApp da clínica." },
+          { badge: "3", title: "Envie", body: "Copie a mensagem e leve para o WhatsApp oficial da clínica." },
         ]}
       />
 
       <TrustStrip
         items={[
-          { title: "Escolha sua trilha", body: "Pós-operatório, continuidade corporal, depilação a laser ou cursos." },
+          { title: "Escolha o assunto", body: "Pós-operatório, continuidade corporal, depilação a laser ou cursos." },
           { title: "Chegue com contexto", body: "Uma mensagem bem montada facilita a leitura do caso logo no começo." },
-          { title: "Menos ruído", body: "A conversa fica mais clara quando a equipe já entende seu momento e sua intenção." },
+          { title: "Equipe entende seu momento mais rápido", body: "Com mais clareza desde o início, a orientação também fica melhor." },
         ]}
       />
 
@@ -45,11 +45,11 @@ export default function AgendamentoPage() {
 
       <CtaPanel
         eyebrow="Depois disso"
-        title="Com a mensagem pronta, o próximo passo é iniciar a conversa com a equipe."
-        body="Quando o link oficial do WhatsApp estiver definido, esta página pode ser ligada diretamente a ele sem mudar a estrutura do fluxo."
+        title="Depois de montar a mensagem, copie o texto e envie para a equipe."
+        body="Isso ajuda a clínica a entender seu caso com mais rapidez e orientar o próximo passo com mais clareza."
         highlight="Caminho atual"
-        detail="Mensagem organizada • Equipe da clínica"
-        primary={{ label: "Ver contato", href: "/contato" }}
+        detail="Mensagem organizada • WhatsApp oficial"
+        primary={{ label: "Ver canais de contato", href: "/contato" }}
         secondary={{ label: "Voltar para início", href: "/" }}
       />
     </>

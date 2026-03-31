@@ -13,16 +13,16 @@ export default function ContatoPage() {
     <>
       <HeroSection
         eyebrow="Contato"
-        title="Mais clareza antes da primeira conversa."
-        description="O primeiro contato e o agendamento são conduzidos pela equipe da clínica via WhatsApp oficial. Aqui você encontra os canais públicos da marca e chega à conversa inicial com mais contexto, menos ruído e a mensagem certa."
-        primary={{ label: "Preparar mensagem", href: "/agendamento" }}
+        title="Os canais oficiais da clínica, de forma simples."
+        description="Se você quer falar com a Luana Carla Dermo Clinic, o primeiro contato é feito pelo WhatsApp oficial da equipe. Aqui você encontra os canais principais e escolhe o melhor próximo passo."
+        primary={{ label: "Preparar mensagem para o WhatsApp", href: "/agendamento" }}
         secondary={{ label: "Abrir Instagram", href: siteConfig.instagram, external: true }}
         panelLabel="Contato e canais atuais"
-        panelTitle="O primeiro contato é feito pela equipe no WhatsApp da clínica."
+        panelTitle="WhatsApp para primeiro contato. Instagram para acompanhar a marca."
         image="/generated/whatsapp-contact-v2.jpg"
         tone="light"
         points={[
-          { badge: "WA", title: "WhatsApp da clínica", body: "O primeiro contato e o agendamento são conduzidos pela equipe." },
+          { badge: "WA", title: "WhatsApp da clínica", body: "O primeiro contato e a marcação são conduzidos pela equipe." },
           { badge: "IG", title: "@luanacarladermoclinic", body: "Instagram institucional e canal público da marca." },
           { badge: "•", title: "Centro", body: "Centro • Canaã dos Carajás • PA" },
         ]}
@@ -30,24 +30,24 @@ export default function ContatoPage() {
 
       <TrustStrip
         items={[
-          { title: "Canal principal", body: "O primeiro contato e o agendamento acontecem pelo WhatsApp oficial da clínica." },
-          { title: "Canal público atual", body: "O Instagram continua sendo a vitrine pública mais estável da marca." },
-          { title: "Atendimento com hora marcada", body: "A experiência é organizada para que a paciente entre com mais contexto e menos ansiedade." },
+          { title: "WhatsApp oficial", body: "É o canal principal para explicar seu momento e conversar com a equipe." },
+          { title: "Instagram institucional", body: "Serve para acompanhar a marca, conteúdos e confirmações do canal público ativo." },
+          { title: "Atendimento com hora marcada", body: "A clínica organiza a experiência para que cada paciente chegue com mais contexto e menos ansiedade." },
         ]}
       />
 
       <ContactGrid
         eyebrow="Canais"
-        title="O que faz mais sentido usar agora."
+        title="Escolha o caminho mais útil agora."
         cards={[
           {
-            title: "Primeiro contato orientado",
-            body: "Se você quer falar com a clínica com mais clareza, o melhor caminho é preparar a mensagem inicial antes de chamar a equipe no WhatsApp.",
+            title: "Primeiro contato com a equipe",
+            body: "Se você quer falar com a clínica com mais clareza, vale preparar sua mensagem antes de iniciar a conversa pelo WhatsApp.",
             cta: { label: "Preparar mensagem", href: "/agendamento" },
           },
           {
-            title: "Instagram institucional",
-            body: "Para acompanhar a marca, conteúdos, bastidores e confirmação do canal público já ativo, o Instagram segue sendo a referência externa principal.",
+            title: "Instagram da clínica",
+            body: "Para acompanhar a marca, conteúdos, bastidores e confirmar o canal público já ativo, o Instagram segue como referência externa da clínica.",
             cta: { label: "Abrir Instagram", href: siteConfig.instagram, external: true },
           },
         ]}
@@ -55,10 +55,10 @@ export default function ContatoPage() {
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Antes de escrever para a clínica, vale chegar com a mensagem certa."
-        body="Isso ajuda a equipe a entender melhor seu momento, responder com mais objetividade e conduzir a triagem com mais clareza."
+        title="Se quiser agilizar a conversa, chegue com sua mensagem preparada."
+        body="Isso ajuda a equipe a entender seu momento com mais rapidez e orientar melhor o primeiro passo."
         highlight="Primeiro contato"
-        detail="WhatsApp oficial • Equipe da clínica"
+        detail="WhatsApp oficial • equipe da clínica"
         primary={{ label: "Organizar mensagem", href: "/agendamento" }}
         secondary={{ label: "Voltar para início", href: "/" }}
       />
