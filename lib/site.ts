@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Luana Carla Dermo Clinic",
   descriptor: "Pós-operatório e Estética Corporal Assistida",
   description:
-    "Clínica em Canaã dos Carajás com foco em pós-operatório assistido, estética corporal com continuidade e depilação a laser. Mais clareza, direção e continuidade para quem busca um cuidado corporal com critério.",
+    "Clínica em Canaã dos Carajás com foco em pós-operatório assistido, continuidade corporal e depilação a laser. Primeiro contato pelo WhatsApp oficial, com orientação clara e atendimento com hora marcada.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luanacarladermoclinic.vercel.app",
   instagram: "https://www.instagram.com/luanacarladermoclinic/",
   city: "Canaã dos Carajás",

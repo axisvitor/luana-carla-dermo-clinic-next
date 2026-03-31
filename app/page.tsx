@@ -23,129 +23,189 @@ export default function HomePage() {
     <>
       <HeroSection
         eyebrow="Atendimento com hora marcada • Canaã dos Carajás"
-        title="Pós-operatório com critério. Estética corporal com continuidade."
-        description="Aqui, o cuidado começa entendendo em que fase o seu corpo está e qual deve ser o próximo passo. Pós-operatório, continuidade corporal e depilação a laser seguem a mesma lógica: mais clareza, mais direção e menos improviso."
-        primary={{ label: "Falar no WhatsApp", href: "/agendamento" }}
+        title="Pós-operatório assistido e cuidado corporal com continuidade."
+        description="Em Canaã dos Carajás, a clínica atende pós-operatório, continuidade corporal e depilação a laser com a mesma base: atenção ao momento do corpo, orientação clara e acompanhamento bem conduzido."
+        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
         secondary={{ label: "Como funciona", href: "/como-funciona" }}
-        panelLabel="O que você encontra aqui"
-        panelTitle="Três entradas, uma lógica de cuidado."
-        mobilePanelTitle="Três entradas, um mesmo padrão de cuidado."
+        panelLabel="Como a clínica atende"
+        panelTitle="Três caminhos de entrada. Um mesmo padrão de cuidado."
+        mobilePanelTitle="Três caminhos. Um mesmo cuidado."
         image="/generated/home-hero-v4.jpg"
         tone="dark"
         points={[
-          { title: "Pós-operatório assistido", body: "Para quem precisa de critério, segurança e continuidade em uma fase sensível." },
-          { title: "Estética corporal com continuidade", body: "Para quem quer plano, constância e manutenção — e não apenas sessão solta." },
-          { title: "Depilação a laser", body: "Uma porta de entrada organizada para quem quer começar com mais clareza." },
+          {
+            title: "Pós-operatório assistido",
+            body: "Para quem precisa de acompanhamento em uma fase delicada, inclusive após cirurgia realizada em outra cidade.",
+          },
+          {
+            title: "Continuidade corporal",
+            body: "Para quem busca constância, plano de cuidado e menos decisões soltas ao longo do tempo.",
+          },
+          {
+            title: "Depilação a laser",
+            body: "Para quem quer começar seu atendimento na clínica de forma leve, clara e bem orientada.",
+          },
         ]}
-        quote="Entrar com clareza. Sair com o próximo passo definido."
+        quote="Seu momento primeiro. O próximo passo com mais clareza."
       />
 
       <TrustStrip
         items={[
-          { title: "Avaliação pela fase do corpo", body: "A conduta parte do seu momento real, e não de um cardápio automático." },
-          { title: "Acompanhamento entre sessões", body: "Continuidade não entra como improviso: ela faz parte da promessa." },
-          { title: "Próxima ação sempre definida", body: "Mais clareza, menos ansiedade e menos perda de tempo." },
+          {
+            title: "Seu momento antes de tudo",
+            body: "Cada atendimento começa entendendo a fase do corpo e o que precisa ser priorizado agora.",
+          },
+          {
+            title: "Acompanhamento quando faz sentido",
+            body: "Quando o caso pede continuidade, a condução vai além de uma sessão isolada.",
+          },
+          {
+            title: "Primeiro contato com a equipe",
+            body: "O WhatsApp oficial da clínica é a porta de entrada para orientação inicial e marcação.",
+          },
         ]}
       />
 
       <ManifestoBand
-        eyebrow="Nosso ponto de vista"
-        title="Não tratamos cuidado corporal como cardápio. Organizamos jornadas com mais critério."
-        body="A clínica foi pensada para que a paciente sinta menos ruído e mais direção. Em vez de parecer uma estética que oferece de tudo, o cuidado ganha foco em recuperação assistida, manutenção corporal com constância e uma porta de entrada mais organizada pelo laser."
+        eyebrow="Nosso cuidado"
+        title="O atendimento não começa pelo procedimento. Começa pelo seu momento."
+        body="A proposta da clínica é simples: receber com calma, orientar com clareza e conduzir cada etapa sem excessos. No pós-operatório, isso significa atenção em uma fase sensível. Na continuidade corporal, significa constância. No laser, significa começar com uma experiência organizada e coerente."
       />
 
       <SignatureGallery />
 
       <TripleArticleSection
-        eyebrow="Para quem esta clínica foi desenhada"
-        title="Três entradas claras para a paciente certa."
+        eyebrow="Quem costuma chegar até aqui"
+        title="Três situações em que a clínica costuma fazer mais sentido."
         items={[
-          { title: "Operou fora e vai se recuperar em Canaã", body: "Especialmente importante para quem operou em Marabá ou Parauapebas e precisa de uma continuidade local mais clara e confiável." },
-          { title: "Quer cuidar do corpo com continuidade", body: "Para quem está cansada da lógica de sessão solta e quer um plano com avaliação, constância e próxima etapa definida." },
-          { title: "Quer começar pelo laser sem cair em commodity", body: "Uma porta de entrada organizada, com comunicação mais honesta e uma experiência coerente com o restante da clínica." },
+          {
+            title: "Operou fora e precisa de continuidade em Canaã",
+            body: "Se a cirurgia aconteceu em outra cidade, a clínica pode ser o ponto de apoio local para seguir essa fase com mais acompanhamento.",
+          },
+          {
+            title: "Quer cuidar do corpo com mais constância",
+            body: "Para quem não quer depender de decisões soltas e prefere um plano mais organizado ao longo do tempo.",
+          },
+          {
+            title: "Quer começar pelo laser com atendimento qualificado",
+            body: "Uma entrada mais leve para quem busca clareza desde o primeiro contato e uma experiência coerente com o restante da clínica.",
+          },
         ]}
       />
 
       <ProcessSection
         eyebrow="Como funciona"
-        title="Uma jornada mais clara, do primeiro contato ao próximo passo."
+        title="Do primeiro WhatsApp ao atendimento com mais clareza."
         items={[
-          { title: "Seu momento vem antes do procedimento", body: "A conversa começa entendendo sua fase, sua necessidade e o que precisa de atenção agora." },
-          { title: "Avaliação com critério", body: "A clínica orienta a conduta com mais clareza, sem prometer o que não pode sustentar." },
-          { title: "Plano com continuidade", body: "Você entende o que começa, o que acompanha e qual será a próxima ação da sua jornada." },
-          { title: "Suporte entre etapas", body: "Follow-up, reavaliação e retorno fazem parte do cuidado que a marca quer transmitir." },
+          {
+            title: "Você explica o seu momento",
+            body: "No primeiro contato, a equipe entende sua necessidade principal e o que pede atenção agora.",
+          },
+          {
+            title: "A clínica orienta a melhor trilha",
+            body: "Pós-operatório, continuidade corporal ou depilação a laser: o caminho é indicado de forma clara.",
+          },
+          {
+            title: "A marcação é conduzida pela equipe",
+            body: "O agendamento não acontece sozinho no site. Ele é organizado pelo WhatsApp oficial da clínica.",
+          },
+          {
+            title: "O cuidado segue com acompanhamento",
+            body: "Quando o caso pede continuidade, as próximas etapas são organizadas com mais calma e previsibilidade.",
+          },
         ]}
       />
 
       <ServiceRailsSection
-        eyebrow="Linhas de cuidado"
-        title="Três caminhos que se encontram no mesmo padrão de cuidado."
+        eyebrow="Linhas de atendimento"
+        title="As principais frentes da clínica."
         featured={{
           label: "Pós-operatório",
           title: "Pós-operatório assistido",
-          body: "A frente mais sensível e mais memorável da clínica: cuidado por fase, acompanhamento mais próximo e mais segurança para quem precisa se recuperar com critério.",
-          bullets: ["Leitura por fase", "Continuidade com clareza", "Próxima ação sempre definida"],
-          cta: { label: "Ver página de pós-operatório", href: "/pos-operatorio" },
+          body: "A frente mais sensível da clínica: acompanhamento com atenção ao momento do corpo, continuidade local em Canaã e orientação clara sobre cada etapa.",
+          bullets: ["Atenção à fase da recuperação", "Continuidade local em Canaã", "Próximo passo orientado com clareza"],
+          cta: { label: "Conhecer o pós-operatório", href: "/pos-operatorio" },
         }}
         items={[
           {
             label: "Continuidade",
-            title: "Estética corporal com continuidade",
-            body: "Plano, manutenção e constância para quem quer cuidar do corpo sem depender de improviso.",
-            cta: { label: "Explorar continuidade corporal", href: "/continuidade-corporal" },
+            title: "Continuidade corporal",
+            body: "Cuidado para quem busca constância, manutenção e um plano mais coerente ao longo do tempo.",
+            cta: { label: "Conhecer continuidade corporal", href: "/continuidade-corporal" },
           },
           {
-            label: "Entrada",
+            label: "Laser",
             title: "Depilação a laser",
-            body: "Uma entrada mais leve e organizada para quem quer começar com clareza, sem cair na lógica de commodity.",
-            cta: { label: "Explorar depilação a laser", href: "/depilacao-laser" },
+            body: "Uma entrada mais organizada para quem deseja começar com atendimento claro desde o primeiro contato.",
+            cta: { label: "Conhecer depilação a laser", href: "/depilacao-laser" },
           },
         ]}
       />
 
       <SplitSection
-        eyebrow="Por que essa experiência parece diferente"
-        title="Porque a clínica prefere direção, verdade e continuidade a ruído promocional."
+        eyebrow="Por que tantas pacientes se identificam com essa proposta"
+        title="Porque cuidado corporal também pede calma, método e acompanhamento."
         items={[
-          { title: "Acolhimento com disciplina", body: "O tom da marca busca reduzir ansiedade sem cair em promessa vazia ou linguagem dramatizada." },
-          { title: "Técnica com clareza", body: "A proposta é explicar o caminho, o momento do caso e o que faz sentido agora com mais tranquilidade." },
-          { title: "Transparência como valor", body: "A clínica segue um norte simples: vender o que realmente entrega, com verdade acima de tudo." },
+          {
+            title: "Menos ruído, mais orientação",
+            body: "Você entende melhor o que faz sentido para o seu momento, sem pressão para decidir antes da hora.",
+          },
+          {
+            title: "Mais atenção ao processo",
+            body: "O atendimento valoriza continuidade, organização e acompanhamento quando isso é importante para o caso.",
+          },
+          {
+            title: "Comunicação clara",
+            body: "A clínica prefere explicar cada etapa com transparência, sem exageros e sem promessas apressadas.",
+          },
         ]}
       />
 
       <DarkBand
-        eyebrow="O que você não encontra aqui"
-        title="Menos espetáculo de estética. Mais responsabilidade no cuidado."
+        eyebrow="Nosso compromisso"
+        title="Um cuidado mais responsável do primeiro contato ao acompanhamento."
         items={[
-          "Sem promessa de milagre ou transformação instantânea.",
-          "Sem cardápio confuso que mistura tudo e enfraquece o pós-operatório.",
-          "Sem preço e urgência vazia no centro da narrativa.",
-          "Sem chamar de acolhimento algo que deveria ser improviso.",
+          "Orientação compatível com o seu momento.",
+          "Atendimento com hora marcada e conversa conduzida pela equipe.",
+          "Comunicação clara sobre cada etapa do processo.",
+          "Continuidade quando ela é importante para o caso.",
         ]}
       />
 
       <FaqSection
         eyebrow="Dúvidas frequentes"
-        title="Dúvidas reais antes da primeira conversa."
-        description="Uma leitura rápida para chegar no WhatsApp com mais clareza. Quando o caso pede sensibilidade maior, a equipe assume a conversa humana."
+        title="O que costuma importar antes da primeira conversa."
+        description="Se preferir, você pode chegar ao WhatsApp já com sua necessidade mais clara. A equipe conduz o restante."
         featured
         items={[
-          { title: "Vocês indicam qualquer procedimento logo no primeiro contato?", body: "Não. O primeiro passo é entender o momento do seu corpo e o que faz sentido agora, com mais critério e menos ruído." },
-          { title: "Meu caso é sensível. Vou falar só com automação?", body: "Não. A entrada pode ser organizada digitalmente, mas casos sensíveis e dúvidas clínicas pedem leitura humana quando necessário." },
-          { title: "Faço pós-operatório aqui mesmo tendo operado em outra cidade?", body: "Sim. Essa é uma das situações em que a clínica pode gerar mais valor: oferecer continuidade local em Canaã com mais critério e clareza." },
-          { title: "O agendamento acontece sozinho pelo site?", body: "Não. O site organiza a entrada, mas o primeiro contato e a marcação são conduzidos pela equipe da clínica via WhatsApp oficial." },
+          {
+            title: "Vocês atendem pós-operatório de quem operou em outra cidade?",
+            body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás.",
+          },
+          {
+            title: "Como sei qual atendimento faz mais sentido para mim?",
+            body: "O primeiro passo é explicar seu momento e sua principal necessidade. A equipe orienta o melhor caminho.",
+          },
+          {
+            title: "Posso agendar tudo sozinha pelo site?",
+            body: "Não. O primeiro contato e a marcação são feitos pela equipe da clínica no WhatsApp oficial.",
+          },
+          {
+            title: "O atendimento termina em uma única sessão?",
+            body: "Depende do caso. Quando há necessidade de acompanhamento, a clínica orienta a continuidade de forma clara.",
+          },
         ]}
       />
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Fale com a clínica e comece com mais clareza do que ansiedade."
-        body="Se você quer entender qual trilha faz sentido para o seu caso — pós-operatório, continuidade corporal ou depilação a laser — o melhor começo é uma conversa bem orientada com a equipe da clínica."
+        title="Fale com a equipe e entenda qual caminho faz mais sentido para você."
+        body="Se você busca acompanhamento no pós-operatório, continuidade corporal ou depilação a laser, o primeiro passo é uma conversa orientada com a clínica pelo WhatsApp."
         highlight="Atendimento com hora marcada"
-        detail="Centro • Canaã dos Carajás • PA"
-        primary={{ label: "Preparar mensagem inicial", href: "/agendamento" }}
-        secondary={{ label: "Ver contato e canais atuais", href: "/contato" }}
-        footnote="A equipe conduz o agendamento depois do primeiro contato no WhatsApp."
+        detail="Canaã dos Carajás • contato conduzido pela equipe"
+        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
+        secondary={{ label: "Ver contato e canais", href: "/contato" }}
+        footnote="A marcação é feita pela equipe após o primeiro contato."
       />
     </>
   );
