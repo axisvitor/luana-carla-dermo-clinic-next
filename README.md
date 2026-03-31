@@ -10,7 +10,7 @@ Projeto preparado para deploy na Vercel.
 
 ## Estrutura
 - `app/` — rotas e metadata
-- `components/site/` — header, footer, seções e formulário
+- `components/site/` — header, footer, seções e componentes de interface
 - `lib/` — config do site e helpers
 - `public/brand/` — favicon, OG e ícones
 - `public/generated/` — imagens refinadas e assets vindos do Stitch
@@ -45,6 +45,6 @@ A build local já foi validada com:
 - `pnpm build`
 
 ## Observações
-- O fluxo de primeiro contato continua orientado para WhatsApp pela equipe da clínica.
-- Quando o link oficial do WhatsApp estiver definido, o CTA pode ser conectado diretamente ao canal real.
+- O fluxo de primeiro contato continua orientado para WhatsApp pela equipe da clínica, sem formulários e sem self-service.
+- Quando o link oficial do WhatsApp estiver definido, os CTAs podem apontar diretamente para o canal real.
 - Ainda vale trocar imagens por fotos próprias da clínica quando disponíveis, principalmente laser e retratos institucionais.

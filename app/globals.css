@@ -33,10 +33,13 @@
 html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
+  color-scheme: light;
+  -webkit-tap-highlight-color: transparent;
 }
 
-:where(h1, h2, h3, h4, blockquote) {
+:where(h1, h2, h3, h4, h5, h6, blockquote) {
   text-wrap: balance;
+  scroll-margin-top: 7rem;
 }
 
 :where(p, li, summary) {
@@ -46,6 +49,10 @@ html {
 :where(a, button, input, select, textarea, summary):focus-visible {
   outline: 2px solid rgba(15, 95, 99, 0.38);
   outline-offset: 3px;
+}
+
+:where(a, button) {
+  touch-action: manipulation;
 }
 
 body {
