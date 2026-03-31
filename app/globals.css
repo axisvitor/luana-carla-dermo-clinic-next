@@ -5,8 +5,8 @@
   --paper: #fffdfa;
   --surface: rgba(255, 252, 248, 0.82);
   --ink: #182322;
-  --ink-soft: rgba(24, 35, 34, 0.74);
-  --ink-faint: rgba(24, 35, 34, 0.56);
+  --ink-soft: rgba(24, 35, 34, 0.82);
+  --ink-faint: rgba(24, 35, 34, 0.64);
   --line: rgba(110, 129, 127, 0.18);
   --line-strong: rgba(110, 129, 127, 0.3);
   --accent: #1a767a;

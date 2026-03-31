@@ -104,7 +104,7 @@ export function HeroSection({
   const dark = tone === "dark";
 
   const overlay = dark
-    ? "linear-gradient(180deg, rgba(15,20,20,0.3) 0%, rgba(15,20,20,0.86) 100%)"
+    ? "linear-gradient(180deg, rgba(15,20,20,0.14) 0%, rgba(15,20,20,0.54) 58%, rgba(15,20,20,0.92) 100%)"
     : "linear-gradient(180deg, rgba(250,246,241,0.72) 0%, rgba(255,255,255,0.92) 74%)";
 
   return (
@@ -139,9 +139,10 @@ export function HeroSection({
           style={{ backgroundImage: `${overlay}, url(${image})`, backgroundPosition: "center", backgroundSize: "cover" }}
         >
           <div className={cn("pointer-events-none absolute -left-[12%] bottom-[-14%] h-56 w-56 rounded-[45%_55%_58%_42%/42%_40%_60%_58%] border", dark ? "border-white/10 shadow-[0_0_0_20px_rgba(255,255,255,0.03),0_0_0_52px_rgba(255,255,255,0.015)]" : "border-accent-deep/15 shadow-[0_0_0_20px_rgba(15,95,99,0.04),0_0_0_52px_rgba(15,95,99,0.02)]")} />
-          <div className="relative z-10 max-w-[26rem]">
+          {dark ? <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[74%] bg-[linear-gradient(180deg,rgba(15,20,20,0)_0%,rgba(15,20,20,0.08)_20%,rgba(15,20,20,0.76)_72%,rgba(15,20,20,0.94)_100%)]" /> : null}
+          <div className="relative z-10 max-w-[25rem]">
             <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
-            <h2 className={cn("mt-3 max-w-[13ch] font-display text-balance text-[clamp(1.5rem,4vw,2.35rem)] leading-[1.01] tracking-[-0.035em]", dark ? "text-white" : "text-ink")}>
+            <h2 className={cn("mt-3 max-w-[12ch] font-display text-balance text-[clamp(1.46rem,3.85vw,2.22rem)] leading-[1.04] tracking-[-0.032em]", dark ? "text-white" : "text-ink")}>
               <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
               <span className="hidden sm:inline">{panelTitle}</span>
             </h2>
@@ -155,7 +156,7 @@ export function HeroSection({
                     </span>
                     <div>
                       <strong className={cn("block text-[1.02rem] font-semibold leading-[1.38] tracking-[-0.012em] md:text-[1.05rem]", dark ? "text-white/94" : "text-ink")}>{item.title}</strong>
-                      <p className={cn("mt-1.5 max-w-[24ch] text-[0.98rem] leading-[1.68] md:text-[1rem]", dark ? "text-white/82" : "text-ink-soft")}>{item.body}</p>
+                      <p className={cn("mt-2 max-w-[23ch] text-[0.99rem] leading-[1.72] md:text-[1rem]", dark ? "text-white/88" : "text-ink-soft")}>{item.body}</p>
                     </div>
                   </article>
                 ))}
@@ -165,7 +166,7 @@ export function HeroSection({
             {list ? (
               <ul className="mt-6 grid gap-3.5">
                 {list.map((item) => (
-                  <li key={item} className={cn("max-w-[26ch] border-b pb-4 text-[0.98rem] leading-[1.68] md:text-[1rem]", dark ? "border-white/12 text-white/86" : "border-black/10 text-ink/86")}>
+                  <li key={item} className={cn("max-w-[24ch] border-b pb-4 text-[0.99rem] leading-[1.72] md:text-[1rem]", dark ? "border-white/14 text-white/90" : "border-black/10 text-ink/88")}>
                     {item}
                   </li>
                 ))}
