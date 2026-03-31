@@ -27,7 +27,7 @@ const sectionClass =
 const primaryButtonClass =
   "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5 sm:w-auto";
 const secondaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white sm:w-auto";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/28 bg-white/82 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep shadow-[0_12px_28px_rgba(15,95,99,0.06)] transition duration-200 hover:border-accent-deep/42 hover:bg-white sm:w-auto";
 const sectionHeadingClass =
   "font-display text-balance text-[clamp(1.95rem,5.2vw,3.45rem)] leading-[0.99] tracking-[-0.042em] text-ink";
 const mediumHeadingClass =
@@ -44,6 +44,8 @@ const eyebrowInverseClass =
   "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']";
 const cardClass =
   "rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,244,238,0.84))] shadow-[0_22px_56px_rgba(16,24,24,0.07)]";
+const softPanelClass =
+  "rounded-[26px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,244,238,0.78))] shadow-[0_18px_40px_rgba(16,24,24,0.045)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -131,13 +133,13 @@ export function HeroSection({
         <div
           className={cn(
             cardClass,
-            "relative isolate flex min-h-[280px] flex-col justify-end overflow-hidden p-6 sm:min-h-[320px] md:min-h-[460px] md:p-8",
+            "relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden p-7 sm:min-h-[340px] md:min-h-[480px] md:p-9",
             dark && "border-white/10 text-white shadow-[0_36px_90px_rgba(10,16,16,0.22)]",
           )}
           style={{ backgroundImage: `${overlay}, url(${image})`, backgroundPosition: "center", backgroundSize: "cover" }}
         >
           <div className={cn("pointer-events-none absolute -left-[12%] bottom-[-14%] h-56 w-56 rounded-[45%_55%_58%_42%/42%_40%_60%_58%] border", dark ? "border-white/10 shadow-[0_0_0_20px_rgba(255,255,255,0.03),0_0_0_52px_rgba(255,255,255,0.015)]" : "border-accent-deep/15 shadow-[0_0_0_20px_rgba(15,95,99,0.04),0_0_0_52px_rgba(15,95,99,0.02)]")} />
-          <div className="relative z-10">
+          <div className="relative z-10 max-w-[26rem]">
             <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
             <h2 className={cn("mt-3 max-w-[13ch] font-display text-balance text-[clamp(1.5rem,4vw,2.35rem)] leading-[1.01] tracking-[-0.035em]", dark ? "text-white" : "text-ink")}>
               <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
@@ -145,15 +147,15 @@ export function HeroSection({
             </h2>
 
             {points ? (
-              <div className="mt-5 grid gap-3">
+              <div className="mt-6 grid gap-4">
                 {points.map((item, index) => (
-                  <article key={item.title} className="grid grid-cols-[auto_1fr] gap-3">
-                    <span className={cn("grid h-10 w-10 place-items-center rounded-[14px] border text-sm font-extrabold", dark ? "border-white/12 bg-white/5 text-[#d8f1f2]" : "border-black/10 bg-white/80 text-accent-deep")}>
+                  <article key={item.title} className="grid grid-cols-[auto_1fr] gap-4">
+                    <span className={cn("grid h-11 w-11 place-items-center rounded-[16px] border text-sm font-extrabold", dark ? "border-white/14 bg-white/7 text-[#d8f1f2]" : "border-black/10 bg-white/88 text-accent-deep")}>
                       {item.badge ?? String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <strong className={cn("block text-[1rem] font-semibold leading-[1.35] tracking-[-0.01em]", dark ? "text-white/92" : "text-ink")}>{item.title}</strong>
-                      <p className={cn("mt-1 text-[0.94rem] leading-6 md:text-[0.97rem]", dark ? "text-white/78" : "text-ink-soft")}>{item.body}</p>
+                      <strong className={cn("block text-[1.02rem] font-semibold leading-[1.38] tracking-[-0.012em] md:text-[1.05rem]", dark ? "text-white/94" : "text-ink")}>{item.title}</strong>
+                      <p className={cn("mt-1.5 max-w-[24ch] text-[0.98rem] leading-[1.68] md:text-[1rem]", dark ? "text-white/82" : "text-ink-soft")}>{item.body}</p>
                     </div>
                   </article>
                 ))}
@@ -161,9 +163,9 @@ export function HeroSection({
             ) : null}
 
             {list ? (
-              <ul className="mt-5 grid gap-2.5">
+              <ul className="mt-6 grid gap-3.5">
                 {list.map((item) => (
-                  <li key={item} className={cn("border-b pb-3 text-[0.95rem] leading-6 md:text-[0.98rem]", dark ? "border-white/12 text-white/84" : "border-black/10 text-ink/85")}>
+                  <li key={item} className={cn("max-w-[26ch] border-b pb-4 text-[0.98rem] leading-[1.68] md:text-[1rem]", dark ? "border-white/12 text-white/86" : "border-black/10 text-ink/86")}>
                     {item}
                   </li>
                 ))}
@@ -184,13 +186,19 @@ export function HeroSection({
 
 export function TrustStrip({ items }: { items: ListItem[] }) {
   return (
-    <section className={cn(sectionClass, "pt-3 md:pt-4")}>
-      <div className="xl:col-span-12 border-t border-line pt-6">
-        <div className="grid gap-6 md:grid-cols-3">
+    <section className={cn(sectionClass, "pt-4 md:pt-6")}>
+      <div className="xl:col-span-12 border-t border-line pt-6 md:pt-8">
+        <div className="grid gap-4 md:grid-cols-3 md:gap-5">
           {items.map((item) => (
-            <article key={item.title} className="relative border-t border-black/10 pt-4 before:absolute before:left-0 before:top-[-1px] before:h-[2px] before:w-9 before:bg-[linear-gradient(90deg,var(--champagne),var(--accent))] before:content-['']">
-              <strong className="block text-[0.8rem] font-bold uppercase tracking-[0.12em] text-ink">{item.title}</strong>
-              <p className={cn(bodyClass, "mt-3 text-ink-soft")}>{item.body}</p>
+            <article
+              key={item.title}
+              className={cn(
+                softPanelClass,
+                "relative flex min-h-[170px] flex-col p-5 md:min-h-[190px] md:p-6 before:absolute before:left-5 before:top-0 before:h-px before:w-11 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.34))] before:content-[''] md:before:left-6",
+              )}
+            >
+              <strong className="block text-[0.78rem] font-bold uppercase tracking-[0.13em] text-ink">{item.title}</strong>
+              <p className={cn(bodyClass, "mt-3 max-w-[30ch] text-ink-soft")}>{item.body}</p>
             </article>
           ))}
         </div>
@@ -284,11 +292,18 @@ export function TripleArticleSection({
   return (
     <section className={cn(sectionClass, muted && "border-y border-black/5 bg-[linear-gradient(180deg,rgba(243,235,226,0.42),rgba(255,255,255,0.18))]")}>
       <SectionIntro eyebrow={eyebrow} title={title} />
-      <div className="xl:col-span-12 grid gap-6 md:grid-cols-3">
+      <div className="xl:col-span-12 grid gap-5 md:grid-cols-3 md:gap-6">
         {items.map((item) => (
-          <article key={item.title} className={cn(cardClass, "border-t border-black/10 p-6 md:p-7")}> 
-            <h3 className={itemHeadingClass}>{item.title}</h3>
-            <p className={cn(bodyClass, "mt-3 text-ink-soft")}>{item.body}</p>
+          <article
+            key={item.title}
+            className={cn(
+              softPanelClass,
+              "relative flex min-h-[210px] flex-col p-6 md:min-h-[232px] md:p-7 before:absolute before:left-6 before:top-0 before:h-px before:w-12 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']",
+              muted && "bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(244,237,228,0.74))]",
+            )}
+          >
+            <h3 className={cn(itemHeadingClass, "max-w-[18ch]")}>{item.title}</h3>
+            <p className={cn(bodyClass, "mt-4 max-w-[30ch] text-ink-soft")}>{item.body}</p>
           </article>
         ))}
       </div>
@@ -316,9 +331,9 @@ export function EditorialFeatureSection({
         <div>
           <p className={cn(leadClass, "max-w-[65ch] text-ink-soft")}>{body}</p>
         </div>
-        <article className={cn(cardClass, "border-t border-black/10 p-6 md:p-7")}>
-          <strong className={cn(itemHeadingClass, "block")}>{calloutTitle}</strong>
-          <p className={cn(bodyClass, "mt-3 text-ink-soft")}>{calloutBody}</p>
+        <article className={cn(softPanelClass, "border-t border-black/10 p-6 md:p-7")}>
+          <strong className={cn(itemHeadingClass, "block max-w-[16ch]")}>{calloutTitle}</strong>
+          <p className={cn(bodyClass, "mt-3 max-w-[30ch] text-ink-soft")}>{calloutBody}</p>
         </article>
       </div>
     </section>
@@ -337,15 +352,15 @@ export function ProcessSection({
   return (
     <section className={cn(sectionClass, "border-y border-black/5 bg-[linear-gradient(180deg,rgba(243,235,226,0.42),rgba(255,255,255,0.18))]")}>
       <SectionIntro eyebrow={eyebrow} title={title} narrow />
-      <ol className="xl:col-span-12 grid gap-6 md:grid-cols-2">
+      <ol className="xl:col-span-12 grid gap-4 md:grid-cols-2 md:gap-5">
         {items.map((item, index) => (
-          <li key={item.title} className="grid grid-cols-[auto_1fr] gap-4 border-t border-black/10 pt-5">
-            <span className="grid h-14 w-14 place-items-center rounded-[18px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.8))] text-sm font-extrabold text-accent-deep shadow-[0_14px_30px_rgba(24,35,34,0.05)]">
+          <li key={item.title} className={cn(softPanelClass, "grid grid-cols-[auto_1fr] gap-4 p-5 md:p-6")}>
+            <span className="grid h-14 w-14 place-items-center rounded-[18px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.82))] text-sm font-extrabold text-accent-deep shadow-[0_14px_30px_rgba(24,35,34,0.05)]">
               {String(index + 1).padStart(2, "0")}
             </span>
-            <div>
-              <h3 className={itemHeadingClass}>{item.title}</h3>
-              <p className={cn(bodyClass, "mt-3 text-ink-soft")}>{item.body}</p>
+            <div className="min-w-0">
+              <h3 className={cn(itemHeadingClass, "max-w-[18ch]")}>{item.title}</h3>
+              <p className={cn(bodyClass, "mt-3 max-w-[30ch] text-ink-soft")}>{item.body}</p>
             </div>
           </li>
         ))}
@@ -414,11 +429,11 @@ export function SplitSection({
         <Eyebrow>{eyebrow}</Eyebrow>
         <h2 className={cn(sectionHeadingClass, "mt-4 max-w-[12ch]")}>{title}</h2>
       </div>
-      <div className="grid gap-5 xl:col-span-6">
+      <div className="grid gap-4 xl:col-span-6 md:gap-5">
         {items.map((item) => (
-          <article key={item.title} className="border-t border-black/10 pt-5">
-            <h3 className={itemHeadingClass}>{item.title}</h3>
-            <p className={cn(bodyClass, "mt-3 text-ink-soft")}>{item.body}</p>
+          <article key={item.title} className={cn(softPanelClass, "p-6 md:min-h-[170px] md:p-7")}>
+            <h3 className={cn(itemHeadingClass, "max-w-[18ch]")}>{item.title}</h3>
+            <p className={cn(bodyClass, "mt-3 max-w-[30ch] text-ink-soft")}>{item.body}</p>
           </article>
         ))}
       </div>
