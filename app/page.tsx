@@ -126,11 +126,14 @@ export default function HomePage() {
 
       <FaqSection
         eyebrow="Dúvidas frequentes"
-        title="Perguntas que costumam aparecer antes do primeiro contato."
+        title="Dúvidas reais antes da primeira conversa."
+        description="Uma leitura rápida para chegar no WhatsApp com mais clareza. Quando o caso pede sensibilidade maior, a equipe assume a conversa humana."
+        featured
         items={[
           { title: "Vocês indicam qualquer procedimento logo no primeiro contato?", body: "Não. O primeiro passo é entender o momento do seu corpo e o que faz sentido agora, com mais critério e menos ruído." },
           { title: "Meu caso é sensível. Vou falar só com automação?", body: "Não. A entrada pode ser organizada digitalmente, mas casos sensíveis e dúvidas clínicas pedem leitura humana quando necessário." },
           { title: "Faço pós-operatório aqui mesmo tendo operado em outra cidade?", body: "Sim. Essa é uma das situações em que a clínica pode gerar mais valor: oferecer continuidade local em Canaã com mais critério e clareza." },
+          { title: "O agendamento acontece sozinho pelo site?", body: "Não. O site organiza a entrada, mas o primeiro contato e a marcação são conduzidos pela equipe da clínica via WhatsApp oficial." },
         ]}
       />
 

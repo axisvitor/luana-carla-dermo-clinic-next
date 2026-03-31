@@ -442,28 +442,64 @@ export function DarkBand({
 export function FaqSection({
   eyebrow,
   title,
+  description,
   items,
+  featured = false,
 }: {
   eyebrow: string;
   title: string;
+  description?: string;
   items: ListItem[];
+  featured?: boolean;
 }) {
+  const accordion = (
+    <div className={cn(featured ? "grid gap-3 md:gap-4" : "xl:col-span-12 grid gap-3 md:gap-4")}>
+      {items.map((item) => (
+        <details
+          key={item.title}
+          className={cn(
+            "group rounded-[22px] border px-5 py-4 transition duration-200 md:px-6 md:py-5",
+            featured
+              ? "border-black/8 bg-white shadow-[0_18px_38px_rgba(16,24,24,0.045)] open:shadow-[0_22px_48px_rgba(16,24,24,0.07)]"
+              : "border-black/8 bg-white/52 shadow-[0_12px_30px_rgba(16,24,24,0.04)] open:bg-white open:shadow-[0_18px_42px_rgba(16,24,24,0.06)]",
+          )}
+        >
+          <summary className="grid cursor-pointer grid-cols-[1fr_auto] items-center gap-4 list-none font-sans text-[1.02rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.12rem] md:leading-[1.42] [&::-webkit-details-marker]:hidden">
+            <span className={cn(featured ? "max-w-[40ch]" : "max-w-[42ch]")}>{item.title}</span>
+            <span className="grid h-9 w-9 place-items-center rounded-full border border-accent-deep/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,242,236,0.94))] font-sans text-[1.05rem] font-medium text-accent-deep transition duration-200 group-open:rotate-45 group-open:border-accent-deep/22 group-open:bg-accent-deep group-open:text-white">
+              +
+            </span>
+          </summary>
+          <p className="mt-3 max-w-[68ch] pr-12 text-[0.98rem] leading-7 text-ink-soft md:mt-4 md:text-[1rem] md:leading-8">{item.body}</p>
+        </details>
+      ))}
+    </div>
+  );
+
+  if (featured) {
+    return (
+      <section className={cn(sectionClass, "items-start")}>
+        <div className={cn(cardClass, "xl:col-span-4 self-start p-6 md:p-7")}>
+          <Eyebrow>{eyebrow}</Eyebrow>
+          <h2 className="mt-4 max-w-[9ch] font-display text-[clamp(2.1rem,4.2vw,3.45rem)] leading-[0.95] tracking-[-0.05em] text-ink">
+            {title}
+          </h2>
+          {description ? (
+            <p className="mt-4 max-w-[34ch] text-[0.98rem] leading-7 text-ink-soft md:text-[1rem] md:leading-8">{description}</p>
+          ) : null}
+        </div>
+
+        <div className="xl:col-span-8 rounded-[32px] border border-black/8 bg-[linear-gradient(180deg,rgba(249,245,239,0.88),rgba(255,255,255,0.98))] p-3 shadow-[0_28px_60px_rgba(16,24,24,0.05)] md:p-4">
+          {accordion}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className={sectionClass}>
       <SectionIntro eyebrow={eyebrow} title={title} narrow />
-      <div className="xl:col-span-12 grid gap-3 md:gap-4">
-        {items.map((item) => (
-          <details key={item.title} className="group rounded-[22px] border border-black/8 bg-white/52 px-5 py-4 shadow-[0_12px_30px_rgba(16,24,24,0.04)] transition duration-200 open:bg-white open:shadow-[0_18px_42px_rgba(16,24,24,0.06)] md:px-6 md:py-5">
-            <summary className="grid cursor-pointer grid-cols-[1fr_auto] items-center gap-4 list-none font-sans text-[1.02rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.12rem] md:leading-[1.42] [&::-webkit-details-marker]:hidden">
-              <span className="max-w-[42ch]">{item.title}</span>
-              <span className="grid h-9 w-9 place-items-center rounded-full border border-accent-deep/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,242,236,0.94))] font-sans text-[1.05rem] font-medium text-accent-deep transition duration-200 group-open:rotate-45 group-open:border-accent-deep/22 group-open:bg-accent-deep group-open:text-white">
-                +
-              </span>
-            </summary>
-            <p className="mt-3 max-w-[68ch] pr-12 text-[0.98rem] leading-7 text-ink-soft md:mt-4 md:text-[1rem] md:leading-8">{item.body}</p>
-          </details>
-        ))}
-      </div>
+      {accordion}
     </section>
   );
 }
