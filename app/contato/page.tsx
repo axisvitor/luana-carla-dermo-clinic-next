@@ -14,8 +14,8 @@ export default function ContatoPage() {
       <HeroSection
         eyebrow="Contato"
         title="Os canais oficiais da clínica, de forma simples."
-        description="Se você quer falar com a Luana Carla Dermo Clinic, o primeiro contato é feito pelo WhatsApp oficial da equipe. Aqui você encontra os canais principais e escolhe o melhor próximo passo."
-        primary={{ label: "Preparar mensagem para o WhatsApp", href: "/agendamento" }}
+        description="Se você quer falar com a Luana Carla Dermo Clinic, o primeiro contato é feito pelo WhatsApp oficial da equipe. Sem formulário: a conversa começa direto com a clínica."
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Abrir Instagram", href: siteConfig.instagram, external: true }}
         panelLabel="Contato e canais atuais"
         panelTitle="WhatsApp para primeiro contato. Instagram para acompanhar a marca."
@@ -42,8 +42,8 @@ export default function ContatoPage() {
         cards={[
           {
             title: "Primeiro contato com a equipe",
-            body: "Se você quer falar com a clínica com mais clareza, vale preparar sua mensagem antes de iniciar a conversa pelo WhatsApp.",
-            cta: { label: "Preparar mensagem", href: "/agendamento" },
+            body: "Se você quer falar com a clínica, o melhor caminho é iniciar a conversa pelo WhatsApp oficial e explicar brevemente seu assunto.",
+            cta: { label: "Ver primeiro contato", href: "/agendamento" },
           },
           {
             title: "Instagram da clínica",
@@ -55,11 +55,11 @@ export default function ContatoPage() {
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Se quiser agilizar a conversa, chegue com sua mensagem preparada."
-        body="Isso ajuda a equipe a entender seu momento com mais rapidez e orientar melhor o primeiro passo."
+        title="Se quiser agilizar a conversa, fale direto com a equipe."
+        body="A clínica não trabalha com formulários. O contato inicial acontece diretamente pelo WhatsApp oficial."
         highlight="Primeiro contato"
         detail="WhatsApp oficial • equipe da clínica"
-        primary={{ label: "Organizar mensagem", href: "/agendamento" }}
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Voltar para início", href: "/" }}
       />
     </>

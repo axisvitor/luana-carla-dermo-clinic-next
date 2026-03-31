@@ -22,7 +22,7 @@ export default function ComoFuncionaPage() {
         eyebrow="Como funciona"
         title="Do primeiro WhatsApp ao atendimento, tudo começa entendendo o seu momento."
         description="A clínica organiza o cuidado de forma simples: ouvir a necessidade principal, orientar o melhor caminho e conduzir o atendimento com mais clareza."
-        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ir para contato", href: "/contato" }}
         panelLabel="Como o atendimento se organiza"
         panelTitle="Entender, orientar e acompanhar fazem parte da mesma experiência."
@@ -79,10 +79,10 @@ export default function ComoFuncionaPage() {
       <CtaPanel
         eyebrow="Próximo passo"
         title="Se você quer entender qual caminho faz mais sentido para o seu caso, comece pela conversa."
-        body="No WhatsApp, a equipe ajuda a organizar a entrada e orientar o melhor próximo passo para o seu momento."
+        body="No WhatsApp, a equipe ajuda a organizar a entrada e orientar o melhor próximo passo para o seu momento, sem uso de formulários."
         highlight="Entrada organizada"
         detail="Primeiro contato • orientação • continuidade"
-        primary={{ label: "Preparar minha mensagem", href: "/agendamento" }}
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ver contato", href: "/contato" }}
       />
     </>

@@ -15,7 +15,7 @@ export default function FaqPage() {
         eyebrow="Perguntas frequentes"
         title="As dúvidas mais comuns antes da primeira conversa."
         description="Se você quer entender melhor como a clínica atende, esta página reúne respostas simples para ajudar no primeiro contato."
-        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ver contato", href: "/contato" }}
         panelLabel="FAQ geral"
         panelTitle="Respostas rápidas sobre pós-operatório, continuidade, laser e primeiro contato."
@@ -35,7 +35,7 @@ export default function FaqPage() {
         items={[
           { title: "Vocês atendem pós-operatório de quem operou em outra cidade?", body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás." },
           { title: "Como saber qual atendimento faz mais sentido para mim?", body: "O primeiro passo é explicar seu momento e sua principal necessidade. A equipe ajuda a orientar o melhor caminho." },
-          { title: "Posso explicar meu caso pelo WhatsApp antes de marcar?", body: "Sim. O contato inicial acontece justamente para isso: entender sua necessidade e orientar o próximo passo." },
+          { title: "Preciso preencher formulário antes de falar com a clínica?", body: "Não. O primeiro contato é direto com a equipe pelo WhatsApp oficial." },
           { title: "A depilação a laser pode ser minha porta de entrada?", body: "Sim. Para muitas pacientes, ela funciona como a forma mais leve de começar o atendimento na clínica." },
           { title: "Quando existe continuidade entre sessões?", body: "Quando o caso pede acompanhamento, a clínica organiza retorno, reavaliação e orientação entre etapas com mais clareza." },
         ]}
@@ -44,10 +44,10 @@ export default function FaqPage() {
       <CtaPanel
         eyebrow="Próximo passo"
         title="Se a sua dúvida não apareceu aqui, a equipe pode orientar seu primeiro passo."
-        body="No WhatsApp, a clínica ajuda a entender qual caminho faz mais sentido para o seu momento."
+        body="No WhatsApp, a clínica ajuda a entender qual caminho faz mais sentido para o seu momento, sem formulários e sem etapas desnecessárias."
         highlight="Primeiro contato"
         detail="Perguntas reais • orientação • clareza"
-        primary={{ label: "Preparar minha mensagem", href: "/agendamento" }}
+        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ver canais de contato", href: "/contato" }}
       />
     </>
