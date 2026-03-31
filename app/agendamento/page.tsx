@@ -15,11 +15,13 @@ export default function AgendamentoPage() {
       <HeroSection
         eyebrow="Primeiro contato e WhatsApp"
         title="A clínica agenda pelo WhatsApp. Esta página te ajuda a chegar com mais clareza."
+        mobileTitle="A clínica agenda pelo WhatsApp. Chegue com mais clareza."
         description="O agendamento é conduzido pela equipe da clínica no WhatsApp oficial. Use esta página para organizar sua mensagem antes do contato, reduzir ruído e facilitar a leitura do caso."
         primary={{ label: "Gerar mensagem abaixo", href: "#mensagem" }}
         secondary={{ label: "Ver contato", href: "/contato" }}
         panelLabel="WhatsApp"
         panelTitle="Escolha sua trilha e leve uma mensagem melhor para a equipe."
+        mobilePanelTitle="Escolha a trilha e chegue com uma mensagem melhor."
         image="/generated/whatsapp-contact-v2.jpg"
         tone="light"
         points={[

@@ -14,11 +14,13 @@ export default function CursosPage() {
       <HeroSection
         eyebrow="Cursos"
         title="Formação profissional em espaço próprio, sem confundir a jornada clínica."
+        mobileTitle="Cursos em espaço próprio, sem confundir a jornada clínica."
         description="A clínica também mantém uma frente de ensino. Aqui, a formação profissional aparece em um espaço próprio para não confundir quem procura capacitação com quem busca atendimento assistencial."
         primary={{ label: "Falar com a equipe", href: "/agendamento" }}
         secondary={{ label: "Voltar para a clínica", href: "/sobre" }}
         panelLabel="Frente separada"
         panelTitle="Formação profissional em área própria, sem confundir a narrativa clínica."
+        mobilePanelTitle="Formação em área própria, sem confundir a clínica."
         image="/generated/stitch/stitch-courses-hero.jpg"
         tone="dark"
         list={[

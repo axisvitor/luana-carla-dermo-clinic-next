@@ -29,6 +29,7 @@ export default function HomePage() {
         secondary={{ label: "Como funciona", href: "/como-funciona" }}
         panelLabel="O que você encontra aqui"
         panelTitle="Três entradas, uma lógica de cuidado."
+        mobilePanelTitle="Três entradas, um mesmo padrão de cuidado."
         image="/generated/home-hero-v4.jpg"
         tone="dark"
         points={[

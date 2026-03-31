@@ -23,15 +23,15 @@ type ListItem = {
 type ImageTone = "dark" | "light";
 
 const sectionClass =
-  "grid grid-cols-1 gap-6 px-5 py-14 md:px-8 md:py-20 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
+  "grid grid-cols-1 gap-5 px-5 py-12 md:px-8 md:py-20 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
 const primaryButtonClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5 sm:w-auto";
 const secondaryButtonClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-6 py-4 text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-6 py-4 text-center text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white sm:w-auto";
 const sectionHeadingClass =
-  "font-display text-[clamp(2.5rem,4.2vw,4.35rem)] leading-[0.96] tracking-[-0.05em] text-ink";
+  "font-display text-[clamp(2.15rem,7vw,4.35rem)] leading-[0.98] tracking-[-0.05em] text-ink";
 const mediumHeadingClass =
-  "font-display text-[clamp(1.85rem,3vw,3rem)] leading-[0.98] tracking-[-0.05em] text-ink";
+  "font-display text-[clamp(1.55rem,5vw,3rem)] leading-[1.02] tracking-[-0.05em] text-ink";
 const cardClass =
   "rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,244,238,0.84))] shadow-[0_22px_56px_rgba(16,24,24,0.07)]";
 
@@ -71,6 +71,8 @@ export function HeroSection({
   points,
   list,
   quote,
+  mobileTitle,
+  mobilePanelTitle,
 }: {
   eyebrow: string;
   title: string;
@@ -84,6 +86,8 @@ export function HeroSection({
   points?: PointItem[];
   list?: string[];
   quote?: string;
+  mobileTitle?: string;
+  mobilePanelTitle?: string;
 }) {
   const dark = tone === "dark";
 
@@ -92,14 +96,15 @@ export function HeroSection({
     : "linear-gradient(180deg, rgba(250,246,241,0.72) 0%, rgba(255,255,255,0.92) 74%)";
 
   return (
-    <section className={cn(sectionClass, "relative overflow-hidden pt-10 md:pt-14 xl:pt-20")}> 
+    <section className={cn(sectionClass, "relative overflow-hidden pt-8 md:pt-14 xl:pt-20")}> 
       <div className="relative z-10 xl:col-span-7 xl:pr-6">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[10.5ch] font-display text-[clamp(2.9rem,5.2vw,5.1rem)] leading-[0.9] tracking-[-0.06em] text-ink">
-          {title}
+        <h1 className="mt-4 max-w-[11ch] font-display text-[clamp(2.55rem,9vw,5.1rem)] leading-[0.92] tracking-[-0.06em] text-ink sm:max-w-[10.5ch]">
+          <span className="sm:hidden">{mobileTitle ?? title}</span>
+          <span className="hidden sm:inline">{title}</span>
         </h1>
-        <p className="mt-5 max-w-[58ch] text-[0.98rem] leading-7 text-ink-soft">{description}</p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <p className="mt-4 max-w-[56ch] text-[0.96rem] leading-7 text-ink-soft">{description}</p>
+        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <SmartLink cta={primary} className={primaryButtonClass} />
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
@@ -109,7 +114,7 @@ export function HeroSection({
         <div
           className={cn(
             cardClass,
-            "relative isolate flex min-h-[340px] flex-col justify-end overflow-hidden p-7 md:min-h-[460px] md:p-8",
+            "relative isolate flex min-h-[280px] flex-col justify-end overflow-hidden p-6 sm:min-h-[320px] md:min-h-[460px] md:p-8",
             dark && "border-white/10 text-white shadow-[0_36px_90px_rgba(10,16,16,0.22)]",
           )}
           style={{ backgroundImage: `${overlay}, url(${image})`, backgroundPosition: "center", backgroundSize: "cover" }}
@@ -117,18 +122,21 @@ export function HeroSection({
           <div className={cn("pointer-events-none absolute -left-[12%] bottom-[-14%] h-56 w-56 rounded-[45%_55%_58%_42%/42%_40%_60%_58%] border", dark ? "border-white/10 shadow-[0_0_0_20px_rgba(255,255,255,0.03),0_0_0_52px_rgba(255,255,255,0.015)]" : "border-accent-deep/15 shadow-[0_0_0_20px_rgba(15,95,99,0.04),0_0_0_52px_rgba(15,95,99,0.02)]")} />
           <div className="relative z-10">
             <p className={cn("inline-flex items-center gap-3 text-[0.74rem] font-extrabold uppercase tracking-[0.18em] before:h-px before:w-8 before:content-['']", dark ? "text-white/82 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))]" : "text-accent-deep before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))]")}>{panelLabel}</p>
-            <h2 className={cn("mt-4 max-w-[12ch] font-display text-[clamp(2rem,3.8vw,3.2rem)] leading-[0.95] tracking-[-0.05em]", dark ? "text-white" : "text-ink")}>{panelTitle}</h2>
+            <h2 className={cn("mt-3 max-w-[12ch] font-display text-[clamp(1.6rem,6vw,3.2rem)] leading-[0.98] tracking-[-0.05em]", dark ? "text-white" : "text-ink")}>
+              <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
+              <span className="hidden sm:inline">{panelTitle}</span>
+            </h2>
 
             {points ? (
-              <div className="mt-6 grid gap-4">
+              <div className="mt-5 grid gap-3">
                 {points.map((item, index) => (
                   <article key={item.title} className="grid grid-cols-[auto_1fr] gap-3">
                     <span className={cn("grid h-10 w-10 place-items-center rounded-[14px] border text-sm font-extrabold", dark ? "border-white/12 bg-white/5 text-[#d8f1f2]" : "border-black/10 bg-white/80 text-accent-deep")}>
                       {item.badge ?? String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <strong className={cn("block text-base font-semibold", dark ? "text-white/92" : "text-ink")}>{item.title}</strong>
-                      <p className={cn("mt-1 text-sm leading-7", dark ? "text-white/78" : "text-ink-soft")}>{item.body}</p>
+                      <strong className={cn("block text-[0.98rem] font-semibold", dark ? "text-white/92" : "text-ink")}>{item.title}</strong>
+                      <p className={cn("mt-1 text-sm leading-6", dark ? "text-white/78" : "text-ink-soft")}>{item.body}</p>
                     </div>
                   </article>
                 ))}
@@ -136,9 +144,9 @@ export function HeroSection({
             ) : null}
 
             {list ? (
-              <ul className="mt-6 grid gap-3">
+              <ul className="mt-5 grid gap-2.5">
                 {list.map((item) => (
-                  <li key={item} className={cn("border-b pb-3 text-sm leading-7", dark ? "border-white/12 text-white/84" : "border-black/10 text-ink/85")}>
+                  <li key={item} className={cn("border-b pb-3 text-sm leading-6", dark ? "border-white/12 text-white/84" : "border-black/10 text-ink/85")}>
                     {item}
                   </li>
                 ))}
@@ -146,7 +154,7 @@ export function HeroSection({
             ) : null}
 
             {quote ? (
-              <blockquote className={cn("mt-6 border-t pt-5 font-display text-[clamp(1.8rem,3vw,2.6rem)] leading-[0.98] tracking-[-0.04em]", dark ? "border-white/12 text-white" : "border-black/10 text-ink")}>
+              <blockquote className={cn("mt-5 border-t pt-4 font-display text-[clamp(1.55rem,5vw,2.6rem)] leading-[1] tracking-[-0.04em]", dark ? "border-white/12 text-white" : "border-black/10 text-ink")}> 
                 {quote}
               </blockquote>
             ) : null}
@@ -200,7 +208,7 @@ export function SignatureGallery() {
           backgroundPosition: "center",
         }}
       >
-        <div className="relative z-10 flex min-h-[360px] max-w-[28rem] flex-col justify-end md:min-h-[500px]">
+        <div className="relative z-10 flex min-h-[280px] max-w-[28rem] flex-col justify-end md:min-h-[500px]">
           <p className="inline-flex items-center gap-3 text-[0.74rem] font-extrabold uppercase tracking-[0.18em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']">
             Atmosfera
           </p>
