@@ -3,13 +3,13 @@
 import { useMemo, useState } from "react";
 
 const inputClass =
-  "w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-4 text-sm text-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] outline-none transition duration-200 placeholder:text-ink-faint focus:border-accent-deep/30 focus:bg-white";
+  "w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-4 text-[0.98rem] leading-6 text-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] outline-none transition duration-200 placeholder:text-ink-faint focus:border-accent-deep/30 focus:bg-white";
 
 const buttonClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-4 text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5";
+  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-4 text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] transition duration-200 hover:-translate-y-0.5";
 
 const secondaryButtonClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-5 py-4 text-[0.78rem] font-extrabold uppercase tracking-[0.16em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white";
+  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-accent-deep/20 bg-white/70 px-5 py-4 text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep transition duration-200 hover:border-accent-deep/35 hover:bg-white";
 
 export function IntakeForm() {
   const [form, setForm] = useState({
@@ -51,10 +51,10 @@ export function IntakeForm() {
     <section className="grid grid-cols-1 gap-6 px-5 py-14 md:px-8 md:py-20 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]">
       <div className="xl:col-span-12">
         <div className="relative mb-8 border-t border-line pt-6">
-          <p className="inline-flex items-center gap-3 text-[0.75rem] font-extrabold uppercase tracking-[0.18em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']">
+          <p className="inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']">
             Preparar mensagem
           </p>
-          <h2 className="mt-4 max-w-[13ch] font-display text-[clamp(2.5rem,4.2vw,4.35rem)] leading-[0.96] tracking-[-0.05em] text-ink">
+          <h2 className="mt-4 max-w-[13ch] font-display text-balance text-[clamp(2.25rem,6vw,4.1rem)] leading-[0.97] tracking-[-0.045em] text-ink">
             Organize o primeiro contato antes de chamar a equipe.
           </h2>
         </div>
@@ -63,22 +63,24 @@ export function IntakeForm() {
       <div className="xl:col-span-7 rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,244,238,0.82))] p-6 shadow-[0_18px_44px_rgba(16,24,24,0.05)] md:p-7">
         <form className="grid gap-5" onSubmit={(event) => event.preventDefault()}>
           <label className="grid gap-2">
-            <span className="text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-ink">Seu nome</span>
+            <span className="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-ink">Seu nome</span>
             <input
               className={inputClass}
               value={form.nome}
               onChange={(event) => setForm((current) => ({ ...current, nome: event.target.value }))}
               placeholder="Como você prefere ser chamada?"
               autoComplete="name"
+              name="nome"
             />
           </label>
 
           <label className="grid gap-2">
-            <span className="text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-ink">Trilha</span>
+            <span className="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-ink">Trilha</span>
             <select
               className={inputClass}
               value={form.trilha}
               onChange={(event) => setForm((current) => ({ ...current, trilha: event.target.value }))}
+              name="trilha"
             >
               <option>Primeiro contato</option>
               <option>Pós-operatório assistido</option>
@@ -89,33 +91,36 @@ export function IntakeForm() {
           </label>
 
           <label className="grid gap-2">
-            <span className="text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-ink">Seu momento hoje</span>
+            <span className="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-ink">Seu momento hoje</span>
             <textarea
               className={inputClass}
               value={form.momento}
               onChange={(event) => setForm((current) => ({ ...current, momento: event.target.value }))}
               placeholder="Conte em poucas linhas o que está acontecendo agora."
               rows={5}
+              name="momento"
             />
           </label>
 
           <label className="grid gap-2">
-            <span className="text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-ink">O que você quer entender primeiro</span>
+            <span className="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-ink">O que você quer entender primeiro</span>
             <textarea
               className={inputClass}
               value={form.objetivo}
               onChange={(event) => setForm((current) => ({ ...current, objetivo: event.target.value }))}
               placeholder="Ex.: quero saber qual entrada faz mais sentido para o meu caso."
               rows={4}
+              name="objetivo"
             />
           </label>
 
           <label className="grid gap-2">
-            <span className="text-[0.78rem] font-extrabold uppercase tracking-[0.12em] text-ink">Melhor período para contato</span>
+            <span className="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-ink">Melhor período para contato</span>
             <select
               className={inputClass}
               value={form.horario}
               onChange={(event) => setForm((current) => ({ ...current, horario: event.target.value }))}
+              name="horario"
             >
               <option>Manhã</option>
               <option>Tarde</option>
@@ -127,20 +132,20 @@ export function IntakeForm() {
       </div>
 
       <div className="xl:col-span-5 rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,244,238,0.82))] p-6 shadow-[0_18px_44px_rgba(16,24,24,0.05)] md:p-7">
-        <p className="inline-flex items-center gap-3 text-[0.75rem] font-extrabold uppercase tracking-[0.18em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']">
+        <p className="inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']">
           Mensagem pronta
         </p>
-        <h3 className="mt-4 font-display text-[clamp(1.9rem,3vw,2.8rem)] leading-[0.98] tracking-[-0.05em] text-ink">
+        <h3 className="mt-4 font-display text-balance text-[clamp(1.72rem,4vw,2.7rem)] leading-[0.99] tracking-[-0.04em] text-ink">
           Copie, ajuste se quiser e envie para a equipe.
         </h3>
-        <p className="mt-4 text-sm leading-7 text-ink-soft">
+        <p className="mt-4 text-pretty text-[0.98rem] leading-7 text-ink-soft md:text-[1rem] md:leading-8">
           Assim a clínica recebe um contexto melhor logo no início e consegue responder com mais clareza.
         </p>
 
         <textarea
           readOnly
           value={message}
-          className="mt-5 min-h-[220px] w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-4 text-sm leading-7 text-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] outline-none"
+          className="mt-5 min-h-[220px] w-full rounded-2xl border border-black/10 bg-white/80 px-4 py-4 text-[0.98rem] leading-7 text-ink shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] outline-none md:text-[1rem] md:leading-8"
         />
 
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">

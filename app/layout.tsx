@@ -12,12 +12,14 @@ const bodoni = Bodoni_Moda({
   variable: "--font-bodoni-moda",
   subsets: ["latin"],
   weight: ["500", "600", "700"],
+  display: "swap",
 });
 
 const instrument = Instrument_Sans({
   variable: "--font-instrument-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

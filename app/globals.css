@@ -32,9 +32,24 @@
 
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+}
+
+:where(h1, h2, h3, h4, blockquote) {
+  text-wrap: balance;
+}
+
+:where(p, li, summary) {
+  text-wrap: pretty;
+}
+
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid rgba(15, 95, 99, 0.38);
+  outline-offset: 3px;
 }
 
 body {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   background:
     radial-gradient(circle at 8% 0%, rgba(189, 165, 139, 0.1), transparent 30%),
     linear-gradient(180deg, #fcfbf8 0%, var(--background) 58%, #efede7 100%);
