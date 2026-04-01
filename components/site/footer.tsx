@@ -16,9 +16,9 @@ export function SiteFooter() {
 
       <div className="grid gap-6 xl:grid-cols-[1.12fr_0.94fr_0.94fr]">
         <div className="relative xl:pr-8">
-          <p className="font-display text-[1.92rem] leading-[0.96] tracking-[-0.035em] text-white/96">{siteConfig.name}</p>
-          <p className="mt-2 text-xs font-medium uppercase tracking-[0.14em] text-white/72">{siteConfig.descriptor}</p>
-          <p className="mt-4 max-w-[36ch] text-pretty text-[0.99rem] leading-[1.8] text-white/82 md:text-[1rem]">
+          <p className="font-display text-[1.9rem] leading-[1] tracking-[-0.032em] text-white/96">{siteConfig.name}</p>
+          <p className="mt-2 text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/72">{siteConfig.descriptor}</p>
+          <p className="mt-4 max-w-[36ch] text-pretty text-[0.98rem] leading-[1.78] text-white/82 md:text-[1rem]">
             Atendimento com hora marcada no Centro, em Canaã dos Carajás. Um cuidado corporal pensado para quem busca mais clareza, acompanhamento e um ritmo de atendimento mais sereno.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -35,7 +35,7 @@ export function SiteFooter() {
 
         <div className="relative xl:border-l xl:border-white/8 xl:pl-8">
           <p className={footerEyebrowClass}>Mapa do site</p>
-          <ul className="mt-5 grid gap-2.5 text-[0.99rem] leading-7">
+          <ul className="mt-5 grid gap-2.5 text-[0.98rem] leading-[1.7]">
             {footerLinks.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className={footerLinkClass}>
@@ -51,9 +51,9 @@ export function SiteFooter() {
 
         <div className="relative xl:border-l xl:border-white/8 xl:pl-8">
           <p className={footerEyebrowClass}>Contato atual</p>
-          <ul className="mt-5 grid gap-4 text-[0.99rem] leading-[1.8]">
+          <ul className="mt-5 grid gap-4 text-[0.98rem] leading-[1.78]">
             <li className="border-b border-white/8 pb-4">
-              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Instagram</span>
+              <span className="block text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/72">Instagram</span>
               <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className={footerLinkClass}>
                 <span>@luanacarladermoclinic</span>
                 <span aria-hidden className="opacity-0 transition duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
@@ -62,18 +62,18 @@ export function SiteFooter() {
               </a>
             </li>
             <li className="border-b border-white/8 pb-4">
-              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Local</span>
+              <span className="block text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/72">Local</span>
               <strong className="font-semibold text-white/90">Centro • Canaã dos Carajás • PA</strong>
             </li>
             <li>
-              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Agenda</span>
+              <span className="block text-[0.75rem] font-medium uppercase tracking-[0.1em] text-white/72">Agenda</span>
               <strong className="font-semibold text-white/90">Atendimento com hora marcada</strong>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-[0.9rem] text-white/62 md:flex-row md:items-center md:justify-between">
+      <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-[0.88rem] text-white/62 md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
         <div className="flex flex-wrap items-center gap-3 text-white/72">
           <Link href="/cursos" className="transition duration-200 hover:text-white">Frente separada de cursos</Link>

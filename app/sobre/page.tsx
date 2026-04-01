@@ -3,9 +3,9 @@ import { CtaPanel, ManifestoBand, SplitSection, TripleArticleSection } from "@/c
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Sobre a clínica",
+  title: "Sobre a Luana Carla Dermo Clinic | Clínica de Estética em Canaã dos Carajás",
   description:
-    "Conheça a Luana Carla Dermo Clinic: uma clínica em Canaã dos Carajás que valoriza calma, clareza e cuidado bem conduzido.",
+    "Conheça a Luana Carla Dermo Clinic: clínica de estética em Canaã dos Carajás desde 2020. Atendimento com calma, clareza e cuidado personalizado em pós-operatório e tratamentos corporais.",
   path: "/sobre",
 });
 

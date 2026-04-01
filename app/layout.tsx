@@ -22,54 +22,117 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
+// Schema.org — LocalBusiness com dados completos
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": `${siteConfig.url}/#localbusiness`,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
   image: `${siteConfig.url}${siteConfig.ogImage}`,
+  logo: `${siteConfig.url}/brand/icon-512.png`,
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Centro",
     addressLocality: siteConfig.city,
     addressRegion: siteConfig.region,
+    postalCode: "68537-000",
     addressCountry: "BR",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -6.4969,
+    longitude: -49.8775,
   },
   areaServed: [
     {
       "@type": "City",
       name: siteConfig.city,
     },
+    {
+      "@type": "State",
+      name: "Pará",
+    },
   ],
   sameAs: [siteConfig.instagram],
   availableLanguage: ["Portuguese"],
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "18:00",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Atendimentos principais",
+    name: "Serviços da clínica",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
+          "@id": `${siteConfig.url}/pos-operatorio`,
           name: "Pós-operatório assistido",
+          description: "Acompanhamento especializado para recuperação pós-cirúrgica com orientação clara e suporte local.",
+          provider: { "@id": `${siteConfig.url}/#localbusiness` },
+          areaServed: { "@type": "City", name: siteConfig.city },
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
+          "@id": `${siteConfig.url}/continuidade-corporal`,
           name: "Continuidade corporal",
+          description: "Plano de cuidado corporal contínuo para resultados duradouros e bem-estar.",
+          provider: { "@id": `${siteConfig.url}/#localbusiness` },
+          areaServed: { "@type": "City", name: siteConfig.city },
         },
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
+          "@id": `${siteConfig.url}/depilacao-laser`,
           name: "Depilação a laser",
+          description: "Depilação a laser com tecnologia avançada e atendimento profissional.",
+          provider: { "@id": `${siteConfig.url}/#localbusiness` },
+          areaServed: { "@type": "City", name: siteConfig.city },
         },
       },
     ],
   },
+};
+
+// Schema.org — Organization para reforcar autoridade
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteConfig.url}/#organization`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/brand/icon-512.png`,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  description: siteConfig.description,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteConfig.city,
+    addressRegion: siteConfig.region,
+    addressCountry: "BR",
+  },
+  sameAs: [siteConfig.instagram],
+};
+
+// Schema.org — WebSite para sitelinks searchbox
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteConfig.url}/#website`,
+  name: siteConfig.name,
+  url: siteConfig.url,
+  publisher: { "@id": `${siteConfig.url}/#organization` },
+  inLanguage: "pt-BR",
 };
 
 export const viewport: Viewport = {
@@ -135,8 +198,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${bodoni.variable} ${instrument.variable}`}>
-      <body className="min-h-screen bg-background pb-28 font-sans text-ink antialiased selection:bg-accent/15 selection:text-ink md:pb-0">
+    <html lang="pt-BR" data-scroll-behavior="smooth" className={`${bodoni.variable} ${instrument.variable}`}>
+      <body className="min-h-screen bg-background font-sans text-ink antialiased selection:bg-accent/15 selection:text-ink">
         <a
           href="#conteudo-principal"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[12px] focus:bg-paper focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink focus:shadow-[0_18px_40px_rgba(24,35,34,0.12)]"
@@ -153,7 +216,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <FloatingCta />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([localBusinessJsonLd, organizationJsonLd, websiteJsonLd]),
+          }}
         />
       </body>
     </html>

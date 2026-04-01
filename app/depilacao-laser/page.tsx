@@ -3,10 +3,11 @@ import { CtaPanel, FaqSection, TripleArticleSection, TrustStrip } from "@/compon
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Depilação a laser",
+  title: "Depilação a Laser em Canaã dos Carajás | Luana Carla Dermo Clinic",
   description:
-    "Depilação a laser em Canaã dos Carajás com avaliação inicial, alinhamento de expectativa e uma experiência de entrada mais organizada.",
+    "Depilação a laser em Canaã dos Carajás com tecnologia avançada. Avaliação inicial, alinhamento de expectativas e atendimento profissional. Agende sua consulta.",
   path: "/depilacao-laser",
+  keywords: ["depilação a laser Canaã dos Carajás", "depilação definitiva Pará", "laser corporal", "depilação profissional"],
 });
 
 export default function DepilacaoLaserPage() {

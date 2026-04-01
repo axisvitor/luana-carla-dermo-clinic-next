@@ -14,7 +14,9 @@ import {
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  description: siteConfig.description,
+  title: "Clínica de Estética em Canaã dos Carajás | Pós-operatório, Corporal e Laser",
+  description:
+    "Luana Carla Dermo Clinic: clínica de estética em Canaã dos Carajás especializada em pós-operatório assistido, continuidade corporal e depilação a laser. Atendimento personalizado com hora marcada.",
   path: "/",
 });
 
@@ -22,46 +24,28 @@ export default function HomePage() {
   return (
     <>
       <HeroSection
-        eyebrow="Atendimento com hora marcada • Canaã dos Carajás"
-        title="Pós-operatório assistido e cuidado corporal com continuidade."
-        description="Em Canaã dos Carajás, a clínica atende pós-operatório, continuidade corporal e depilação a laser com a mesma base: atenção ao momento do corpo, orientação clara e acompanhamento bem conduzido."
-        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
-        secondary={{ label: "Como funciona", href: "/como-funciona" }}
-        panelLabel="Como a clínica atende"
-        panelTitle="Três caminhos de entrada. Um mesmo padrão de cuidado."
-        mobilePanelTitle="Três caminhos. Um mesmo cuidado."
+        eyebrow="Canaã dos Carajás"
+        title="Cuidado corporal com atenção, método e continuidade."
+        mobileTitle="Cuidado corporal com atenção e continuidade."
+        description="Pós-operatório assistido, continuidade corporal e depilação a laser — cada atendimento conduzido com atenção ao seu momento e orientação clara desde o primeiro contato."
+        primary={{ label: "Conhecer a clínica", href: "/sobre" }}
         image="/generated/home-hero-v4.jpg"
-        tone="dark"
-        points={[
-          {
-            title: "Pós-operatório assistido",
-            body: "Para quem precisa de acompanhamento em uma fase delicada, inclusive após cirurgia realizada em outra cidade.",
-          },
-          {
-            title: "Continuidade corporal",
-            body: "Para quem busca constância, plano de cuidado e menos decisões soltas ao longo do tempo.",
-          },
-          {
-            title: "Depilação a laser",
-            body: "Para quem quer começar seu atendimento na clínica de forma leve, clara e bem orientada.",
-          },
-        ]}
-        quote="Seu momento primeiro. O próximo passo com mais clareza."
+        credentials={["Atendimento com hora marcada", "Pós-operatório assistido", "Depilação a laser"]}
       />
 
       <TrustStrip
         items={[
           {
-            title: "Seu momento antes de tudo",
-            body: "Cada atendimento começa entendendo a fase do corpo e o que precisa ser priorizado agora.",
+            title: "Atendimento personalizado",
+            body: "Cada consulta é conduzida com atenção ao seu momento e às suas necessidades específicas.",
           },
           {
-            title: "Acompanhamento quando faz sentido",
-            body: "Quando o caso pede continuidade, a condução vai além de uma sessão isolada.",
+            title: "Acompanhamento contínuo",
+            body: "Quando o tratamento pede continuidade, oferecemos suporte em cada etapa do processo.",
           },
           {
-            title: "Primeiro contato com a equipe",
-            body: "O WhatsApp oficial da clínica é a porta de entrada para orientação inicial e marcação.",
+            title: "Equipe especializada",
+            body: "Profissionais qualificados para orientar e conduzir seu cuidado com excelência.",
           },
         ]}
       />
@@ -95,23 +79,23 @@ export default function HomePage() {
 
       <ProcessSection
         eyebrow="Como funciona"
-        title="Do primeiro WhatsApp ao atendimento com mais clareza."
+        title="Do primeiro contato ao atendimento personalizado."
         items={[
           {
-            title: "Você explica o seu momento",
-            body: "No primeiro contato, a equipe entende sua necessidade principal e o que pede atenção agora.",
+            title: "Avaliação inicial",
+            body: "Entendemos suas necessidades e o momento atual do seu corpo para oferecer a melhor orientação.",
           },
           {
-            title: "A clínica orienta a melhor trilha",
-            body: "Pós-operatório, continuidade corporal ou depilação a laser: o caminho é indicado de forma clara.",
+            title: "Indicação do tratamento",
+            body: "Nossa equipe indica o caminho mais adequado: pós-operatório, continuidade corporal ou depilação a laser.",
           },
           {
-            title: "A marcação é conduzida pela equipe",
-            body: "O agendamento não acontece sozinho no site. Ele é organizado pelo WhatsApp oficial da clínica.",
+            title: "Agendamento personalizado",
+            body: "O horário é organizado pela equipe da clínica para garantir um atendimento dedicado.",
           },
           {
-            title: "O cuidado segue com acompanhamento",
-            body: "Quando o caso pede continuidade, as próximas etapas são organizadas com mais calma e previsibilidade.",
+            title: "Acompanhamento contínuo",
+            body: "Quando necessário, as próximas etapas são planejadas com organização e previsibilidade.",
           },
         ]}
       />
@@ -174,38 +158,38 @@ export default function HomePage() {
 
       <FaqSection
         eyebrow="Dúvidas frequentes"
-        title="O que costuma importar antes da primeira conversa."
-        description="Se preferir, você pode chegar ao WhatsApp já com sua necessidade mais clara. A equipe conduz o restante."
+        title="Perguntas comuns antes da primeira consulta."
+        description="Reunimos as principais dúvidas para ajudar você a entender melhor nossos serviços."
         featured
         items={[
           {
             title: "Vocês atendem pós-operatório de quem operou em outra cidade?",
-            body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás.",
+            body: "Sim. Oferecemos acompanhamento e continuidade local em Canaã dos Carajás para pacientes que realizaram cirurgias em outras cidades.",
           },
           {
-            title: "Como sei qual atendimento faz mais sentido para mim?",
-            body: "O primeiro passo é explicar seu momento e sua principal necessidade. A equipe orienta o melhor caminho.",
+            title: "Como sei qual tratamento é mais indicado para mim?",
+            body: "Na avaliação inicial, nossa equipe analisa suas necessidades e indica o caminho mais adequado para o seu caso.",
           },
           {
-            title: "Posso agendar tudo sozinha pelo site?",
-            body: "Não. O primeiro contato e a marcação são feitos pela equipe da clínica no WhatsApp oficial.",
+            title: "Como funciona o agendamento?",
+            body: "O agendamento é feito diretamente com a equipe da clínica, que organiza o melhor horário para seu atendimento.",
           },
           {
-            title: "O atendimento termina em uma única sessão?",
-            body: "Depende do caso. Quando há necessidade de acompanhamento, a clínica orienta a continuidade de forma clara.",
+            title: "Os tratamentos exigem mais de uma sessão?",
+            body: "Depende do caso. Quando necessário, elaboramos um plano de acompanhamento com as etapas claramente definidas.",
           },
         ]}
       />
 
       <CtaPanel
         eyebrow="Próximo passo"
-        title="Fale com a equipe e entenda qual caminho faz mais sentido para você."
-        body="Se você busca acompanhamento no pós-operatório, continuidade corporal ou depilação a laser, o primeiro passo é uma conversa orientada com a clínica pelo WhatsApp."
+        title="Agende sua consulta e descubra o melhor caminho para você."
+        body="Seja para acompanhamento pós-operatório, continuidade corporal ou depilação a laser, nossa equipe está pronta para orientar você desde o primeiro contato."
         highlight="Atendimento com hora marcada"
-        detail="Canaã dos Carajás • contato conduzido pela equipe"
-        primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
-        secondary={{ label: "Ver contato e canais", href: "/contato" }}
-        footnote="A marcação é feita pela equipe após o primeiro contato."
+        detail="Canaã dos Carajás"
+        primary={{ label: "Agendar consulta", href: "/agendamento" }}
+        secondary={{ label: "Fale conosco", href: "/contato" }}
+        footnote="O agendamento é realizado pela equipe da clínica."
       />
     </>
   );

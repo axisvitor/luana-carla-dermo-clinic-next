@@ -12,12 +12,27 @@ export const siteConfig = {
   region: "PA",
   neighborhood: "Centro",
   keywords: [
+    // Marca
     "Luana Carla Dermo Clinic",
+    "Luana Carla Canaã dos Carajás",
+    // Servicos principais
     "pós-operatório assistido",
-    "pós-operatório em Canaã dos Carajás",
-    "estética corporal em Canaã dos Carajás",
+    "pós-operatório Canaã dos Carajás",
+    "acompanhamento pós-cirúrgico",
+    "recuperação pós-operatória",
+    // Estetica
+    "estética corporal Canaã dos Carajás",
+    "clínica de estética Canaã dos Carajás",
     "continuidade corporal",
-    "depilação a laser em Canaã dos Carajás",
+    "tratamento corporal",
+    // Laser
+    "depilação a laser Canaã dos Carajás",
+    "depilação definitiva Canaã dos Carajás",
+    "laser corporal",
+    // Geograficos
+    "clínica estética Pará",
+    "dermoclínica Canaã dos Carajás",
+    "estética sudeste do Pará",
   ],
 };
 
@@ -38,19 +53,35 @@ export function createPageMetadata({
   title,
   description,
   path = "/",
+  keywords: pageKeywords,
 }: {
   title?: string;
   description: string;
   path?: string;
+  keywords?: string[];
 }): Metadata {
-  const pageTitle = title ? `${title} — ${siteConfig.name}` : siteConfig.name;
+  // Se title ja tem pipe ou travessao, usa como esta; senao, adiciona nome da clinica
+  const hasDelimiter = title && (title.includes("|") || title.includes("—"));
+  const pageTitle = hasDelimiter ? title : title ? `${title} — ${siteConfig.name}` : siteConfig.name;
+
+  // Combina keywords da pagina com keywords globais
+  const combinedKeywords = pageKeywords
+    ? [...new Set([...pageKeywords, ...siteConfig.keywords])]
+    : siteConfig.keywords;
 
   return {
     metadataBase: new URL(siteConfig.url),
     title: pageTitle,
     description,
-    keywords: siteConfig.keywords,
+    keywords: combinedKeywords,
     alternates: { canonical: path },
+    // Geo-targeting para buscas locais
+    other: {
+      "geo.region": "BR-PA",
+      "geo.placename": siteConfig.city,
+      "geo.position": "-6.4969;-49.8775",
+      ICBM: "-6.4969, -49.8775",
+    },
     openGraph: {
       title: pageTitle,
       description,

@@ -3,9 +3,9 @@ import { ProcessSection, SplitSection, TripleArticleSection } from "@/components
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Como funciona",
+  title: "Como Funciona | Atendimento na Luana Carla Dermo Clinic",
   description:
-    "Entenda como a clínica recebe, orienta e acompanha cada paciente, do primeiro WhatsApp às próximas etapas do atendimento.",
+    "Saiba como funciona o atendimento na Luana Carla Dermo Clinic em Canaã dos Carajás. Do primeiro contato à consulta: orientação clara e agendamento personalizado.",
   path: "/como-funciona",
 });
 

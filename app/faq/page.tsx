@@ -3,9 +3,9 @@ import { CtaPanel, FaqSection } from "@/components/site/sections";
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Perguntas frequentes",
+  title: "Perguntas Frequentes | FAQ Luana Carla Dermo Clinic",
   description:
-    "Respostas claras para duvidas comuns antes do primeiro contato com a clinica.",
+    "FAQ da Luana Carla Dermo Clinic: respostas claras sobre pós-operatório, continuidade corporal, depilação a laser e agendamento em Canaã dos Carajás.",
   path: "/faq",
 });
 
