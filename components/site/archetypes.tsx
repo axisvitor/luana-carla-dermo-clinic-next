@@ -1,6 +1,18 @@
 import Link from "next/link";
 
 import { cn } from "@/lib/cn";
+import {
+  sectionClass,
+  primaryButtonClass,
+  secondaryButtonClass,
+  eyebrowClass,
+  eyebrowInverseClass,
+  leadClass,
+  bodyClass,
+  cardClass,
+  softPanelClass,
+  smallLabelClass,
+} from "@/lib/styles";
 
 import type { CallToAction } from "./sections";
 
@@ -21,23 +33,6 @@ type TopicCard = {
   body: string;
   href: string;
 };
-
-const sectionClass =
-  "grid grid-cols-1 gap-6 px-5 py-12 md:px-8 md:py-16 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
-const primaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_46px_rgba(15,95,99,0.24)] active:translate-y-0 sm:w-auto";
-const secondaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-black/10 bg-white/58 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-ink/76 transition duration-200 hover:-translate-y-0.5 hover:border-black/16 hover:bg-white/82 hover:text-ink active:translate-y-0 sm:w-auto";
-const eyebrowClass =
-  "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']";
-const inverseEyebrowClass =
-  "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']";
-const leadClass = "text-pretty text-[0.98rem] leading-[1.82] md:text-[1.02rem] md:leading-[1.88]";
-const bodyClass = "text-pretty text-[0.96rem] leading-[1.74] md:text-[0.99rem] md:leading-[1.8]";
-const cardClass =
-  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,244,238,0.82))] shadow-[0_22px_54px_rgba(16,24,24,0.065)]";
-const softPanelClass =
-  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,239,231,0.82))] shadow-[0_12px_26px_rgba(16,24,24,0.032)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -109,7 +104,7 @@ export function OperationalHero({
         <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2">
           {facts.map((fact) => (
             <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
-              <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
+              <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
               <strong className="mt-2 block max-w-[20ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.05rem]">
                 {fact.value}
               </strong>
@@ -197,7 +192,7 @@ export function ServiceHero({
         <div className="mt-7 grid gap-3 sm:grid-cols-2 md:auto-rows-fr">
           {facts.map((fact) => (
             <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:min-h-[108px] md:p-5")}>
-              <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
+              <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
               <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.06rem]">
                 {fact.value}
               </strong>
@@ -219,7 +214,7 @@ export function ServiceHero({
           }}
         >
           <div className="relative z-10 flex min-h-[280px] flex-col justify-end md:min-h-[400px]">
-            <p className={dark ? inverseEyebrowClass : eyebrowClass}>{panelLabel}</p>
+            <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
             <h2
               className={cn(
                 "mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.46rem,2.6vw,2.12rem)] leading-[1.04] tracking-[-0.032em]",
@@ -314,7 +309,7 @@ export function InstitutionalHero({
         <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2 xl:grid-cols-4">
           {facts.map((fact) => (
             <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
-              <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
+              <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
               <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.04rem]">
                 {fact.value}
               </strong>

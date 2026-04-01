@@ -1,15 +1,12 @@
 import Link from "next/link";
 
 import { footerLinks, siteConfig } from "@/lib/site";
-
-const footerEyebrowClass =
-  "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/75 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.2))] before:content-['']";
-const footerButtonClass =
-  "inline-flex items-center gap-2 rounded-[14px] border border-white/10 bg-white/7 px-4 py-3 text-[0.74rem] font-bold uppercase tracking-[0.14em] text-white shadow-[0_14px_32px_rgba(0,0,0,0.16)] transition duration-200 hover:-translate-y-0.5 hover:border-white/18 hover:bg-white/10";
-const footerGhostButtonClass =
-  "inline-flex items-center gap-2 rounded-[14px] border border-white/8 bg-transparent px-4 py-3 text-[0.74rem] font-bold uppercase tracking-[0.14em] text-white/82 transition duration-200 hover:border-white/14 hover:bg-white/6 hover:text-white";
-const footerLinkClass =
-  "group inline-flex items-center gap-2 text-white/86 transition duration-200 hover:text-white";
+import {
+  footerEyebrowClass,
+  footerButtonClass,
+  footerGhostButtonClass,
+  footerLinkClass,
+} from "@/lib/styles";
 
 export function SiteFooter() {
   return (
@@ -20,7 +17,7 @@ export function SiteFooter() {
       <div className="grid gap-6 xl:grid-cols-[1.12fr_0.94fr_0.94fr]">
         <div className="relative xl:pr-8">
           <p className="font-display text-[1.92rem] leading-[0.96] tracking-[-0.035em] text-white/96">{siteConfig.name}</p>
-          <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.14em] text-white/62">{siteConfig.descriptor}</p>
+          <p className="mt-2 text-xs font-medium uppercase tracking-[0.14em] text-white/72">{siteConfig.descriptor}</p>
           <p className="mt-4 max-w-[36ch] text-pretty text-[0.99rem] leading-[1.8] text-white/82 md:text-[1rem]">
             Atendimento com hora marcada no Centro, em Canaã dos Carajás. Um cuidado corporal pensado para quem busca mais clareza, acompanhamento e um ritmo de atendimento mais sereno.
           </p>
@@ -56,7 +53,7 @@ export function SiteFooter() {
           <p className={footerEyebrowClass}>Contato atual</p>
           <ul className="mt-5 grid gap-4 text-[0.99rem] leading-[1.8]">
             <li className="border-b border-white/8 pb-4">
-              <span className="block text-[0.7rem] font-medium uppercase tracking-[0.14em] text-white/48">Instagram</span>
+              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Instagram</span>
               <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className={footerLinkClass}>
                 <span>@luanacarladermoclinic</span>
                 <span aria-hidden className="opacity-0 transition duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
@@ -65,11 +62,11 @@ export function SiteFooter() {
               </a>
             </li>
             <li className="border-b border-white/8 pb-4">
-              <span className="block text-[0.7rem] font-medium uppercase tracking-[0.14em] text-white/48">Local</span>
+              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Local</span>
               <strong className="font-semibold text-white/90">Centro • Canaã dos Carajás • PA</strong>
             </li>
             <li>
-              <span className="block text-[0.7rem] font-medium uppercase tracking-[0.14em] text-white/48">Agenda</span>
+              <span className="block text-xs font-medium uppercase tracking-[0.14em] text-white/72">Agenda</span>
               <strong className="font-semibold text-white/90">Atendimento com hora marcada</strong>
             </li>
           </ul>
