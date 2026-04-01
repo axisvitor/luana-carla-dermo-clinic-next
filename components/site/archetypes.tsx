@@ -23,21 +23,21 @@ type TopicCard = {
 };
 
 const sectionClass =
-  "grid grid-cols-1 gap-6 px-5 py-14 md:px-8 md:py-20 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
+  "grid grid-cols-1 gap-6 px-5 py-12 md:px-8 md:py-16 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
 const primaryButtonClass =
   "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_46px_rgba(15,95,99,0.24)] active:translate-y-0 sm:w-auto";
 const secondaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-accent-deep/28 bg-white/82 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-accent-deep shadow-[0_12px_28px_rgba(15,95,99,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-accent-deep/42 hover:bg-white hover:shadow-[0_16px_32px_rgba(15,95,99,0.08)] active:translate-y-0 sm:w-auto";
+  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-black/10 bg-white/58 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-ink/76 transition duration-200 hover:-translate-y-0.5 hover:border-black/16 hover:bg-white/82 hover:text-ink active:translate-y-0 sm:w-auto";
 const eyebrowClass =
   "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']";
 const inverseEyebrowClass =
   "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']";
-const leadClass = "text-pretty text-[1rem] leading-8 md:text-[1.05rem]";
-const bodyClass = "text-pretty text-[0.98rem] leading-7 md:text-[1rem] md:leading-8";
+const leadClass = "text-pretty text-[0.98rem] leading-[1.82] md:text-[1.02rem] md:leading-[1.88]";
+const bodyClass = "text-pretty text-[0.96rem] leading-[1.74] md:text-[0.99rem] md:leading-[1.8]";
 const cardClass =
-  "rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,244,238,0.84))] shadow-[0_22px_56px_rgba(16,24,24,0.07)]";
+  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,244,238,0.82))] shadow-[0_20px_48px_rgba(16,24,24,0.06)]";
 const softPanelClass =
-  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,239,231,0.82))] shadow-[0_16px_34px_rgba(16,24,24,0.05)]";
+  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,239,231,0.82))] shadow-[0_16px_34px_rgba(16,24,24,0.04)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -96,7 +96,7 @@ export function OperationalHero({
     >
       <div className="xl:col-span-7 xl:pr-6">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[12ch] font-display text-balance text-[clamp(2.12rem,5.6vw,3.7rem)] leading-[0.97] tracking-[-0.045em] text-ink">
+        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.92rem,4.9vw,3.12rem)] leading-[1] tracking-[-0.04em] text-ink">
           {title}
         </h1>
         <p className={cn(leadClass, "mt-4 max-w-[57ch] text-ink-soft")}>{description}</p>
@@ -106,9 +106,9 @@ export function OperationalHero({
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-8 grid gap-3 md:grid-cols-2">
+        <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "p-4 md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
               <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
               <strong className="mt-2 block max-w-[20ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.05rem]">
                 {fact.value}
@@ -118,21 +118,21 @@ export function OperationalHero({
         </div>
       </div>
 
-      <aside className="xl:col-span-5">
-        <div className={cn(cardClass, "p-6 md:p-7")}>
+      <aside className="xl:col-span-5 xl:pt-6">
+        <div className={cn(cardClass, "p-5 md:p-6")}>
           <p className={eyebrowClass}>{deskTitle}</p>
-          <p className="mt-4 max-w-[34ch] text-[1.03rem] leading-8 text-ink">{deskBody}</p>
-          <div className="mt-6 grid gap-4">
+          <p className="mt-4 max-w-[36ch] text-[0.98rem] leading-[1.82] text-ink">{deskBody}</p>
+          <div className="mt-6 grid gap-3.5">
             {points.map((point) => (
-              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-4 border-t border-black/8 pt-4 first:border-t-0 first:pt-0">
+              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-3.5 border-t border-black/8 pt-4 first:border-t-0 first:pt-0">
                 <span className="grid h-11 w-11 place-items-center rounded-[16px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.92))] text-[0.72rem] font-extrabold uppercase tracking-[0.08em] text-accent-deep shadow-[0_12px_30px_rgba(24,35,34,0.04)]">
                   {point.label}
                 </span>
                 <div>
-                  <strong className="block text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.05rem]">
+                  <strong className="block text-[0.97rem] font-semibold leading-[1.44] tracking-[-0.018em] text-ink md:text-[1.01rem]">
                     {point.title}
                   </strong>
-                  <p className={cn(bodyClass, "mt-2 max-w-[28ch] text-ink-soft")}>{point.body}</p>
+                  <p className={cn(bodyClass, "mt-2 max-w-[30ch] text-ink-soft")}>{point.body}</p>
                 </div>
               </article>
             ))}
@@ -172,7 +172,7 @@ export function ServiceHero({
 }) {
   const dark = tone === "dark";
   const overlay = dark
-    ? "linear-gradient(180deg, rgba(15,20,20,0.12) 0%, rgba(15,20,20,0.48) 52%, rgba(15,20,20,0.9) 100%)"
+    ? "linear-gradient(180deg, rgba(15,20,20,0.14) 0%, rgba(15,20,20,0.58) 54%, rgba(15,20,20,0.94) 100%)"
     : "linear-gradient(180deg, rgba(252,248,243,0.38) 0%, rgba(255,255,255,0.2) 28%, rgba(255,255,255,0.94) 100%)";
 
   return (
@@ -184,7 +184,7 @@ export function ServiceHero({
     >
       <div className="xl:col-span-6 xl:pr-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[12ch] font-display text-balance text-[clamp(2.12rem,5.8vw,3.82rem)] leading-[0.97] tracking-[-0.046em] text-ink">
+        <h1 className="mt-4 max-w-[13.5ch] font-display text-balance text-[clamp(1.94rem,5vw,3.18rem)] leading-[1] tracking-[-0.04em] text-ink">
           {title}
         </h1>
         <p className={cn(leadClass, "mt-4 max-w-[58ch] text-ink-soft")}>{description}</p>
@@ -194,9 +194,9 @@ export function ServiceHero({
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        <div className="mt-7 grid gap-3 sm:grid-cols-2 md:auto-rows-fr">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "min-h-[108px] p-4 md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:min-h-[108px] md:p-5")}>
               <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
               <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.06rem]">
                 {fact.value}
@@ -206,10 +206,10 @@ export function ServiceHero({
         </div>
       </div>
 
-      <aside className="xl:col-span-6 xl:pl-4">
+      <aside className="xl:col-span-6 xl:pl-4 xl:pt-6">
         <div
           className={cn(
-            "relative isolate overflow-hidden rounded-[34px] border p-7 shadow-[0_30px_72px_rgba(16,24,24,0.12)] md:min-h-[520px] md:p-9",
+            "relative isolate overflow-hidden rounded-[32px] border p-6 shadow-[0_28px_64px_rgba(16,24,24,0.11)] md:min-h-[480px] md:p-8",
             dark ? "border-white/10" : "border-black/10",
           )}
           style={{
@@ -218,11 +218,11 @@ export function ServiceHero({
             backgroundSize: "cover",
           }}
         >
-          <div className="relative z-10 flex min-h-[300px] flex-col justify-end md:min-h-[440px]">
+          <div className="relative z-10 flex min-h-[280px] flex-col justify-end md:min-h-[400px]">
             <p className={dark ? inverseEyebrowClass : eyebrowClass}>{panelLabel}</p>
             <h2
               className={cn(
-                "mt-4 max-w-[13ch] font-display text-balance text-[clamp(1.66rem,3.4vw,2.55rem)] leading-[1.01] tracking-[-0.04em]",
+                "mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.46rem,2.6vw,2.12rem)] leading-[1.04] tracking-[-0.032em]",
                 dark ? "text-white" : "text-ink",
               )}
             >
@@ -285,7 +285,7 @@ export function InstitutionalHero({
     >
       <div className="xl:col-span-4">
         <div
-          className="relative isolate overflow-hidden rounded-[34px] border border-black/10 shadow-[0_28px_64px_rgba(16,24,24,0.1)] md:min-h-[520px]"
+          className="relative isolate overflow-hidden rounded-[32px] border border-black/10 shadow-[0_26px_58px_rgba(16,24,24,0.09)] md:min-h-[500px]"
           style={{
             backgroundImage:
               `linear-gradient(180deg, rgba(15,20,20,0.06) 0%, rgba(15,20,20,0.18) 34%, rgba(15,20,20,0.74) 100%), url(${image})`,
@@ -293,7 +293,7 @@ export function InstitutionalHero({
             backgroundSize: "cover",
           }}
         >
-          <div className="relative z-10 flex min-h-[300px] flex-col justify-end p-7 md:min-h-[520px] md:p-8">
+          <div className="relative z-10 flex min-h-[280px] flex-col justify-end p-6 md:min-h-[500px] md:p-7">
             {quote ? <p className="max-w-[16ch] font-display text-balance text-[clamp(1.5rem,3vw,2.15rem)] leading-[1.04] tracking-[-0.035em] text-white">{quote}</p> : null}
           </div>
         </div>
@@ -301,7 +301,7 @@ export function InstitutionalHero({
 
       <div className="xl:col-span-8 xl:pl-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[12ch] font-display text-balance text-[clamp(2.08rem,5.5vw,3.72rem)] leading-[0.97] tracking-[-0.046em] text-ink">
+        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.94rem,5vw,3.16rem)] leading-[1] tracking-[-0.04em] text-ink">
           {title}
         </h1>
         <p className={cn(leadClass, "mt-4 max-w-[60ch] text-ink-soft")}>{description}</p>
@@ -311,9 +311,9 @@ export function InstitutionalHero({
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2 xl:grid-cols-4">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "p-4 md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
               <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{fact.label}</span>
               <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.04rem]">
                 {fact.value}
@@ -322,9 +322,9 @@ export function InstitutionalHero({
           ))}
         </div>
 
-        <article className={cn(cardClass, "mt-8 p-6 md:p-7")}>
+        <article className={cn(cardClass, "mt-7 p-5 md:p-6")}>
           <p className={eyebrowClass}>{noteLabel}</p>
-          <h2 className="mt-4 max-w-[15ch] font-display text-balance text-[clamp(1.66rem,3vw,2.4rem)] leading-[1.03] tracking-[-0.04em] text-ink">
+          <h2 className="mt-4 max-w-[16ch] font-display text-balance text-[clamp(1.5rem,2.4vw,2.04rem)] leading-[1.06] tracking-[-0.03em] text-ink">
             {noteTitle}
           </h2>
           <p className={cn(bodyClass, "mt-4 max-w-[44ch] text-ink-soft")}>{noteBody}</p>
@@ -358,7 +358,7 @@ export function FaqIntroHub({
     >
       <div className="xl:col-span-5 xl:pr-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[12ch] font-display text-balance text-[clamp(2rem,5vw,3.5rem)] leading-[0.98] tracking-[-0.044em] text-ink">
+        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.86rem,4.6vw,3rem)] leading-[1] tracking-[-0.038em] text-ink">
           {title}
         </h1>
         <p className={cn(leadClass, "mt-4 max-w-[54ch] text-ink-soft")}>{description}</p>
@@ -368,22 +368,22 @@ export function FaqIntroHub({
         </div>
       </div>
 
-      <div className="xl:col-span-7 grid gap-4 md:grid-cols-2">
+      <div className="xl:col-span-7 grid gap-4 md:auto-rows-fr md:grid-cols-2">
         {topics.map((topic) => (
           <Link
             key={topic.href}
             href={topic.href}
             className={cn(
               cardClass,
-              "group p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_26px_60px_rgba(16,24,24,0.08)] md:p-6",
+              "group flex h-full flex-col p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_52px_rgba(16,24,24,0.08)] md:p-6",
             )}
           >
             <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{topic.label}</span>
-            <h2 className="mt-3 max-w-[16ch] text-[1.08rem] font-semibold leading-[1.42] tracking-[-0.02em] text-ink md:text-[1.15rem]">
+            <h2 className="mt-3 max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.018em] text-ink md:text-[1.08rem]">
               {topic.title}
             </h2>
             <p className={cn(bodyClass, "mt-3 max-w-[32ch] text-ink-soft")}>{topic.body}</p>
-            <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-accent-deep transition duration-200 group-hover:gap-3">
+            <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold text-accent-deep transition duration-200 group-hover:gap-3">
               Ir para esta seção
               <span aria-hidden>→</span>
             </span>

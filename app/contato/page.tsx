@@ -14,7 +14,7 @@ export default function ContatoPage() {
     <>
       <OperationalHero
         eyebrow="Contato"
-        title="Os canais oficiais da clínica, sem ruído e sem desvio."
+        title="Os canais oficiais da clínica, com mais clareza."
         description="Se você quer falar com a Luana Carla Dermo Clinic, o ponto de entrada é o WhatsApp oficial da equipe. O Instagram funciona como vitrine da marca. O site só organiza esse caminho com mais clareza."
         primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Abrir Instagram", href: siteConfig.instagram, external: true }}
@@ -47,7 +47,7 @@ export default function ContatoPage() {
 
       <ContactGrid
         eyebrow="Canais"
-        title="Use o caminho que resolve o seu assunto agora."
+        title="Escolha o caminho mais útil agora."
         cards={[
           {
             title: "Primeiro contato com a equipe",
@@ -74,7 +74,7 @@ export default function ContatoPage() {
 
       <SplitSection
         eyebrow="Antes de mandar a mensagem"
-        title="Três pontos simples que já ajudam a equipe a orientar melhor."
+        title="Três pontos que ajudam a equipe a orientar melhor."
         items={[
           {
             title: "Diga qual é o seu momento",

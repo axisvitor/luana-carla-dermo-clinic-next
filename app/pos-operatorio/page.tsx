@@ -14,7 +14,7 @@ export default function PosOperatorioPage() {
     <>
       <ServiceHero
         eyebrow="Pós-operatório assistido"
-        title="Recuperação pede acompanhamento, leitura de fase e o cuidado certo em cada momento."
+        title="Recuperação pede acompanhamento e leitura certa de cada fase."
         description="No pós-operatório, a clínica oferece suporte local em Canaã dos Carajás para quem precisa de mais clareza durante a recuperação. A equipe entende a fase do corpo, orienta se a clínica pode acompanhar o caso e organiza avaliação e retornos quando necessário — inclusive para quem operou em outra cidade."
         primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
         secondary={{ label: "Ver perguntas frequentes", href: "/faq" }}
@@ -38,7 +38,7 @@ export default function PosOperatorioPage() {
 
       <ProcessSection
         eyebrow="Como o acompanhamento costuma se organizar"
-        title="Do primeiro contato ao retorno, o pós-operatório precisa de mais leitura do que pressa."
+        title="Do primeiro contato ao retorno, cada fase pede leitura e contexto."
         items={[
           {
             title: "A conversa inicial esclarece a fase atual",

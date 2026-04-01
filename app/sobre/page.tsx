@@ -14,7 +14,7 @@ export default function SobrePage() {
     <>
       <InstitutionalHero
         eyebrow="Sobre a clínica"
-        title="Uma clínica desenhada para receber com calma, orientar com clareza e acompanhar com responsabilidade."
+        title="Uma clínica pensada para receber com calma e orientar com clareza."
         description="A Luana Carla Dermo Clinic nasceu para sustentar uma experiência mais serena, bem conduzida e sem excesso. Em vez de prometer demais, a clínica prefere explicar com responsabilidade, acolher com presença e acompanhar quando o caso pede continuidade."
         image="/generated/stitch/stitch-courses-portrait.jpg"
         primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
@@ -26,14 +26,14 @@ export default function SobrePage() {
           { label: "Jeito de cuidar", value: "calma, clareza e continuidade" },
         ]}
         noteLabel="Essência da marca"
-        noteTitle="A proposta não é impressionar pela pressa. É transmitir confiança pela forma de conduzir."
+        noteTitle="A clínica prefere transmitir confiança pela forma de conduzir."
         noteBody="A experiência da clínica foi pensada para parecer mais legível do começo ao fim: primeiro contato claro, atendimento bem conduzido e linguagem mais responsável sobre o que realmente está sendo oferecido."
         quote="Cuidado com mais calma."
       />
 
       <ManifestoBand
         eyebrow="O que a clínica quer sustentar"
-        title="Uma presença digital e presencial que pareça mais madura, mais serena e mais confiável."
+        title="Uma presença digital e presencial mais madura, serena e confiável."
         body="A proposta da marca é combinar acolhimento e leitura de contexto na mesma medida. Isso significa receber bem, explicar melhor e evitar o tipo de promessa que até chama atenção, mas não sustenta a experiência real."
       />
 

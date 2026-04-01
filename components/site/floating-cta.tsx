@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export function FloatingCta() {
   const pathname = usePathname();
 
-  if (pathname === "/agendamento") return null;
+  if (pathname !== "/") return null;
 
   return (
     <div className="fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-40 md:hidden">

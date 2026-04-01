@@ -64,7 +64,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${bodoni.variable} ${instrument.variable}`}>
-      <body className="min-h-screen bg-background pb-24 font-sans text-ink antialiased selection:bg-accent/15 selection:text-ink md:pb-0">
+      <body className="min-h-screen bg-background pb-28 font-sans text-ink antialiased selection:bg-accent/15 selection:text-ink md:pb-0">
         <a
           href="#conteudo-principal"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[12px] focus:bg-paper focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-ink focus:shadow-[0_18px_40px_rgba(24,35,34,0.12)]"

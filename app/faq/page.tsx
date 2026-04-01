@@ -14,8 +14,8 @@ export default function FaqPage() {
     <>
       <FaqIntroHub
         eyebrow="Perguntas frequentes"
-        title="Respostas organizadas para as dúvidas que mais aparecem antes da primeira conversa."
-        description="Em vez de uma página genérica, o FAQ foi separado por assunto para ficar mais fácil encontrar o que você precisa entender agora: contato, pós-operatório, continuidade corporal ou depilação a laser."
+        title="As dúvidas mais comuns, organizadas por assunto."
+        description="O FAQ foi separado por assunto para ficar mais fácil entender o que você precisa agora: contato, pós-operatório, continuidade corporal ou depilação a laser."
         primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ver contato", href: "/contato" }}
         topics={[
