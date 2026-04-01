@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 import {
@@ -715,7 +717,13 @@ export function TestimonialsSection({
     <section className={cn(sectionClass, "py-10 sm:py-12 md:py-16 xl:py-20")}>
       <SectionIntro eyebrow={eyebrow} title={title} narrow />
 
-      <div className="col-span-12 mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-6 md:mt-16 lg:grid-cols-3">
+      {/* Mobile: Carrossel */}
+      <div className="col-span-12 mt-8 md:hidden">
+        <TestimonialsCarouselMobile testimonials={testimonials} />
+      </div>
+
+      {/* Desktop: Grid */}
+      <div className="col-span-12 mt-8 hidden gap-4 sm:mt-12 sm:gap-6 md:mt-16 md:grid md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((item) => (
           <article
             key={item.name}
@@ -755,6 +763,109 @@ export function TestimonialsSection({
         ))}
       </div>
     </section>
+  );
+}
+
+// Carrossel inline para mobile (evita dependencia circular)
+function TestimonialsCarouselMobile({ testimonials }: { testimonials: Testimonial[] }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+  const totalSlides = testimonials.length;
+
+  const goToSlide = (index: number) => setCurrentIndex(index);
+
+  const goToNext = () => setCurrentIndex((prev) => (prev + 1) % totalSlides);
+  const goToPrev = () => setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) goToNext();
+    else if (distance < -minSwipeDistance) goToPrev();
+  };
+
+  return (
+    <div className="relative">
+      <div
+        className="overflow-hidden rounded-[20px]"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <div
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {testimonials.map((item) => (
+            <div key={item.name} className="w-full flex-shrink-0 px-1">
+              <article
+                className={cn(
+                  softPanelClass,
+                  "flex flex-col gap-3 p-4",
+                )}
+              >
+                <div className="flex items-center gap-3">
+                  <div
+                    className={cn(
+                      "grid h-10 w-10 place-items-center rounded-full font-display text-xs font-bold text-white",
+                      item.avatarColor || "bg-gradient-to-br from-accent-deep to-accent-deep/80",
+                    )}
+                  >
+                    {item.avatarInitials || item.name.charAt(0)}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-[0.95rem] font-semibold text-ink">{item.name}</p>
+                    <p className="text-[0.7rem] font-medium text-ink/60">{item.procedure}</p>
+                  </div>
+                </div>
+                <blockquote className="border-l-2 border-accent-deep/30 pl-3">
+                  <p className={cn(bodyClass, "text-ink/80 italic")}>"{item.quote}"</p>
+                </blockquote>
+                <div className="mt-auto flex gap-1 pt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-sm text-accent-deep">★</span>
+                  ))}
+                </div>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dots navigation */}
+      <div className="mt-5 flex items-center justify-center gap-2" role="tablist">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            role="tab"
+            aria-selected={index === currentIndex}
+            aria-label={`Ir para depoimento ${index + 1}`}
+            className={cn(
+              "h-2 rounded-full transition-all duration-300",
+              index === currentIndex
+                ? "w-5 bg-accent-deep"
+                : "w-2 bg-black/15 hover:bg-black/25",
+            )}
+          />
+        ))}
+      </div>
+
+      {/* Screen reader announcement */}
+      <div className="sr-only" aria-live="polite" aria-atomic="true">
+        Depoimento {currentIndex + 1} de {totalSlides}
+      </div>
+    </div>
   );
 }
 
