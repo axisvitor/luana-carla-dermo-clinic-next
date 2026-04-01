@@ -2,14 +2,23 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Luana Carla Dermo Clinic",
-  descriptor: "Pós-operatório e Estética Corporal Assistida",
+  descriptor: "Pós-operatório e estética corporal assistida",
   description:
     "Clínica em Canaã dos Carajás com foco em pós-operatório assistido, continuidade corporal e depilação a laser. Primeiro contato pelo WhatsApp oficial, com orientação clara e atendimento com hora marcada.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luanacarladermoclinic.vercel.app",
+  ogImage: "/brand/og-default.png",
   instagram: "https://www.instagram.com/luanacarladermoclinic/",
   city: "Canaã dos Carajás",
   region: "PA",
   neighborhood: "Centro",
+  keywords: [
+    "Luana Carla Dermo Clinic",
+    "pós-operatório assistido",
+    "pós-operatório em Canaã dos Carajás",
+    "estética corporal em Canaã dos Carajás",
+    "continuidade corporal",
+    "depilação a laser em Canaã dos Carajás",
+  ],
 };
 
 export const navItems = [
@@ -40,6 +49,7 @@ export function createPageMetadata({
     metadataBase: new URL(siteConfig.url),
     title: pageTitle,
     description,
+    keywords: siteConfig.keywords,
     alternates: { canonical: path },
     openGraph: {
       title: pageTitle,
@@ -50,7 +60,7 @@ export function createPageMetadata({
       type: "website",
       images: [
         {
-          url: "/brand/og-default.png",
+          url: siteConfig.ogImage,
           width: 1200,
           height: 630,
           alt: pageTitle,
@@ -61,7 +71,7 @@ export function createPageMetadata({
       card: "summary_large_image",
       title: pageTitle,
       description,
-      images: ["/brand/og-default.png"],
+      images: [siteConfig.ogImage],
     },
   };
 }

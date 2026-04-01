@@ -32,6 +32,7 @@ Abra:
 - `http://localhost:3000`
 
 ## Deploy na Vercel
+### Pela interface web
 1. Suba esta pasta para um repositório Git.
 2. Na Vercel, importe o repositório.
 3. Se este projeto estiver em monorepo, defina o Root Directory como:
@@ -40,9 +41,26 @@ Abra:
    - `NEXT_PUBLIC_SITE_URL=https://seu-dominio.com`
 5. Faça o deploy.
 
+### Pela CLI
+```bash
+pnpm dlx vercel login
+pnpm dlx vercel
+pnpm dlx vercel --prod
+```
+
+Observação:
+- neste ambiente, `pnpm dlx vercel` funciona, mas ainda não há credenciais configuradas para publicar direto pela CLI
+
 A build local já foi validada com:
 - `pnpm lint`
 - `pnpm build`
+
+## SEO / metadata
+- metadata base consistente
+- Open Graph e Twitter cards configurados
+- sitemap.xml e robots.txt gerados pelo App Router
+- manifest.webmanifest configurado
+- JSON-LD básico de LocalBusiness no layout raiz
 
 ## Observações
 - O fluxo de primeiro contato continua orientado para WhatsApp pela equipe da clínica, sem formulários e sem self-service.

@@ -22,6 +22,55 @@ const instrument = Instrument_Sans({
   display: "swap",
 });
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  image: `${siteConfig.url}${siteConfig.ogImage}`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: siteConfig.city,
+    addressRegion: siteConfig.region,
+    addressCountry: "BR",
+  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: siteConfig.city,
+    },
+  ],
+  sameAs: [siteConfig.instagram],
+  availableLanguage: ["Portuguese"],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Atendimentos principais",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Pós-operatório assistido",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Continuidade corporal",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Depilação a laser",
+        },
+      },
+    ],
+  },
+};
 
 export const viewport: Viewport = {
   themeColor: "#fcfbf8",
@@ -33,6 +82,29 @@ export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  alternates: { canonical: "/" },
+  keywords: siteConfig.keywords,
+  category: "health-and-beauty",
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    telephone: false,
+    address: false,
+    email: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -42,7 +114,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/brand/og-default.png",
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -53,7 +125,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/brand/og-default.png"],
+    images: [siteConfig.ogImage],
   },
   icons: {
     icon: "/brand/favicon.svg",
@@ -79,6 +151,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <SiteFooter />
         </div>
         <FloatingCta />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
       </body>
     </html>
   );
