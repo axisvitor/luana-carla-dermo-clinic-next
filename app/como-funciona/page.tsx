@@ -1,11 +1,5 @@
-import {
-  CtaPanel,
-  HeroSection,
-  ProcessSection,
-  SplitSection,
-  TripleArticleSection,
-  TrustStrip,
-} from "@/components/site/sections";
+import { OperationalHero } from "@/components/site/archetypes";
+import { ProcessSection, SplitSection, TripleArticleSection } from "@/components/site/sections";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -18,72 +12,99 @@ export const metadata = createPageMetadata({
 export default function ComoFuncionaPage() {
   return (
     <>
-      <HeroSection
+      <OperationalHero
         eyebrow="Como funciona"
-        title="Do primeiro WhatsApp ao atendimento, tudo começa entendendo o seu momento."
-        description="A clínica organiza o cuidado de forma simples: ouvir a necessidade principal, orientar o melhor caminho e conduzir o atendimento com mais clareza."
+        title="A clínica organiza o cuidado em três movimentos: entender, orientar e conduzir."
+        description="Em vez de tratar o site como agenda automática, a clínica usa o primeiro contato para ouvir o que você precisa, indicar a frente correta e organizar o caminho seguinte com mais clareza."
         primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Ir para contato", href: "/contato" }}
-        panelLabel="Como o atendimento se organiza"
-        panelTitle="Entender, orientar e acompanhar fazem parte da mesma experiência."
-        image="/generated/stitch/stitch-post-op-3.jpg"
-        tone="light"
+        deskTitle="Fluxo atual da clínica"
+        deskBody="O atendimento foi pensado para reduzir ruído: menos pressa na entrada, mais contexto antes de marcar e mais clareza sobre o que vem depois."
         points={[
-          { badge: "1", title: "Entender", body: "Ouvir sua necessidade principal e o momento do corpo." },
-          { badge: "2", title: "Orientar", body: "Indicar o melhor caminho com clareza e sem pressa." },
-          { badge: "3", title: "Acompanhar", body: "Organizar o atendimento e as próximas etapas quando necessário." },
+          {
+            label: "01",
+            title: "Entender seu momento",
+            body: "O primeiro passo é ouvir sua necessidade principal e identificar se o caso se conecta ao pós-operatório, à continuidade corporal ou ao laser.",
+          },
+          {
+            label: "02",
+            title: "Orientar o melhor caminho",
+            body: "A equipe responde dúvidas iniciais, alinha expectativa e mostra o próximo passo que faz sentido agora.",
+          },
+          {
+            label: "03",
+            title: "Conduzir a continuidade",
+            body: "Quando existe atendimento, retorno ou acompanhamento, a clínica organiza isso sem transformar a experiência em algo mecânico.",
+          },
         ]}
-        quote="Quando o primeiro passo fica claro, o restante do processo também fica mais leve."
-      />
-
-      <TrustStrip
-        items={[
-          { title: "Escuta do seu momento", body: "O atendimento começa entendendo o que você precisa agora, e não partindo de uma resposta automática." },
-          { title: "Orientação do melhor caminho", body: "A equipe ajuda a indicar se o seu caso se conecta ao pós-operatório, à continuidade corporal ou ao laser." },
-          { title: "Continuidade quando necessário", body: "Quando o caso pede acompanhamento, os próximos passos são organizados com mais clareza." },
+        facts={[
+          { label: "Entrada", value: "WhatsApp oficial da equipe" },
+          { label: "Agenda", value: "atendimento com hora marcada" },
+          { label: "Lógica", value: "orientar antes de marcar" },
+          { label: "Meta", value: "menos confusão e mais clareza" },
         ]}
       />
 
       <ProcessSection
         eyebrow="A jornada"
-        title="O caminho costuma seguir esta sequência."
+        title="Da conversa inicial ao atendimento, o fluxo costuma seguir esta ordem."
         items={[
-          { title: "Primeiro contato pelo WhatsApp", body: "Você explica sua necessidade principal, sua dúvida ou o momento em que está." },
-          { title: "Entendimento do seu caso", body: "A equipe lê o contexto inicial e ajuda a identificar qual frente de atendimento faz mais sentido." },
-          { title: "Orientação e marcação com a equipe", body: "O agendamento não acontece sozinho no site. Ele é conduzido pela clínica conforme o caso." },
-          { title: "Atendimento e próximos passos", body: "Depois do atendimento, a clínica orienta o que observar, quando retornar e como seguir, se houver continuidade." },
+          {
+            title: "Primeiro contato pelo WhatsApp",
+            body: "Você explica sua necessidade principal, sua dúvida ou o momento do corpo que quer tratar agora.",
+          },
+          {
+            title: "Leitura do seu contexto",
+            body: "A equipe identifica qual frente da clínica faz mais sentido e se existe algo que precisa ser alinhado antes de seguir.",
+          },
+          {
+            title: "Orientação e organização da marcação",
+            body: "O agendamento não acontece sozinho no site. Ele é conduzido pela clínica conforme o tipo de atendimento e o momento da paciente.",
+          },
+          {
+            title: "Atendimento e próximos passos",
+            body: "Depois da entrada, a paciente entende o que observar, quando retornar e como seguir caso exista continuidade.",
+          },
         ]}
       />
 
       <TripleArticleSection
-        eyebrow="O que essa forma de atendimento evita"
-        title="Menos pressa, menos confusão e mais clareza ao longo do caminho."
+        eyebrow="O que esse formato evita"
+        title="Menos entrada sem contexto, menos marcação apressada e menos dúvida sobre o que vem depois."
         muted
         items={[
-          { title: "Entrar sem contexto", body: "Quando a conversa começa com mais informação, fica mais fácil orientar o melhor próximo passo." },
-          { title: "Marcar sem orientação", body: "A clínica prefere conduzir a marcação junto com a paciente, em vez de tratar tudo como agenda automática." },
-          { title: "Sair sem saber o que vem depois", body: "Quando existe continuidade, a paciente entende melhor como seguir e o que esperar das próximas etapas." },
+          {
+            title: "Entrar sem saber por onde começar",
+            body: "A conversa inicial serve para transformar dúvida difusa em próximo passo claro.",
+          },
+          {
+            title: "Marcar antes de entender o próprio caso",
+            body: "A clínica prefere orientar a paciente primeiro, em vez de simular um autoatendimento que não reflete a realidade do negócio.",
+          },
+          {
+            title: "Sair do atendimento sem leitura de continuidade",
+            body: "Quando existe acompanhamento, a paciente entende melhor o ritmo, os retornos e o que observar entre etapas.",
+          },
         ]}
       />
 
       <SplitSection
-        eyebrow="Por que isso faz diferença"
-        title="Porque acolher bem também é ajudar a paciente a entender o que vem agora."
+        eyebrow="Por que isso melhora a experiência"
+        title="Porque acolher bem também significa deixar o próximo passo mais legível."
         items={[
-          { title: "Mais tranquilidade", body: "Quando a entrada é clara, a paciente chega ao atendimento com menos insegurança." },
-          { title: "Mais coerência", body: "A forma de receber precisa combinar com o cuidado que a clínica promete entregar." },
-          { title: "Mais percepção de cuidado", body: "Orientação, organização e acompanhamento fazem a experiência parecer mais sólida do começo ao fim." },
+          {
+            title: "Mais tranquilidade para a paciente",
+            body: "Quando a entrada é mais clara, a sensação de cuidado já começa antes do atendimento presencial.",
+          },
+          {
+            title: "Mais coerência com a proposta da clínica",
+            body: "O jeito de receber precisa combinar com a promessa de calma, clareza e responsabilidade que a marca quer sustentar.",
+          },
+          {
+            title: "Mais valor percebido em toda a jornada",
+            body: "Orientação, contexto e continuidade fazem o atendimento parecer mais sólido do começo ao fim.",
+          },
         ]}
-      />
-
-      <CtaPanel
-        eyebrow="Próximo passo"
-        title="Se você quer entender qual caminho faz mais sentido para o seu caso, comece pela conversa."
-        body="No WhatsApp, a equipe ajuda a organizar a entrada e orientar o melhor próximo passo para o seu momento, sem uso de formulários."
-        highlight="Entrada organizada"
-        detail="Primeiro contato • orientação • continuidade"
-        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
-        secondary={{ label: "Ver contato", href: "/contato" }}
       />
     </>
   );

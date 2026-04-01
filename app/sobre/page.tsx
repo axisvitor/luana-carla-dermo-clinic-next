@@ -1,11 +1,5 @@
-import {
-  CtaPanel,
-  EditorialFeatureSection,
-  HeroSection,
-  SplitSection,
-  TripleArticleSection,
-  TrustStrip,
-} from "@/components/site/sections";
+import { InstitutionalHero } from "@/components/site/archetypes";
+import { CtaPanel, ManifestoBand, SplitSection, TripleArticleSection } from "@/components/site/sections";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -18,66 +12,75 @@ export const metadata = createPageMetadata({
 export default function SobrePage() {
   return (
     <>
-      <HeroSection
+      <InstitutionalHero
         eyebrow="Sobre a clínica"
-        title="Uma clínica que valoriza calma, clareza e cuidado bem conduzido."
-        description="A Luana Carla Dermo Clinic nasceu para atender com presença, orientação clara e atenção ao processo. Em vez de prometer demais, a clínica prefere receber com serenidade, explicar com responsabilidade e acompanhar quando o caso pede continuidade."
+        title="Uma clínica desenhada para receber com calma, orientar com clareza e acompanhar com responsabilidade."
+        description="A Luana Carla Dermo Clinic nasceu para sustentar uma experiência mais serena, bem conduzida e sem excesso. Em vez de prometer demais, a clínica prefere explicar com responsabilidade, acolher com presença e acompanhar quando o caso pede continuidade."
+        image="/generated/stitch/stitch-courses-portrait.jpg"
         primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
         secondary={{ label: "Ver perguntas frequentes", href: "/faq" }}
-        panelLabel="Essência da clínica"
-        panelTitle="Calma, clareza e responsabilidade do primeiro contato ao atendimento."
-        image="/generated/stitch/stitch-courses-portrait.jpg"
-        tone="light"
-        list={[
-          "Desde 2020",
-          "Canaã dos Carajás • Centro",
-          "Atendimento com hora marcada",
-          "Cuidado com continuidade",
+        facts={[
+          { label: "Desde", value: "2020 em Canaã dos Carajás" },
+          { label: "Local", value: "Centro • Canaã dos Carajás • PA" },
+          { label: "Agenda", value: "atendimento com hora marcada" },
+          { label: "Jeito de cuidar", value: "calma, clareza e continuidade" },
         ]}
+        noteLabel="Essência da marca"
+        noteTitle="A proposta não é impressionar pela pressa. É transmitir confiança pela forma de conduzir."
+        noteBody="A experiência da clínica foi pensada para parecer mais legível do começo ao fim: primeiro contato claro, atendimento bem conduzido e linguagem mais responsável sobre o que realmente está sendo oferecido."
+        quote="Cuidado com mais calma."
       />
 
-      <TrustStrip
-        items={[
-          { title: "Desde 2020 em Canaã dos Carajás", body: "A clínica constrói sua presença local com atendimento organizado e cuidado próximo." },
-          { title: "Atendimento com hora marcada", body: "A experiência é conduzida com mais calma, contexto e atenção ao momento de cada paciente." },
-          { title: "Comunicação clara", body: "A clínica prefere explicar bem o processo em vez de depender de excesso ou promessa apressada." },
-        ]}
-      />
-
-      <EditorialFeatureSection
-        eyebrow="O que a clínica acredita"
-        title="A proposta é fazer o cuidado parecer mais sereno, mais claro e mais confiável."
-        body="A clínica combina acolhimento e orientação técnica na mesma medida. Isso significa receber bem, explicar com responsabilidade, acompanhar quando necessário e manter uma experiência coerente do primeiro contato ao atendimento."
-        calloutTitle="Jeito de cuidar"
-        calloutBody="Calma para receber, clareza para orientar e responsabilidade para conduzir cada etapa."
+      <ManifestoBand
+        eyebrow="O que a clínica quer sustentar"
+        title="Uma presença digital e presencial que pareça mais madura, mais serena e mais confiável."
+        body="A proposta da marca é combinar acolhimento e leitura de contexto na mesma medida. Isso significa receber bem, explicar melhor e evitar o tipo de promessa que até chama atenção, mas não sustenta a experiência real."
       />
 
       <TripleArticleSection
-        eyebrow="Valores da marca"
-        title="Três pilares que definem a presença da clínica."
+        eyebrow="Pilares da marca"
+        title="Três valores que orientam a presença da clínica."
         muted
         items={[
-          { title: "Calma", body: "Em um momento sensível, a paciente sente diferença quando é recebida com serenidade e atenção." },
-          { title: "Clareza", body: "Orientação boa é aquela que ajuda a entender o que faz sentido agora e o que pode esperar." },
-          { title: "Responsabilidade", body: "A comunicação da clínica procura prometer apenas o que o atendimento realmente consegue sustentar." },
+          {
+            title: "Calma",
+            body: "Em um momento sensível, a paciente percebe diferença quando é recebida com serenidade e atenção real.",
+          },
+          {
+            title: "Clareza",
+            body: "Orientação boa é aquela que ajuda a entender o que faz sentido agora e o que pode esperar sem pressa.",
+          },
+          {
+            title: "Responsabilidade",
+            body: "A comunicação da clínica procura prometer apenas o que o atendimento realmente consegue sustentar.",
+          },
         ]}
       />
 
       <SplitSection
         eyebrow="O que a paciente costuma perceber"
-        title="Uma clínica que acolhe com mais calma, explica com mais clareza e conduz com mais coerência."
+        title="Uma clínica que acolhe com mais contexto, explica com mais legibilidade e conduz com mais coerência."
         items={[
-          { title: "Foco no que realmente importa", body: "O site deixa mais claro quais são as principais frentes de atendimento e como cada uma funciona." },
-          { title: "Experiência mais organizada", body: "Do primeiro WhatsApp ao atendimento, a clínica procura reduzir ruído e aumentar a sensação de cuidado." },
-          { title: "Comunicação sem excesso", body: "A proposta é transmitir confiança por meio de clareza, e não por exagero visual ou verbal." },
+          {
+            title: "Foco no que realmente importa",
+            body: "O site e a conversa deixam mais claro quais são as principais frentes de atendimento e como cada uma funciona.",
+          },
+          {
+            title: "Experiência mais organizada",
+            body: "Do primeiro WhatsApp ao atendimento, a clínica procura reduzir ruído e aumentar a sensação de cuidado contínuo.",
+          },
+          {
+            title: "Comunicação sem exagero",
+            body: "A proposta é transmitir confiança por meio de clareza, não por excesso visual, promessa apressada ou linguagem inflada.",
+          },
         ]}
       />
 
       <CtaPanel
-        eyebrow="Quer conhecer melhor a clínica?"
+        eyebrow="Próximos caminhos"
         title="Explore as principais frentes de atendimento ou siga direto para o contato."
-        body="Se você quer entender melhor como a clínica atende, o restante do site foi organizado para tornar esse caminho mais claro."
-        highlight="Próximos caminhos"
+        body="Se você quer entender melhor como a clínica atende, o restante do site foi organizado para tornar esse caminho mais claro e mais útil."
+        highlight="Depois desta página"
         detail="Pós-operatório • Continuidade • Contato"
         primary={{ label: "Ver pós-operatório", href: "/pos-operatorio" }}
         secondary={{ label: "Ir para contato", href: "/contato" }}

@@ -1,4 +1,5 @@
-import { ContactGrid, CtaPanel, HeroSection, TrustStrip } from "@/components/site/sections";
+import { OperationalHero } from "@/components/site/archetypes";
+import { ContactGrid, SplitSection } from "@/components/site/sections";
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -11,56 +12,83 @@ export const metadata = createPageMetadata({
 export default function ContatoPage() {
   return (
     <>
-      <HeroSection
+      <OperationalHero
         eyebrow="Contato"
-        title="Os canais oficiais da clínica, de forma simples."
-        description="Se você quer falar com a Luana Carla Dermo Clinic, o primeiro contato é feito pelo WhatsApp oficial da equipe. Sem formulário: a conversa começa direto com a clínica."
+        title="Os canais oficiais da clínica, sem ruído e sem desvio."
+        description="Se você quer falar com a Luana Carla Dermo Clinic, o ponto de entrada é o WhatsApp oficial da equipe. O Instagram funciona como vitrine da marca. O site só organiza esse caminho com mais clareza."
         primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
         secondary={{ label: "Abrir Instagram", href: siteConfig.instagram, external: true }}
-        panelLabel="Contato e canais atuais"
-        panelTitle="WhatsApp para primeiro contato. Instagram para acompanhar a marca."
-        image="/generated/whatsapp-contact-v2.jpg"
-        tone="light"
+        deskTitle="Escolha o canal certo"
+        deskBody="Cada canal existe para uma função clara. Isso evita expectativas erradas e deixa a conversa mais objetiva desde o começo."
         points={[
-          { badge: "WA", title: "WhatsApp da clínica", body: "O primeiro contato e a marcação são conduzidos pela equipe." },
-          { badge: "IG", title: "@luanacarladermoclinic", body: "Instagram institucional e canal público da marca." },
-          { badge: "•", title: "Centro", body: "Centro • Canaã dos Carajás • PA" },
+          {
+            label: "WA",
+            title: "WhatsApp para começar a conversa",
+            body: "É onde a equipe entende seu momento, responde dúvidas iniciais e conduz a marcação quando faz sentido seguir.",
+          },
+          {
+            label: "IG",
+            title: "Instagram para acompanhar a marca",
+            body: "O Instagram é o canal público para acompanhar conteúdos, bastidores e a presença institucional da clínica.",
+          },
+          {
+            label: "LOC",
+            title: "Centro de Canaã dos Carajás",
+            body: "O atendimento acontece com hora marcada, em uma experiência pensada para ser mais calma e organizada.",
+          },
         ]}
-      />
-
-      <TrustStrip
-        items={[
-          { title: "WhatsApp oficial", body: "É o canal principal para explicar seu momento e conversar com a equipe." },
-          { title: "Instagram institucional", body: "Serve para acompanhar a marca, conteúdos e confirmações do canal público ativo." },
-          { title: "Atendimento com hora marcada", body: "A clínica organiza a experiência para que cada paciente chegue com mais contexto e menos ansiedade." },
+        facts={[
+          { label: "Canal principal", value: "WhatsApp oficial da equipe" },
+          { label: "Canal público", value: "@luanacarladermoclinic" },
+          { label: "Local", value: "Centro • Canaã dos Carajás • PA" },
+          { label: "Agenda", value: "atendimento com hora marcada" },
         ]}
       />
 
       <ContactGrid
         eyebrow="Canais"
-        title="Escolha o caminho mais útil agora."
+        title="Use o caminho que resolve o seu assunto agora."
         cards={[
           {
             title: "Primeiro contato com a equipe",
-            body: "Se você quer falar com a clínica, o melhor caminho é iniciar a conversa pelo WhatsApp oficial e explicar brevemente seu assunto.",
+            body: "Se você quer falar sobre pós-operatório, continuidade corporal ou depilação a laser, este é o canal principal. A conversa começa aqui.",
             cta: { label: "Ver primeiro contato", href: "/agendamento" },
           },
           {
-            title: "Instagram da clínica",
-            body: "Para acompanhar a marca, conteúdos, bastidores e confirmar o canal público já ativo, o Instagram segue como referência externa da clínica.",
+            title: "Instagram institucional",
+            body: "Para acompanhar a marca, conferir conteúdos e validar o canal público ativo da clínica, o Instagram continua sendo a referência externa.",
             cta: { label: "Abrir Instagram", href: siteConfig.instagram, external: true },
+          },
+          {
+            title: "Se o assunto for curso",
+            body: "Você também pode começar pela equipe, mas vale avisar logo na primeira mensagem que seu interesse é formação profissional para acelerar o direcionamento.",
+            cta: { label: "Ver página de cursos", href: "/cursos" },
+          },
+          {
+            title: "Se ainda existe dúvida sobre qual frente procurar",
+            body: "Não tem problema chegar sem resposta pronta. O papel da equipe no primeiro contato é justamente organizar esse entendimento com você.",
+            cta: { label: "Entender como funciona", href: "/como-funciona" },
           },
         ]}
       />
 
-      <CtaPanel
-        eyebrow="Próximo passo"
-        title="Se quiser agilizar a conversa, fale direto com a equipe."
-        body="A clínica não trabalha com formulários. O contato inicial acontece diretamente pelo WhatsApp oficial."
-        highlight="Primeiro contato"
-        detail="WhatsApp oficial • equipe da clínica"
-        primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
-        secondary={{ label: "Voltar para início", href: "/" }}
+      <SplitSection
+        eyebrow="Antes de mandar a mensagem"
+        title="Três pontos simples que já ajudam a equipe a orientar melhor."
+        items={[
+          {
+            title: "Diga qual é o seu momento",
+            body: "Explique se o assunto é pós-operatório, continuidade corporal, laser ou curso. Isso já economiza uma etapa da conversa.",
+          },
+          {
+            title: "Diga qual é sua dúvida principal",
+            body: "A clínica consegue orientar com mais objetividade quando entende o que você precisa esclarecer primeiro.",
+          },
+          {
+            title: "Seja breve e direta",
+            body: "Não precisa construir uma mensagem perfeita. Poucas linhas com contexto já ajudam bastante no começo.",
+          },
+        ]}
       />
     </>
   );

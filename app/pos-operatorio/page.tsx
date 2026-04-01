@@ -1,12 +1,5 @@
-import {
-  CtaPanel,
-  EditorialFeatureSection,
-  FaqSection,
-  HeroSection,
-  SplitSection,
-  TripleArticleSection,
-  TrustStrip,
-} from "@/components/site/sections";
+import { ServiceHero } from "@/components/site/archetypes";
+import { CtaPanel, EditorialFeatureSection, FaqSection, ProcessSection, SplitSection } from "@/components/site/sections";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -19,58 +12,77 @@ export const metadata = createPageMetadata({
 export default function PosOperatorioPage() {
   return (
     <>
-      <HeroSection
+      <ServiceHero
         eyebrow="Pós-operatório assistido"
-        title="Recuperação pede acompanhamento, clareza e o cuidado certo em cada fase."
-        description="No pós-operatório, a clínica oferece suporte local em Canaã dos Carajás para quem precisa de orientação mais clara. A equipe entende o momento da recuperação, orienta se a clínica pode acompanhar o caso e organiza avaliação e retornos quando necessário — inclusive quando a cirurgia aconteceu em outra cidade."
+        title="Recuperação pede acompanhamento, leitura de fase e o cuidado certo em cada momento."
+        description="No pós-operatório, a clínica oferece suporte local em Canaã dos Carajás para quem precisa de mais clareza durante a recuperação. A equipe entende a fase do corpo, orienta se a clínica pode acompanhar o caso e organiza avaliação e retornos quando necessário — inclusive para quem operou em outra cidade."
         primary={{ label: "Falar com a equipe no WhatsApp", href: "/agendamento" }}
         secondary={{ label: "Ver perguntas frequentes", href: "/faq" }}
-        panelLabel="Pós-operatório assistido"
-        panelTitle="Primeira conversa, avaliação e retornos quando necessários, com atenção à fase do corpo."
         image="/generated/post-op-hero.jpg"
         tone="dark"
-        list={[
-          "Acompanhamento conforme a fase da recuperação",
-          "Suporte local para quem operou fora",
-          "Orientação clara sobre o que observar",
-          "Continuidade quando o caso pede",
+        facts={[
+          { label: "Base do cuidado", value: "acompanhamento conforme a fase da recuperação" },
+          { label: "Cidade", value: "Canaã dos Carajás com apoio local" },
+          { label: "Também atende", value: "quem operou fora e precisa de continuidade" },
+          { label: "Entrada", value: "primeira conversa com a equipe pelo WhatsApp" },
+        ]}
+        panelLabel="Leitura de momento"
+        panelTitle="Recuperação mais clara começa quando a paciente entende o que observar agora."
+        panelBody="Presença, calma e retorno bem conduzido fazem diferença justamente quando o corpo pede mais atenção."
+        bullets={[
+          "apoio local para quem precisa de continuidade perto de casa",
+          "orientação clara sobre o que observar em cada fase",
+          "retornos organizados quando o caso pede acompanhamento",
         ]}
       />
 
-      <TrustStrip
+      <ProcessSection
+        eyebrow="Como o acompanhamento costuma se organizar"
+        title="Do primeiro contato ao retorno, o pós-operatório precisa de mais leitura do que pressa."
         items={[
-          { title: "Cada fase pede um cuidado diferente", body: "A recuperação muda ao longo do tempo, e o atendimento precisa respeitar isso." },
-          { title: "Continuidade local em Canaã", body: "A clínica pode acompanhar pacientes que operaram fora e precisam de apoio próximo." },
-          { title: "Primeira conversa, avaliação e retornos organizados", body: "Quando a paciente entende como será acompanhada e quais são os próximos passos, a recuperação fica menos confusa." },
+          {
+            title: "A conversa inicial esclarece a fase atual",
+            body: "A equipe entende em que momento da recuperação você está e qual é a necessidade principal agora.",
+          },
+          {
+            title: "A clínica orienta se consegue acompanhar o caso",
+            body: "Antes de avançar, a paciente entende se a frente de pós-operatório faz sentido para a fase atual do corpo.",
+          },
+          {
+            title: "Avaliação e próximos passos são combinados",
+            body: "Quando existe continuidade, a clínica organiza marcação, retorno e condução do atendimento com mais clareza.",
+          },
+          {
+            title: "A recuperação não fica sem leitura entre etapas",
+            body: "Se o caso pede retorno ou reavaliação, isso entra como parte da experiência, não como improviso posterior.",
+          },
         ]}
       />
 
       <EditorialFeatureSection
-        eyebrow="Por que essa frente é tão importante"
-        title="É no pós-operatório que presença, organização e acompanhamento fazem mais diferença."
-        body="Quem está se recuperando geralmente precisa de calma, orientação e apoio prático. Por isso a clínica trata essa frente como um cuidado sensível: entende a fase do corpo, organiza o acompanhamento e ajuda a paciente a atravessar esse momento com menos insegurança."
+        eyebrow="Por que essa frente importa tanto"
+        title="É na recuperação que presença, organização e serenidade costumam fazer mais diferença."
+        body="Quem está em pós-operatório geralmente precisa de calma, orientação e apoio prático. Por isso a clínica trata essa frente como um cuidado sensível: entende a fase do corpo, ajuda a reduzir insegurança e organiza o acompanhamento com mais clareza ao longo do processo."
         calloutTitle="O que a paciente encontra"
-        calloutBody="Mais segurança sobre o que fazer agora, mais clareza sobre o próximo passo e um atendimento que não abandona a paciente no meio do processo."
-      />
-
-      <TripleArticleSection
-        eyebrow="O que importa nessa fase"
-        title="Três bases para um pós-operatório melhor conduzido."
-        muted
-        items={[
-          { title: "Entender a fase da recuperação", body: "Antes de qualquer conduta, é importante saber em que momento do pós-operatório a paciente está e o que precisa de atenção agora." },
-          { title: "Acompanhar com continuidade", body: "Quando o caso pede retorno, reavaliação e suporte entre etapas, isso precisa fazer parte do cuidado." },
-          { title: "Orientar com calma e clareza", body: "Explicar bem o processo ajuda a reduzir ansiedade e melhora a experiência da paciente." },
-        ]}
+        calloutBody="Mais leitura do momento atual, mais segurança sobre o próximo passo e menos sensação de estar atravessando a recuperação sozinha."
       />
 
       <SplitSection
         eyebrow="Para quem esse atendimento costuma fazer mais sentido"
-        title="Para quem precisa de apoio local, atenção ao momento do corpo e orientação segura."
+        title="Para quem precisa de apoio local, atenção ao momento do corpo e orientação mais legível."
         items={[
-          { title: "Quem operou em outra cidade", body: "A clínica pode ser o ponto de apoio em Canaã dos Carajás para seguir a recuperação com mais acompanhamento." },
-          { title: "Quem quer acompanhamento mais próximo", body: "Quando a paciente sente necessidade de orientação ao longo da fase de recuperação, essa frente ganha ainda mais valor." },
-          { title: "Quem prefere clareza em vez de excesso", body: "O foco é orientar o que faz sentido para o momento do corpo, sem dramatizar e sem prometer o que não cabe nessa fase." },
+          {
+            title: "Quem operou em outra cidade",
+            body: "A clínica pode funcionar como ponto de continuidade em Canaã dos Carajás para quem precisa seguir a recuperação com suporte local.",
+          },
+          {
+            title: "Quem quer acompanhamento mais próximo",
+            body: "Quando a paciente sente necessidade de orientação ao longo da recuperação, essa frente ganha ainda mais valor.",
+          },
+          {
+            title: "Quem prefere clareza em vez de dramatização",
+            body: "O foco é ajudar a entender o que faz sentido agora, sem prometer demais e sem tratar a fase com ruído desnecessário.",
+          },
         ]}
       />
 
@@ -78,18 +90,29 @@ export default function PosOperatorioPage() {
         eyebrow="FAQ"
         title="Perguntas frequentes sobre pós-operatório assistido."
         items={[
-          { title: "Vocês atendem quem operou em outra cidade?", body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás." },
-          { title: "O primeiro contato já define tudo?", body: "Não. A prioridade inicial é entender a fase da recuperação, ouvir a necessidade principal e orientar o melhor próximo passo." },
-          { title: "Existe acompanhamento além da sessão?", body: "Quando o caso pede continuidade, a clínica organiza retorno, reavaliação e orientação entre etapas." },
-          { title: "Isso substitui o acompanhamento do cirurgião?", body: "Não. A clínica atua como apoio local dentro do escopo do atendimento e, quando necessário, a paciente deve manter o contato com o profissional responsável pela cirurgia." },
-          { title: "Como funciona o primeiro passo?", body: "No WhatsApp, a equipe entende seu momento, orienta se a clínica pode acompanhar a fase atual e organiza avaliação e retornos quando necessário." },
+          {
+            title: "Vocês atendem quem operou em outra cidade?",
+            body: "Sim. Esse é um dos contextos em que a clínica pode oferecer continuidade local em Canaã dos Carajás.",
+          },
+          {
+            title: "O primeiro contato já define tudo?",
+            body: "Não. A prioridade inicial é entender a fase da recuperação, ouvir a necessidade principal e orientar o melhor próximo passo.",
+          },
+          {
+            title: "Existe acompanhamento além da sessão?",
+            body: "Quando o caso pede continuidade, a clínica organiza retorno, reavaliação e orientação entre etapas.",
+          },
+          {
+            title: "Isso substitui o acompanhamento do cirurgião?",
+            body: "Não. A clínica atua como apoio local dentro do escopo do atendimento e, quando necessário, a paciente deve manter o contato com o profissional responsável pela cirurgia.",
+          },
         ]}
       />
 
       <CtaPanel
         eyebrow="Próximo passo"
         title="Se o seu momento é de recuperação, comece por uma conversa mais orientada."
-        body="Explique brevemente seu caso no WhatsApp e a equipe ajuda a entender como a clínica pode acompanhar essa fase."
+        body="Explique brevemente seu caso no WhatsApp e a equipe ajuda a entender como a clínica pode acompanhar essa fase com mais clareza."
         highlight="Pós-operatório assistido"
         detail="Canaã dos Carajás • acompanhamento local"
         primary={{ label: "Falar sobre meu pós-operatório", href: "/agendamento" }}

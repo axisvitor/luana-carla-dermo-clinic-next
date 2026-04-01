@@ -1,11 +1,5 @@
-import {
-  CtaPanel,
-  FaqSection,
-  HeroSection,
-  ProcessSection,
-  TrustStrip,
-  TripleArticleSection,
-} from "@/components/site/sections";
+import { OperationalHero } from "@/components/site/archetypes";
+import { FaqSection, ProcessSection, TripleArticleSection } from "@/components/site/sections";
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
@@ -18,74 +12,103 @@ export const metadata = createPageMetadata({
 export default function AgendamentoPage() {
   return (
     <>
-      <HeroSection
-        eyebrow="Primeiro contato e WhatsApp"
-        title="O primeiro contato é direto com a equipe pelo WhatsApp."
-        mobileTitle="O primeiro contato é direto com a equipe."
-        description="A clínica não trabalha com formulários. O caminho é simples: você fala com a equipe pelo WhatsApp oficial, explica brevemente seu momento e recebe orientação sobre o melhor próximo passo."
+      <OperationalHero
+        eyebrow="Primeiro contato"
+        title="Aqui, o primeiro passo começa em conversa, não em formulário."
+        description="A clínica usa o WhatsApp oficial como porta de entrada para entender o seu momento antes de orientar qualquer próxima etapa. Você explica o essencial, a equipe lê o contexto e conduz a conversa com mais clareza."
         primary={{ label: "Ver contato oficial", href: "/contato" }}
         secondary={{ label: "Como funciona", href: "/como-funciona" }}
-        panelLabel="Primeiro contato"
-        panelTitle="Explique seu caso em poucas linhas e a equipe conduz a conversa."
-        mobilePanelTitle="Explique seu caso e a equipe conduz a conversa."
-        image="/generated/whatsapp-contact-v2.jpg"
-        tone="light"
+        deskTitle="O que acontece na prática"
+        deskBody="O site não finge autoatendimento. A lógica é simples: mensagem curta, leitura do seu contexto e orientação humana da equipe."
         points={[
-          { badge: "1", title: "Envie uma mensagem", body: "Diga em poucas linhas qual é sua necessidade ou dúvida principal." },
-          { badge: "2", title: "A equipe orienta", body: "A clínica ajuda a entender qual frente de atendimento faz mais sentido." },
-          { badge: "3", title: "A marcação é conduzida pela clínica", body: "Quando fizer sentido seguir, a equipe organiza o próximo passo com você." },
+          {
+            label: "01",
+            title: "Você manda uma mensagem curta",
+            body: "Explique em poucas linhas qual é seu momento, sua dúvida ou o atendimento que mais te interessa.",
+          },
+          {
+            label: "02",
+            title: "A equipe entende o contexto",
+            body: "A clínica lê sua necessidade principal antes de orientar o caminho mais adequado para agora.",
+          },
+          {
+            label: "03",
+            title: "O próximo passo é combinado com você",
+            body: "Quando faz sentido seguir, a equipe organiza a marcação e os retornos diretamente pela conversa.",
+          },
         ]}
-      />
-
-      <TrustStrip
-        items={[
-          { title: "Sem formulário", body: "O contato não começa com preenchimento de campos. Ele começa com conversa direta com a equipe." },
-          { title: "WhatsApp oficial", body: "É por ali que a clínica recebe o primeiro contato e conduz a orientação inicial." },
-          { title: "Atendimento com hora marcada", body: "Quando o caso segue adiante, a marcação é organizada pela própria clínica." },
+        facts={[
+          { label: "Canal principal", value: "WhatsApp oficial da equipe" },
+          { label: "Formato", value: "sem formulário e sem automação fria" },
+          { label: "Objetivo", value: "entender seu momento antes de orientar" },
+          { label: "Agendamento", value: "conduzido pela própria clínica" },
         ]}
       />
 
       <ProcessSection
-        eyebrow="Como esse começo acontece"
-        title="O primeiro contato costuma seguir esta sequência."
+        eyebrow="Como esse começo costuma acontecer"
+        title="A conversa é simples, mas a clínica conduz cada etapa com mais contexto."
         items={[
-          { title: "Você envia sua mensagem", body: "Pode explicar se seu interesse é pós-operatório, continuidade corporal, depilação a laser ou cursos." },
-          { title: "A equipe entende o contexto", body: "A clínica lê sua necessidade principal e orienta o melhor caminho para o seu momento." },
-          { title: "As dúvidas iniciais são esclarecidas", body: "Quando necessário, a equipe ajuda a alinhar o que faz sentido agora antes de qualquer marcação." },
-          { title: "O próximo passo é combinado com você", body: "Se houver continuidade, avaliação ou atendimento, a clínica organiza isso diretamente pela conversa." },
+          {
+            title: "A mensagem inicial chega com o básico",
+            body: "Basta dizer se seu interesse é pós-operatório, continuidade corporal, depilação a laser ou cursos, além da sua dúvida principal.",
+          },
+          {
+            title: "A equipe identifica a frente correta",
+            body: "O objetivo do primeiro contato é evitar marcação sem contexto e orientar a linha de atendimento mais adequada.",
+          },
+          {
+            title: "As dúvidas iniciais são respondidas",
+            body: "Antes de avançar, a clínica ajuda a alinhar o que faz sentido agora e o que pode esperar.",
+          },
+          {
+            title: "A continuidade é combinada com você",
+            body: "Se houver avaliação, retorno ou atendimento, a própria equipe organiza esse próximo passo pela conversa.",
+          },
         ]}
       />
 
       <TripleArticleSection
-        eyebrow="O que vale informar já na primeira mensagem"
-        title="Três formas simples de ajudar a equipe a te orientar melhor."
+        eyebrow="O que ajuda nessa primeira mensagem"
+        title="Três informações que já deixam a orientação mais objetiva."
         muted
         items={[
-          { title: "Se for pós-operatório", body: "Diga em que fase da recuperação você está, se operou em outra cidade e qual é sua principal necessidade agora." },
-          { title: "Se for continuidade corporal ou laser", body: "Explique qual é seu interesse principal e quais dúvidas você quer esclarecer primeiro." },
-          { title: "Se for curso", body: "Avise logo no início que seu interesse é formação profissional para a equipe conduzir a conversa pelo caminho certo." },
+          {
+            title: "Se for pós-operatório",
+            body: "Diga em que fase da recuperação você está, se operou em outra cidade e qual é sua necessidade principal agora.",
+          },
+          {
+            title: "Se for continuidade corporal ou laser",
+            body: "Explique qual é o seu interesse principal e quais dúvidas você quer esclarecer antes de marcar.",
+          },
+          {
+            title: "Se for curso",
+            body: "Avise logo no início que seu interesse é formação profissional para a equipe levar a conversa para o caminho certo.",
+          },
         ]}
       />
 
       <FaqSection
         eyebrow="FAQ"
-        title="Dúvidas comuns sobre o primeiro contato."
+        title="Dúvidas comuns antes de falar com a equipe."
         items={[
-          { title: "Preciso preencher algum formulário?", body: "Não. A clínica não trabalha com formulários para o primeiro contato." },
-          { title: "Posso explicar meu caso direto pelo WhatsApp?", body: "Sim. Esse é o canal usado para a conversa inicial com a equipe." },
-          { title: "O agendamento acontece sozinho pelo site?", body: "Não. Quando fizer sentido seguir, a marcação é conduzida pela clínica." },
-          { title: "Se eu tiver dúvida e ainda não souber qual atendimento preciso, posso chamar mesmo assim?", body: "Sim. Você pode explicar seu momento e a equipe ajuda a orientar o melhor caminho." },
+          {
+            title: "Preciso preencher algum formulário antes?",
+            body: "Não. O primeiro contato é direto com a equipe pelo WhatsApp oficial da clínica.",
+          },
+          {
+            title: "Posso explicar meu caso mesmo sem saber exatamente qual atendimento preciso?",
+            body: "Sim. A própria conversa inicial serve para a equipe entender seu momento e orientar o melhor caminho.",
+          },
+          {
+            title: "O agendamento acontece sozinho pelo site?",
+            body: "Não. Quando faz sentido seguir, a marcação é organizada pela clínica dentro da própria conversa.",
+          },
+          {
+            title: "Se meu assunto for curso, devo usar esse mesmo começo?",
+            body: "Sim. Basta informar logo na primeira mensagem que seu interesse é formação profissional.",
+          },
         ]}
-      />
-
-      <CtaPanel
-        eyebrow="Próximo passo"
-        title="Se quiser falar com a clínica, siga para o contato oficial."
-        body="Use o contato oficial da página de contato e comece a conversa com a equipe de forma simples, sem formulários e sem etapas desnecessárias."
-        highlight="Primeiro contato"
-        detail="WhatsApp oficial • equipe da clínica"
-        primary={{ label: "Ver contato", href: "/contato" }}
-        secondary={{ label: "Voltar para início", href: "/" }}
       />
     </>
   );
