@@ -26,13 +26,13 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-30 border-b border-black/6 bg-[linear-gradient(180deg,rgba(253,251,247,0.94),rgba(253,251,247,0.84))] px-5 py-5 shadow-[0_10px_28px_rgba(24,35,34,0.035)] backdrop-blur md:px-8 xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-6 2xl:px-[60px]">
-      <div className="flex items-center justify-between gap-4 xl:contents">
+    <header className="sticky top-0 z-30 border-b border-black/6 bg-[linear-gradient(180deg,rgba(253,251,247,0.94),rgba(253,251,247,0.84))] px-4 py-4 shadow-[0_10px_28px_rgba(24,35,34,0.035)] backdrop-blur sm:px-5 sm:py-5 md:px-8 xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-6 2xl:px-[60px]">
+      <div className="flex items-center justify-between gap-3 sm:gap-4 xl:contents">
         <Link href="/" aria-label={`${siteConfig.name}, voltar para a página inicial`} className="min-w-0">
-          <span className="block font-display text-[clamp(1.7rem,2.2vw,2.15rem)] leading-[1] tracking-[-0.035em] text-ink">
+          <span className="block font-display text-[clamp(1.5rem,2.2vw,2.15rem)] leading-[1] tracking-[-0.035em] text-ink">
             {siteConfig.name}
           </span>
-          <span className="mt-1 block text-[0.75rem] font-medium uppercase tracking-[0.12em] text-ink-faint">
+          <span className="mt-0.5 block text-[0.68rem] font-medium uppercase tracking-[0.1em] text-ink-faint sm:mt-1 sm:text-[0.75rem] sm:tracking-[0.12em]">
             {siteConfig.descriptor}
           </span>
         </Link>
@@ -43,11 +43,11 @@ export function SiteHeader() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((current) => !current)}
           aria-label={open ? "Fechar menu" : "Abrir menu"}
-          className="inline-flex h-12 w-12 flex-col items-center justify-center gap-[5px] rounded-[12px] border border-black/12 bg-white/92 shadow-[0_12px_28px_rgba(24,35,34,0.05)] transition duration-200 xl:hidden"
+          className="inline-flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-[10px] border border-black/10 bg-white/92 shadow-[0_10px_24px_rgba(24,35,34,0.04)] transition duration-200 sm:h-12 sm:w-12 sm:gap-[5px] sm:rounded-[12px] xl:hidden"
         >
-          <span className={cn("h-px w-4 rounded-full bg-ink transition duration-200", open && "translate-y-[6px] rotate-45")} />
-          <span className={cn("h-px w-4 rounded-full bg-ink transition duration-200", open && "opacity-0")} />
-          <span className={cn("h-px w-4 rounded-full bg-ink transition duration-200", open && "-translate-y-[6px] -rotate-45")} />
+          <span className={cn("h-px w-3.5 rounded-full bg-ink transition duration-200 sm:w-4", open && "translate-y-[5px] rotate-45 sm:translate-y-[6px]")} />
+          <span className={cn("h-px w-3.5 rounded-full bg-ink transition duration-200 sm:w-4", open && "opacity-0")} />
+          <span className={cn("h-px w-3.5 rounded-full bg-ink transition duration-200 sm:w-4", open && "-translate-y-[5px] -rotate-45 sm:-translate-y-[6px]")} />
           <span className="sr-only">{open ? "Fechar menu" : "Abrir menu"}</span>
         </button>
       </div>
@@ -80,17 +80,18 @@ export function SiteHeader() {
         id="mobile-nav"
         className={cn(
           "overflow-hidden transition-[max-height,opacity,padding] duration-300 xl:hidden",
-          open ? "max-h-[32rem] border-t border-black/5 pt-4 opacity-100" : "max-h-0 opacity-0",
+          open ? "max-h-[32rem] border-t border-black/5 pt-3 opacity-100 sm:pt-4" : "max-h-0 opacity-0",
         )}
       >
-        <nav className="grid gap-3 pb-4 text-[1rem] font-medium text-ink/82" aria-label="Principal no celular">
+        <nav className="grid gap-2 pb-3 text-[0.95rem] font-medium text-ink/82 sm:gap-3 sm:pb-4 sm:text-[1rem]" aria-label="Principal no celular">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
+              onClick={() => setOpen(false)}
               className={cn(
-                "border-b border-black/5 pb-3",
+                "border-b border-black/5 py-2.5 sm:pb-3",
                 isActive(item.href) && "text-ink",
               )}
             >
@@ -99,7 +100,8 @@ export function SiteHeader() {
           ))}
           <Link
             href="/contato"
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/8 py-3 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-ink/72 transition duration-300 hover:border-black/14 hover:text-ink"
+            onClick={() => setOpen(false)}
+            className="mt-1.5 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/8 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-ink/72 transition duration-300 hover:border-black/14 hover:text-ink sm:mt-2 sm:py-3 sm:text-[0.75rem]"
           >
             Agendar consulta
             <span aria-hidden className="text-accent-deep">→</span>

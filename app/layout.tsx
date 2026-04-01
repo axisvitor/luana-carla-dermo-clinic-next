@@ -138,6 +138,10 @@ const websiteJsonLd = {
 export const viewport: Viewport = {
   themeColor: "#fcfbf8",
   colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export const metadata: Metadata = {
@@ -206,8 +210,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         >
           Pular para o conteúdo principal
         </a>
-        <div className="relative mx-auto my-2 w-[min(calc(100%-12px),1460px)] overflow-hidden rounded-[24px] border border-black/5 bg-white/75 shadow-[0_24px_80px_rgba(23,40,39,0.07)] backdrop-blur md:my-4 md:w-[min(calc(100%-28px),1460px)] md:rounded-[42px]">
-          <div className="pointer-events-none absolute inset-[6px] rounded-[18px] border border-white/35 md:inset-[10px] md:rounded-[32px]" />
+        <div className="relative mx-auto my-1.5 w-[min(calc(100%-8px),1460px)] overflow-hidden rounded-[18px] border border-black/5 bg-white/75 shadow-[0_24px_80px_rgba(23,40,39,0.07)] backdrop-blur sm:my-2 sm:w-[min(calc(100%-12px),1460px)] sm:rounded-[24px] md:my-4 md:w-[min(calc(100%-28px),1460px)] md:rounded-[42px]">
+          <div className="pointer-events-none absolute inset-[4px] rounded-[14px] border border-white/35 sm:inset-[6px] sm:rounded-[18px] md:inset-[10px] md:rounded-[32px]" />
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(189,165,139,0.34),rgba(15,95,99,0.24),transparent)]" />
           <SiteHeader />
           <main id="conteudo-principal" className="relative flex-1">{children}</main>
