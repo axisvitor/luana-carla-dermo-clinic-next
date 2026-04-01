@@ -14,7 +14,9 @@ import {
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  description: siteConfig.description,
+  title: "Clínica de Estética em Canaã dos Carajás | Pós-operatório, Corporal e Laser",
+  description:
+    "Luana Carla Dermo Clinic: clínica de estética em Canaã dos Carajás especializada em pós-operatório assistido, continuidade corporal e depilação a laser. Atendimento personalizado com hora marcada.",
   path: "/",
 });
 

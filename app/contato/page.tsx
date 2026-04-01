@@ -3,9 +3,9 @@ import { ContactGrid, SplitSection } from "@/components/site/sections";
 import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Contato",
+  title: "Contato | Luana Carla Dermo Clinic em Canaã dos Carajás",
   description:
-    "Contato da Luana Carla Dermo Clinic em Canaã dos Carajás. O primeiro contato e o agendamento são conduzidos pela equipe via WhatsApp oficial.",
+    "Entre em contato com a Luana Carla Dermo Clinic em Canaã dos Carajás. Agendamento via WhatsApp oficial, Instagram @luanacarladermoclinic. Atendimento com hora marcada no Centro.",
   path: "/contato",
 });
 

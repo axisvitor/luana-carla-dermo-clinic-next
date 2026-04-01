@@ -3,9 +3,9 @@ import { CtaPanel, EditorialFeatureSection, FaqSection, ProcessSection, SplitSec
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Pós-operatório assistido",
+  title: "Pós-operatório Assistido em Canaã dos Carajás | Recuperação com Acompanhamento",
   description:
-    "Pós-operatório assistido em Canaã dos Carajás, com acompanhamento por fase, orientação clara e continuidade local para quem precisa de suporte na recuperação.",
+    "Pós-operatório assistido em Canaã dos Carajás: acompanhamento especializado por fase da recuperação, orientação clara e continuidade local. Ideal para quem operou em outra cidade.",
   path: "/pos-operatorio",
 });
 

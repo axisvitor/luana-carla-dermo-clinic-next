@@ -3,10 +3,11 @@ import { CtaPanel, EditorialFeatureSection, FaqSection, SplitSection, TripleArti
 import { createPageMetadata } from "@/lib/site";
 
 export const metadata = createPageMetadata({
-  title: "Estética corporal com continuidade",
+  title: "Continuidade Corporal em Canaã dos Carajás | Tratamento Estético com Acompanhamento",
   description:
-    "Continuidade corporal com plano de cuidado, constância e acompanhamento para quem quer tratar o corpo com mais coerência ao longo do tempo.",
+    "Continuidade corporal em Canaã dos Carajás: plano de cuidado estético com constância e acompanhamento profissional. Tratamentos corporais com resultados duradouros.",
   path: "/continuidade-corporal",
+  keywords: ["continuidade corporal", "tratamento corporal Canaã dos Carajás", "estética com acompanhamento", "plano de tratamento estético"],
 });
 
 export default function ContinuidadeCorporalPage() {
