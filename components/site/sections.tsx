@@ -618,3 +618,193 @@ function SectionIntro({
     </div>
   );
 }
+
+// ============================================================================
+// GALERIA DE RESULTADOS (ANTES E DEPOIS)
+// ============================================================================
+
+type BeforeAfterItem = {
+  title: string;
+  procedure: string;
+  timeline: string;
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt?: string;
+  afterAlt?: string;
+};
+
+export function ResultsGallery({
+  eyebrow,
+  title,
+  description,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  items: BeforeAfterItem[];
+}) {
+  return (
+    <section className={cn(sectionClass, "py-12 md:py-16 xl:py-20")}>
+      <SectionIntro eyebrow={eyebrow} title={title} />
+      
+      {description && (
+        <p className={cn(leadClass, "col-span-12 mt-6 max-w-[52ch] text-ink-soft")}>
+          {description}
+        </p>
+      )}
+
+      <div className="col-span-12 mt-12 grid gap-8 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+        {items.map((item) => (
+          <article key={item.title} className="group overflow-hidden">
+            {/* Containers antes/depois com transição suave */}
+            <div className="relative overflow-hidden rounded-[24px] border border-black/6 bg-black/2">
+              <div className="aspect-square overflow-hidden bg-black/3">
+                {/* Placeholder com elemento visual */}
+                <div className="relative h-full w-full flex flex-col items-center justify-center gap-4 bg-gradient-to-br from-ink-faint/8 to-accent-deep/8 p-6">
+                  <div className="text-center">
+                    <p className="text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-ink/50">Resultado visual</p>
+                    <p className="mt-2 text-sm text-ink/40">Imagem em alta resolução</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Legenda */}
+              <div className="border-t border-black/6 p-5">
+                <h3 className={itemHeadingClass}>{item.title}</h3>
+                <div className="mt-3 flex flex-col gap-2">
+                  <p className={cn(bodyClass, "text-ink/70")}>{item.procedure}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent-deep">{item.timeline}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ============================================================================
+// DEPOIMENTOS VISUAIS COM FOTO
+// ============================================================================
+
+type Testimonial = {
+  name: string;
+  procedure: string;
+  quote: string;
+  avatarInitials?: string;
+  avatarColor?: string;
+};
+
+export function TestimonialsSection({
+  eyebrow,
+  title,
+  testimonials,
+}: {
+  eyebrow: string;
+  title: string;
+  testimonials: Testimonial[];
+}) {
+  return (
+    <section className={cn(sectionClass, "py-12 md:py-16 xl:py-20")}>
+      <SectionIntro eyebrow={eyebrow} title={title} narrow />
+
+      <div className="col-span-12 mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((item) => (
+          <article
+            key={item.name}
+            className={cn(
+              softPanelClass,
+              "flex flex-col gap-4 p-6 transition duration-300 hover:border-black/12 hover:shadow-[0_14px_34px_rgba(16,24,24,0.04)]",
+            )}
+          >
+            {/* Avatar + Nome */}
+            <div className="flex items-center gap-4">
+              <div
+                className={cn(
+                  "grid h-12 w-12 place-items-center rounded-full font-display text-sm font-bold text-white",
+                  item.avatarColor || "bg-gradient-to-br from-accent-deep to-accent-deep/80",
+                )}
+              >
+                {item.avatarInitials || item.name.charAt(0)}
+              </div>
+              <div className="min-w-0">
+                <p className="font-semibold text-ink">{item.name}</p>
+                <p className="text-xs font-medium text-ink/60">{item.procedure}</p>
+              </div>
+            </div>
+
+            {/* Quote */}
+            <blockquote className="border-l-2 border-accent-deep/30 pl-4">
+              <p className={cn(bodyClass, "text-ink/80 italic")}>"{item.quote}"</p>
+            </blockquote>
+
+            {/* Star rating (visual) */}
+            <div className="flex gap-1.5 pt-2">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="text-accent-deep">★</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ============================================================================
+// GALERIA DE AMBIENTE DA CLÍNICA
+// ============================================================================
+
+type ClinicSpace = {
+  title: string;
+  description: string;
+  image: string;
+  imageAlt?: string;
+  featured?: boolean;
+};
+
+export function ClinicEnvironmentGallery({
+  eyebrow,
+  title,
+  spaces,
+}: {
+  eyebrow: string;
+  title: string;
+  spaces: ClinicSpace[];
+}) {
+  return (
+    <section className={cn(sectionClass, "py-12 md:py-16 xl:py-20")}>
+      <SectionIntro eyebrow={eyebrow} title={title} />
+
+      <div className="col-span-12 mt-12 grid gap-6 md:mt-16 auto-rows-[300px] md:auto-rows-[320px]">
+        {spaces.map((space, index) => (
+          <article
+            key={space.title}
+            className={cn(
+              "group relative overflow-hidden rounded-[24px] border border-black/6",
+              space.featured ? "md:col-span-2 md:row-span-2" : "",
+            )}
+          >
+            {/* Imagem de placeholder */}
+            <div className="absolute inset-0 bg-gradient-to-br from-ink-faint/12 to-accent-deep/12 flex items-center justify-center">
+              <p className="text-center text-sm text-ink/40">Foto do espaço</p>
+            </div>
+
+            {/* Overlay + Conteúdo */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+
+            <div className="relative z-10 flex h-full flex-col justify-end p-6">
+              <h3 className={cn(itemHeadingClass, "text-white")}>{space.title}</h3>
+              <p className={cn(bodyClass, "mt-2 text-white/85")}>{space.description}</p>
+            </div>
+
+            {/* Hover effect */}
+            <div className="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/10" />
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
