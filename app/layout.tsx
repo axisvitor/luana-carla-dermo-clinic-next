@@ -135,7 +135,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${bodoni.variable} ${instrument.variable}`}>
+    <html lang="pt-BR" data-scroll-behavior="smooth" className={`${bodoni.variable} ${instrument.variable}`}>
       <body className="min-h-screen bg-background pb-28 font-sans text-ink antialiased selection:bg-accent/15 selection:text-ink md:pb-0">
         <a
           href="#conteudo-principal"

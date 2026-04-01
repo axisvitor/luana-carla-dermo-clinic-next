@@ -71,7 +71,6 @@ export function HeroSection({
   tone = "light",
   points,
   list,
-  quote,
   mobileTitle,
   mobilePanelTitle,
 }: {
@@ -79,73 +78,69 @@ export function HeroSection({
   title: string;
   description: string;
   primary: CallToAction;
-  secondary: CallToAction;
+  secondary?: CallToAction;
   panelLabel: string;
   panelTitle: string;
   image: string;
   tone?: ImageTone;
   points?: PointItem[];
   list?: string[];
-  quote?: string;
   mobileTitle?: string;
   mobilePanelTitle?: string;
 }) {
   const dark = tone === "dark";
 
   const overlay = dark
-    ? "linear-gradient(180deg, rgba(15,20,20,0.14) 0%, rgba(15,20,20,0.54) 58%, rgba(15,20,20,0.92) 100%)"
+    ? "linear-gradient(180deg, rgba(15,20,20,0.08) 0%, rgba(15,20,20,0.42) 50%, rgba(15,20,20,0.88) 100%)"
     : "linear-gradient(180deg, rgba(250,246,241,0.72) 0%, rgba(255,255,255,0.92) 74%)";
 
   return (
-    <section className={cn(sectionClass, "relative isolate overflow-hidden pt-8 md:pt-14 xl:pt-20")}> 
+    <section className={cn(sectionClass, "relative isolate overflow-hidden pt-10 md:pt-16 xl:pt-24")}> 
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-12%] top-[-4%] h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,rgba(220,196,162,0.42)_0%,rgba(220,196,162,0.18)_32%,transparent_72%)] blur-3xl md:h-[28rem] md:w-[28rem]" />
-        <div className="absolute left-[16%] top-[26%] h-[15rem] w-[15rem] rounded-full bg-[radial-gradient(circle,rgba(15,95,99,0.14)_0%,rgba(15,95,99,0.06)_36%,transparent_74%)] blur-3xl md:h-[22rem] md:w-[22rem]" />
-        <div className="absolute right-[22%] top-[10%] h-[18rem] w-[18rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.55)_0%,rgba(255,255,255,0.16)_34%,transparent_76%)] blur-3xl md:h-[24rem] md:w-[24rem]" />
-        <div className="absolute inset-0 opacity-[0.05] [background-image:radial-gradient(rgba(24,35,34,0.85)_0.6px,transparent_0.6px)] [background-size:9px_9px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.92),rgba(0,0,0,0.58),transparent)]" />
-        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(15,95,99,0.18),transparent)]" />
+        <div className="absolute left-[-8%] top-[-2%] h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,rgba(220,196,162,0.28)_0%,rgba(220,196,162,0.12)_32%,transparent_72%)] blur-3xl md:h-[24rem] md:w-[24rem]" />
+        <div className="absolute right-[18%] top-[8%] h-[14rem] w-[14rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.12)_34%,transparent_76%)] blur-3xl md:h-[20rem] md:w-[20rem]" />
+        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(15,95,99,0.12),transparent)]" />
       </div>
-      <div className="relative z-10 xl:col-span-7 xl:pr-6">
+      <div className="relative z-10 flex flex-col justify-center xl:col-span-7 xl:pr-8">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.96rem,5vw,3.35rem)] leading-[1] tracking-[-0.04em] text-ink sm:max-w-[13.6ch]">
+        <h1 className="mt-5 max-w-[15ch] font-display text-balance text-[clamp(2.1rem,5.2vw,3.5rem)] leading-[0.98] tracking-[-0.042em] text-ink sm:max-w-[14ch]">
           <span className="sm:hidden">{mobileTitle ?? title}</span>
           <span className="hidden sm:inline">{title}</span>
         </h1>
-        <p className={cn(leadClass, "mt-4 max-w-[56ch] text-ink-soft")}>{description}</p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+        <p className={cn(leadClass, "mt-5 max-w-[52ch] text-ink-soft")}>{description}</p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
           <SmartLink cta={primary} className={primaryButtonClass} />
-          <SmartLink cta={secondary} className={secondaryButtonClass} />
+          {secondary && <SmartLink cta={secondary} className={secondaryButtonClass} />}
         </div>
       </div>
 
-      <aside className="relative z-10 xl:col-span-5 xl:pt-6">
+      <aside className="relative z-10 xl:col-span-5 xl:pt-2">
         <div
           className={cn(
             cardClass,
-            "relative isolate flex min-h-[280px] flex-col justify-end overflow-hidden p-6 sm:min-h-[320px] md:min-h-[430px] md:p-8",
-            dark && "border-white/10 text-white shadow-[0_36px_90px_rgba(10,16,16,0.22)]",
+            "relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden p-7 sm:min-h-[340px] md:min-h-[460px] md:p-9",
+            dark && "border-white/8 text-white shadow-[0_40px_100px_rgba(10,16,16,0.18)]",
           )}
           style={{ backgroundImage: `${overlay}, url(${image})`, backgroundPosition: "center", backgroundSize: "cover" }}
         >
-          <div className={cn("pointer-events-none absolute -left-[12%] bottom-[-14%] h-56 w-56 rounded-[45%_55%_58%_42%/42%_40%_60%_58%] border", dark ? "border-white/10 shadow-[0_0_0_20px_rgba(255,255,255,0.03),0_0_0_52px_rgba(255,255,255,0.015)]" : "border-accent-deep/15 shadow-[0_0_0_20px_rgba(15,95,99,0.04),0_0_0_52px_rgba(15,95,99,0.02)]")} />
-          {dark ? <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[74%] bg-[linear-gradient(180deg,rgba(15,20,20,0)_0%,rgba(15,20,20,0.08)_20%,rgba(15,20,20,0.76)_72%,rgba(15,20,20,0.94)_100%)]" /> : null}
-          <div className="relative z-10 max-w-[25rem]">
+          {dark ? <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[linear-gradient(180deg,rgba(15,20,20,0)_0%,rgba(15,20,20,0.06)_18%,rgba(15,20,20,0.72)_68%,rgba(15,20,20,0.92)_100%)]" /> : null}
+          <div className="relative z-10 max-w-[26rem]">
             <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
-            <h2 className={cn("mt-3 max-w-[13ch] font-display text-balance text-[clamp(1.34rem,3vw,1.98rem)] leading-[1.05] tracking-[-0.028em]", dark ? "text-white" : "text-ink")}>
+            <h2 className={cn("mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.4rem,3.2vw,2.1rem)] leading-[1.04] tracking-[-0.03em]", dark ? "text-white" : "text-ink")}>
               <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
               <span className="hidden sm:inline">{panelTitle}</span>
             </h2>
 
             {points ? (
-              <div className="mt-6 grid gap-4">
+              <div className="mt-7 grid gap-5">
                 {points.map((item, index) => (
                   <article key={item.title} className="grid grid-cols-[auto_1fr] gap-4">
-                    <span className={cn("grid h-11 w-11 place-items-center rounded-[16px] border text-sm font-extrabold", dark ? "border-white/14 bg-white/7 text-[#d8f1f2]" : "border-black/10 bg-white/88 text-accent-deep")}>
+                    <span className={cn("grid h-10 w-10 place-items-center rounded-full border text-xs font-bold", dark ? "border-white/12 bg-white/6 text-white/90" : "border-black/8 bg-white/90 text-accent-deep")}>
                       {item.badge ?? String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
-                      <strong className={cn("block text-[0.97rem] font-semibold leading-[1.4] tracking-[-0.012em] md:text-[1.01rem]", dark ? "text-white/94" : "text-ink")}>{item.title}</strong>
-                      <p className={cn("mt-2 max-w-[26ch] text-[0.95rem] leading-[1.72] md:text-[0.98rem]", dark ? "text-white/88" : "text-ink-soft")}>{item.body}</p>
+                      <strong className={cn("block text-[0.94rem] font-semibold leading-[1.38] tracking-[-0.01em] md:text-[0.98rem]", dark ? "text-white/95" : "text-ink")}>{item.title}</strong>
+                      <p className={cn("mt-1.5 max-w-[28ch] text-[0.9rem] leading-[1.68] md:text-[0.92rem]", dark ? "text-white/75" : "text-ink-soft")}>{item.body}</p>
                     </div>
                   </article>
                 ))}
@@ -153,19 +148,13 @@ export function HeroSection({
             ) : null}
 
             {list ? (
-              <ul className="mt-6 grid gap-3.5">
+              <ul className="mt-7 grid gap-3">
                 {list.map((item) => (
-                  <li key={item} className={cn("max-w-[28ch] border-b pb-3 text-[0.95rem] leading-[1.72] md:text-[0.98rem]", dark ? "border-white/14 text-white/90" : "border-black/10 text-ink/88")}>
+                  <li key={item} className={cn("max-w-[30ch] border-b pb-3 text-[0.92rem] leading-[1.7] md:text-[0.95rem]", dark ? "border-white/10 text-white/85" : "border-black/8 text-ink/85")}>
                     {item}
                   </li>
                 ))}
               </ul>
-            ) : null}
-
-            {quote ? (
-              <blockquote className={cn("mt-5 border-t pt-4 font-display text-balance text-[clamp(1.4rem,3.4vw,1.95rem)] leading-[1.06] tracking-[-0.03em]", dark ? "border-white/12 text-white" : "border-black/10 text-ink")}> 
-                {quote}
-              </blockquote>
             ) : null}
           </div>
         </div>

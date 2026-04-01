@@ -9,13 +9,13 @@ export function FloatingCta() {
   if (pathname !== "/") return null;
 
   return (
-    <div className="fixed inset-x-3 bottom-[calc(env(safe-area-inset-bottom)+0.75rem)] z-40 md:hidden">
+    <div className="fixed inset-x-4 bottom-[calc(env(safe-area-inset-bottom)+1rem)] z-40 md:hidden">
       <Link
         href="/agendamento"
-        className="inline-flex w-full touch-manipulation items-center justify-center gap-2 rounded-[14px] border border-white/10 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-4 text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_16px_36px_rgba(15,95,99,0.18)] backdrop-blur"
+        className="inline-flex w-full touch-manipulation items-center justify-center gap-2 rounded-full border border-white/8 bg-[linear-gradient(180deg,var(--accent-deep),#0a4a4d)] px-5 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.1em] text-white shadow-[0_12px_28px_rgba(15,95,99,0.14)] backdrop-blur-sm transition duration-300"
       >
-        Falar no WhatsApp
-        <span aria-hidden>↗</span>
+        Agendar consulta
+        <span aria-hidden className="text-white/70">→</span>
       </Link>
     </div>
   );
