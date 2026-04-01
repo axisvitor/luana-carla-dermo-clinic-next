@@ -43,9 +43,9 @@ const eyebrowClass =
 const eyebrowInverseClass =
   "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']";
 const cardClass =
-  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,244,238,0.82))] shadow-[0_20px_48px_rgba(16,24,24,0.06)]";
+  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,244,238,0.82))] shadow-[0_22px_54px_rgba(16,24,24,0.065)]";
 const softPanelClass =
-  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,244,238,0.78))] shadow-[0_16px_34px_rgba(16,24,24,0.04)]";
+  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,244,238,0.78))] shadow-[0_12px_26px_rgba(16,24,24,0.032)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -241,7 +241,7 @@ export function SignatureGallery() {
           <h3 className="mt-4 max-w-[11ch] font-display text-balance text-[clamp(2rem,3.7vw,3rem)] leading-[0.97] tracking-[-0.045em] text-white">
             Ambiente sereno, leitura cuidadosa e atenção ao detalhe.
           </h3>
-          <p className={cn(bodyClass, "mt-4 max-w-[34ch] text-white/76")}>
+          <p className={cn(bodyClass, "mt-4 max-w-[34ch] text-white/84")}>
             O que a clínica promete na conversa precisa aparecer também no espaço, no ritmo e na forma de receber.
           </p>
         </div>
@@ -491,10 +491,10 @@ export function FaqSection({
         <details
           key={item.title}
           className={cn(
-            "group rounded-[22px] border px-5 py-4 transition duration-200 md:px-6 md:py-5",
+            "group rounded-[22px] border px-5 py-[1.05rem] transition duration-200 md:px-6 md:py-[1.15rem]",
             featured
-              ? "border-black/8 bg-white shadow-[0_18px_38px_rgba(16,24,24,0.045)] open:shadow-[0_22px_48px_rgba(16,24,24,0.07)]"
-              : "border-black/8 bg-white/52 shadow-[0_12px_30px_rgba(16,24,24,0.04)] open:bg-white open:shadow-[0_18px_42px_rgba(16,24,24,0.06)]",
+              ? "border-black/6 bg-white shadow-[0_14px_30px_rgba(16,24,24,0.035)] open:shadow-[0_18px_40px_rgba(16,24,24,0.055)]"
+              : "border-black/6 bg-white/52 shadow-[0_10px_24px_rgba(16,24,24,0.03)] open:bg-white open:shadow-[0_16px_34px_rgba(16,24,24,0.05)]",
           )}
         >
           <summary className="grid cursor-pointer grid-cols-[1fr_auto] items-center gap-4 list-none font-sans text-[0.97rem] font-semibold leading-[1.5] tracking-[-0.018em] text-ink md:text-[1.02rem] md:leading-[1.46] [&::-webkit-details-marker]:hidden">

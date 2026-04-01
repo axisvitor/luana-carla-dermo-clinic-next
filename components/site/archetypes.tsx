@@ -35,9 +35,9 @@ const inverseEyebrowClass =
 const leadClass = "text-pretty text-[0.98rem] leading-[1.82] md:text-[1.02rem] md:leading-[1.88]";
 const bodyClass = "text-pretty text-[0.96rem] leading-[1.74] md:text-[0.99rem] md:leading-[1.8]";
 const cardClass =
-  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,244,238,0.82))] shadow-[0_20px_48px_rgba(16,24,24,0.06)]";
+  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,244,238,0.82))] shadow-[0_22px_54px_rgba(16,24,24,0.065)]";
 const softPanelClass =
-  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,239,231,0.82))] shadow-[0_16px_34px_rgba(16,24,24,0.04)]";
+  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(245,239,231,0.82))] shadow-[0_12px_26px_rgba(16,24,24,0.032)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -124,7 +124,7 @@ export function OperationalHero({
           <p className="mt-4 max-w-[36ch] text-[0.98rem] leading-[1.82] text-ink">{deskBody}</p>
           <div className="mt-6 grid gap-3.5">
             {points.map((point) => (
-              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-3.5 border-t border-black/8 pt-4 first:border-t-0 first:pt-0">
+              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-3.5 border-t border-black/6 pt-4 first:border-t-0 first:pt-0">
                 <span className="grid h-11 w-11 place-items-center rounded-[16px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.92))] text-[0.72rem] font-extrabold uppercase tracking-[0.08em] text-accent-deep shadow-[0_12px_30px_rgba(24,35,34,0.04)]">
                   {point.label}
                 </span>

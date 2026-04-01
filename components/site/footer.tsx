@@ -9,7 +9,7 @@ const footerButtonClass =
 const footerGhostButtonClass =
   "inline-flex items-center gap-2 rounded-[14px] border border-white/8 bg-transparent px-4 py-3 text-[0.74rem] font-bold uppercase tracking-[0.14em] text-white/82 transition duration-200 hover:border-white/14 hover:bg-white/6 hover:text-white";
 const footerLinkClass =
-  "group inline-flex items-center gap-2 text-white/82 transition duration-200 hover:text-white";
+  "group inline-flex items-center gap-2 text-white/86 transition duration-200 hover:text-white";
 
 export function SiteFooter() {
   return (
@@ -20,8 +20,8 @@ export function SiteFooter() {
       <div className="grid gap-6 xl:grid-cols-[1.12fr_0.94fr_0.94fr]">
         <div className="relative xl:pr-8">
           <p className="font-display text-[1.92rem] leading-[0.96] tracking-[-0.035em] text-white/96">{siteConfig.name}</p>
-          <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.14em] text-white/58">{siteConfig.descriptor}</p>
-          <p className="mt-4 max-w-[36ch] text-pretty text-[0.99rem] leading-[1.8] text-white/78 md:text-[1rem]">
+          <p className="mt-2 text-[0.78rem] font-medium uppercase tracking-[0.14em] text-white/62">{siteConfig.descriptor}</p>
+          <p className="mt-4 max-w-[36ch] text-pretty text-[0.99rem] leading-[1.8] text-white/82 md:text-[1rem]">
             Atendimento com hora marcada no Centro, em Canaã dos Carajás. Um cuidado corporal pensado para quem busca mais clareza, acompanhamento e um ritmo de atendimento mais sereno.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -76,7 +76,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-[0.9rem] text-white/58 md:flex-row md:items-center md:justify-between">
+      <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-[0.9rem] text-white/62 md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
         <div className="flex flex-wrap items-center gap-3 text-white/72">
           <Link href="/cursos" className="transition duration-200 hover:text-white">Frente separada de cursos</Link>
