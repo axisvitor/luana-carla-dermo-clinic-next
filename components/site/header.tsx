@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import { navItems, siteConfig } from "@/lib/site";
-import { primaryCtaClass } from "@/lib/styles";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -30,10 +29,10 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-black/6 bg-[linear-gradient(180deg,rgba(253,251,247,0.94),rgba(253,251,247,0.84))] px-5 py-5 shadow-[0_10px_28px_rgba(24,35,34,0.035)] backdrop-blur md:px-8 xl:grid xl:grid-cols-[auto_1fr_auto] xl:items-center xl:gap-6 2xl:px-[60px]">
       <div className="flex items-center justify-between gap-4 xl:contents">
         <Link href="/" aria-label={`${siteConfig.name}, voltar para a página inicial`} className="min-w-0">
-          <span className="block font-display text-[clamp(1.68rem,2.2vw,2.18rem)] leading-[0.96] tracking-[-0.04em] text-ink">
+          <span className="block font-display text-[clamp(1.7rem,2.2vw,2.15rem)] leading-[1] tracking-[-0.035em] text-ink">
             {siteConfig.name}
           </span>
-          <span className="mt-1 block text-xs font-medium uppercase tracking-[0.16em] text-ink-faint">
+          <span className="mt-1 block text-[0.75rem] font-medium uppercase tracking-[0.12em] text-ink-faint">
             {siteConfig.descriptor}
           </span>
         </Link>
@@ -53,7 +52,7 @@ export function SiteHeader() {
         </button>
       </div>
 
-      <nav className="hidden flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.94rem] font-medium tracking-[0.01em] text-ink/76 xl:flex" aria-label="Principal">
+      <nav className="hidden flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.95rem] font-medium tracking-[-0.005em] text-ink/78 xl:flex" aria-label="Principal">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -71,7 +70,7 @@ export function SiteHeader() {
 
       <Link
         href="/contato"
-        className="hidden items-center gap-2 rounded-full border border-black/8 px-5 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink/70 transition duration-300 hover:border-black/14 hover:text-ink xl:inline-flex"
+        className="hidden items-center gap-2 rounded-full border border-black/8 px-5 py-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-ink/72 transition duration-300 hover:border-black/14 hover:text-ink xl:inline-flex"
       >
         Agendar consulta
         <span aria-hidden className="text-accent-deep">→</span>
@@ -84,7 +83,7 @@ export function SiteHeader() {
           open ? "max-h-[32rem] border-t border-black/5 pt-4 opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <nav className="grid gap-3 pb-4 text-[0.98rem] font-medium text-ink/82" aria-label="Principal no celular">
+        <nav className="grid gap-3 pb-4 text-[1rem] font-medium text-ink/82" aria-label="Principal no celular">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -100,7 +99,7 @@ export function SiteHeader() {
           ))}
           <Link
             href="/contato"
-            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink/70 transition duration-300 hover:border-black/14 hover:text-ink"
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/8 py-3 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-ink/72 transition duration-300 hover:border-black/14 hover:text-ink"
           >
             Agendar consulta
             <span aria-hidden className="text-accent-deep">→</span>
