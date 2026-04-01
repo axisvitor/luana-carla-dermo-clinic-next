@@ -91,21 +91,21 @@ export function OperationalHero({
     >
       <div className="xl:col-span-7 xl:pr-6">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.92rem,4.9vw,3.12rem)] leading-[1] tracking-[-0.04em] text-ink">
+        <h1 className="mt-3 max-w-[14ch] font-display text-balance text-[clamp(1.7rem,4.9vw,3.12rem)] leading-[1] tracking-[-0.04em] text-ink sm:mt-4">
           {title}
         </h1>
-        <p className={cn(leadClass, "mt-4 max-w-[57ch] text-ink-soft")}>{description}</p>
+        <p className={cn(leadClass, "mt-3 max-w-[57ch] text-ink-soft sm:mt-4")}>{description}</p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:gap-3">
           <SmartLink cta={primary} className={primaryButtonClass} />
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2">
+        <div className="mt-5 grid gap-2.5 sm:mt-7 sm:grid-cols-2 sm:gap-3 md:auto-rows-fr">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[90px] p-3.5 sm:min-h-[100px] sm:p-4 md:p-5")}>
               <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
-              <strong className="mt-2 block max-w-[20ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.05rem]">
+              <strong className="mt-1.5 block max-w-[20ch] text-[0.95rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink sm:mt-2 sm:text-[1rem] md:text-[1.05rem]">
                 {fact.value}
               </strong>
             </article>
@@ -114,20 +114,20 @@ export function OperationalHero({
       </div>
 
       <aside className="xl:col-span-5 xl:pt-6">
-        <div className={cn(cardClass, "p-5 md:p-6")}>
+        <div className={cn(cardClass, "p-4 sm:p-5 md:p-6")}>
           <p className={eyebrowClass}>{deskTitle}</p>
-          <p className="mt-4 max-w-[36ch] text-[0.98rem] leading-[1.82] text-ink">{deskBody}</p>
-          <div className="mt-6 grid gap-3.5">
+          <p className="mt-3 max-w-[36ch] text-[0.92rem] leading-[1.78] text-ink sm:mt-4 sm:text-[0.98rem] sm:leading-[1.82]">{deskBody}</p>
+          <div className="mt-5 grid gap-3 sm:mt-6 sm:gap-3.5">
             {points.map((point) => (
-              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-3.5 border-t border-black/6 pt-4 first:border-t-0 first:pt-0">
-                <span className="grid h-11 w-11 place-items-center rounded-[16px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.92))] text-[0.72rem] font-extrabold uppercase tracking-[0.08em] text-accent-deep shadow-[0_12px_30px_rgba(24,35,34,0.04)]">
+              <article key={point.title} className="grid grid-cols-[auto_1fr] gap-3 border-t border-black/6 pt-3 first:border-t-0 first:pt-0 sm:gap-3.5 sm:pt-4">
+                <span className="grid h-9 w-9 place-items-center rounded-[12px] border border-black/10 bg-[linear-gradient(180deg,rgba(244,237,228,0.94),rgba(255,255,255,0.92))] text-[0.65rem] font-extrabold uppercase tracking-[0.08em] text-accent-deep shadow-[0_12px_30px_rgba(24,35,34,0.04)] sm:h-11 sm:w-11 sm:rounded-[16px] sm:text-[0.72rem]">
                   {point.label}
                 </span>
                 <div>
-                  <strong className="block text-[0.97rem] font-semibold leading-[1.44] tracking-[-0.018em] text-ink md:text-[1.01rem]">
+                  <strong className="block text-[0.92rem] font-semibold leading-[1.44] tracking-[-0.018em] text-ink sm:text-[0.97rem] md:text-[1.01rem]">
                     {point.title}
                   </strong>
-                  <p className={cn(bodyClass, "mt-2 max-w-[30ch] text-ink-soft")}>{point.body}</p>
+                  <p className={cn(bodyClass, "mt-1.5 max-w-[30ch] text-ink-soft sm:mt-2")}>{point.body}</p>
                 </div>
               </article>
             ))}
@@ -179,21 +179,21 @@ export function ServiceHero({
     >
       <div className="xl:col-span-6 xl:pr-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[13.5ch] font-display text-balance text-[clamp(1.94rem,5vw,3.18rem)] leading-[1] tracking-[-0.04em] text-ink">
+        <h1 className="mt-3 max-w-[13.5ch] font-display text-balance text-[clamp(1.7rem,5vw,3.18rem)] leading-[1] tracking-[-0.04em] text-ink sm:mt-4">
           {title}
         </h1>
-        <p className={cn(leadClass, "mt-4 max-w-[58ch] text-ink-soft")}>{description}</p>
+        <p className={cn(leadClass, "mt-3 max-w-[58ch] text-ink-soft sm:mt-4")}>{description}</p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:gap-3">
           <SmartLink cta={primary} className={primaryButtonClass} />
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-7 grid gap-3 sm:grid-cols-2 md:auto-rows-fr">
+        <div className="mt-5 grid gap-2.5 sm:mt-7 sm:grid-cols-2 sm:gap-3 md:auto-rows-fr">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:min-h-[108px] md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[90px] p-3.5 sm:min-h-[100px] sm:p-4 md:min-h-[108px] md:p-5")}>
               <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
-              <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.06rem]">
+              <strong className="mt-1.5 block max-w-[18ch] text-[0.95rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink sm:mt-2 sm:text-[1rem] md:text-[1.06rem]">
                 {fact.value}
               </strong>
             </article>
@@ -204,7 +204,7 @@ export function ServiceHero({
       <aside className="xl:col-span-6 xl:pl-4 xl:pt-6">
         <div
           className={cn(
-            "relative isolate overflow-hidden rounded-[32px] border p-6 shadow-[0_28px_64px_rgba(16,24,24,0.11)] md:min-h-[480px] md:p-8",
+            "relative isolate overflow-hidden rounded-[24px] border p-5 shadow-[0_28px_64px_rgba(16,24,24,0.11)] sm:rounded-[32px] sm:p-6 md:min-h-[480px] md:p-8",
             dark ? "border-white/10" : "border-black/10",
           )}
           style={{
@@ -213,25 +213,25 @@ export function ServiceHero({
             backgroundSize: "cover",
           }}
         >
-          <div className="relative z-10 flex min-h-[280px] flex-col justify-end md:min-h-[400px]">
+          <div className="relative z-10 flex min-h-[240px] flex-col justify-end sm:min-h-[280px] md:min-h-[400px]">
             <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
             <h2
               className={cn(
-                "mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.46rem,2.6vw,2.12rem)] leading-[1.04] tracking-[-0.032em]",
+                "mt-3 max-w-[14ch] font-display text-balance text-[clamp(1.3rem,2.6vw,2.12rem)] leading-[1.04] tracking-[-0.032em] sm:mt-4",
                 dark ? "text-white" : "text-ink",
               )}
             >
               {panelTitle}
             </h2>
             {panelBody ? (
-              <p className={cn(bodyClass, "mt-4 max-w-[35ch]", dark ? "text-white/82" : "text-ink-soft")}>{panelBody}</p>
+              <p className={cn(bodyClass, "mt-3 max-w-[35ch] sm:mt-4", dark ? "text-white/82" : "text-ink-soft")}>{panelBody}</p>
             ) : null}
-            <ul className="mt-6 grid gap-3.5">
+            <ul className="mt-4 grid gap-2.5 sm:mt-6 sm:gap-3.5">
               {bullets.map((bullet) => (
                 <li
                   key={bullet}
                   className={cn(
-                    "max-w-[26ch] border-b pb-3 text-[0.98rem] leading-[1.72] md:text-[1rem]",
+                    "max-w-[26ch] border-b pb-2 text-[0.92rem] leading-[1.68] sm:pb-3 sm:text-[0.98rem] sm:leading-[1.72] md:text-[1rem]",
                     dark ? "border-white/14 text-white/88" : "border-black/10 text-ink/88",
                   )}
                 >
@@ -280,7 +280,7 @@ export function InstitutionalHero({
     >
       <div className="xl:col-span-4">
         <div
-          className="relative isolate overflow-hidden rounded-[32px] border border-black/10 shadow-[0_26px_58px_rgba(16,24,24,0.09)] md:min-h-[500px]"
+          className="relative isolate overflow-hidden rounded-[24px] border border-black/10 shadow-[0_26px_58px_rgba(16,24,24,0.09)] sm:rounded-[32px] md:min-h-[500px]"
           style={{
             backgroundImage:
               `linear-gradient(180deg, rgba(15,20,20,0.06) 0%, rgba(15,20,20,0.18) 34%, rgba(15,20,20,0.74) 100%), url(${image})`,
@@ -288,41 +288,41 @@ export function InstitutionalHero({
             backgroundSize: "cover",
           }}
         >
-          <div className="relative z-10 flex min-h-[280px] flex-col justify-end p-6 md:min-h-[500px] md:p-7">
-            {quote ? <p className="max-w-[16ch] font-display text-balance text-[clamp(1.5rem,3vw,2.15rem)] leading-[1.04] tracking-[-0.035em] text-white">{quote}</p> : null}
+          <div className="relative z-10 flex min-h-[220px] flex-col justify-end p-5 sm:min-h-[280px] sm:p-6 md:min-h-[500px] md:p-7">
+            {quote ? <p className="max-w-[16ch] font-display text-balance text-[clamp(1.3rem,3vw,2.15rem)] leading-[1.04] tracking-[-0.035em] text-white">{quote}</p> : null}
           </div>
         </div>
       </div>
 
       <div className="xl:col-span-8 xl:pl-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.94rem,5vw,3.16rem)] leading-[1] tracking-[-0.04em] text-ink">
+        <h1 className="mt-3 max-w-[14ch] font-display text-balance text-[clamp(1.7rem,5vw,3.16rem)] leading-[1] tracking-[-0.04em] text-ink sm:mt-4">
           {title}
         </h1>
-        <p className={cn(leadClass, "mt-4 max-w-[60ch] text-ink-soft")}>{description}</p>
+        <p className={cn(leadClass, "mt-3 max-w-[60ch] text-ink-soft sm:mt-4")}>{description}</p>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:gap-3">
           <SmartLink cta={primary} className={primaryButtonClass} />
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
 
-        <div className="mt-7 grid gap-3 md:auto-rows-fr md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-5 grid gap-2.5 sm:mt-7 sm:grid-cols-2 sm:gap-3 md:auto-rows-fr xl:grid-cols-4">
           {facts.map((fact) => (
-            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[100px] p-4 md:p-5")}>
+            <article key={fact.label} className={cn(softPanelClass, "h-full min-h-[90px] p-3.5 sm:min-h-[100px] sm:p-4 md:p-5")}>
               <span className={cn(smallLabelClass, "block text-ink-faint")}>{fact.label}</span>
-              <strong className="mt-2 block max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink md:text-[1.04rem]">
+              <strong className="mt-1.5 block max-w-[18ch] text-[0.95rem] font-semibold leading-[1.45] tracking-[-0.02em] text-ink sm:mt-2 sm:text-[1rem] md:text-[1.04rem]">
                 {fact.value}
               </strong>
             </article>
           ))}
         </div>
 
-        <article className={cn(cardClass, "mt-7 p-5 md:p-6")}>
+        <article className={cn(cardClass, "mt-5 p-4 sm:mt-7 sm:p-5 md:p-6")}>
           <p className={eyebrowClass}>{noteLabel}</p>
-          <h2 className="mt-4 max-w-[16ch] font-display text-balance text-[clamp(1.5rem,2.4vw,2.04rem)] leading-[1.06] tracking-[-0.03em] text-ink">
+          <h2 className="mt-3 max-w-[16ch] font-display text-balance text-[clamp(1.35rem,2.4vw,2.04rem)] leading-[1.06] tracking-[-0.03em] text-ink sm:mt-4">
             {noteTitle}
           </h2>
-          <p className={cn(bodyClass, "mt-4 max-w-[44ch] text-ink-soft")}>{noteBody}</p>
+          <p className={cn(bodyClass, "mt-3 max-w-[44ch] text-ink-soft sm:mt-4")}>{noteBody}</p>
         </article>
       </div>
     </section>
@@ -353,32 +353,32 @@ export function FaqIntroHub({
     >
       <div className="xl:col-span-5 xl:pr-4">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.86rem,4.6vw,3rem)] leading-[1] tracking-[-0.038em] text-ink">
+        <h1 className="mt-3 max-w-[14ch] font-display text-balance text-[clamp(1.7rem,4.6vw,3rem)] leading-[1] tracking-[-0.038em] text-ink sm:mt-4">
           {title}
         </h1>
-        <p className={cn(leadClass, "mt-4 max-w-[54ch] text-ink-soft")}>{description}</p>
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        <p className={cn(leadClass, "mt-3 max-w-[54ch] text-ink-soft sm:mt-4")}>{description}</p>
+        <div className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:flex-row sm:gap-3">
           <SmartLink cta={primary} className={primaryButtonClass} />
           <SmartLink cta={secondary} className={secondaryButtonClass} />
         </div>
       </div>
 
-      <div className="xl:col-span-7 grid gap-4 md:auto-rows-fr md:grid-cols-2">
+      <div className="xl:col-span-7 grid gap-3 sm:grid-cols-2 sm:gap-4 md:auto-rows-fr">
         {topics.map((topic) => (
           <Link
             key={topic.href}
             href={topic.href}
             className={cn(
               cardClass,
-              "group flex h-full flex-col p-5 transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_52px_rgba(16,24,24,0.08)] md:p-6",
+              "group flex h-full flex-col p-4 transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_24px_52px_rgba(16,24,24,0.08)] sm:p-5 md:p-6",
             )}
           >
-            <span className="block text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink-faint">{topic.label}</span>
-            <h2 className="mt-3 max-w-[18ch] text-[1rem] font-semibold leading-[1.45] tracking-[-0.018em] text-ink md:text-[1.08rem]">
+            <span className="block text-[0.65rem] font-bold uppercase tracking-[0.12em] text-ink-faint sm:text-[0.68rem] sm:tracking-[0.14em]">{topic.label}</span>
+            <h2 className="mt-2 max-w-[18ch] text-[0.95rem] font-semibold leading-[1.45] tracking-[-0.018em] text-ink sm:mt-3 sm:text-[1rem] md:text-[1.08rem]">
               {topic.title}
             </h2>
-            <p className={cn(bodyClass, "mt-3 max-w-[32ch] text-ink-soft")}>{topic.body}</p>
-            <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-bold text-accent-deep transition duration-200 group-hover:gap-3">
+            <p className={cn(bodyClass, "mt-2 max-w-[32ch] text-ink-soft sm:mt-3")}>{topic.body}</p>
+            <span className="mt-auto inline-flex items-center gap-2 pt-4 text-[0.85rem] font-bold text-accent-deep transition duration-200 group-hover:gap-3 sm:pt-5 sm:text-sm">
               Ir para esta seção
               <span aria-hidden>→</span>
             </span>

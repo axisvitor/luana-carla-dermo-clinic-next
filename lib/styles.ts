@@ -5,7 +5,7 @@
 
 // Layout
 export const sectionClass =
-  "grid grid-cols-1 gap-6 px-5 py-12 md:px-8 md:py-16 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
+  "grid grid-cols-1 gap-4 px-4 py-10 sm:gap-6 sm:px-5 sm:py-12 md:px-8 md:py-16 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
 
 // Buttons — Unified sizing (min 12px / 0.75rem)
 export const primaryButtonClass =

@@ -1,13 +1,16 @@
 import {
+  ClinicEnvironmentGallery,
   CtaPanel,
   DarkBand,
   FaqSection,
   HeroSection,
   ManifestoBand,
   ProcessSection,
+  ResultsGallery,
   ServiceRailsSection,
   SignatureGallery,
   SplitSection,
+  TestimonialsSection,
   TripleArticleSection,
   TrustStrip,
 } from "@/components/site/sections";
@@ -57,6 +60,122 @@ export default function HomePage() {
       />
 
       <SignatureGallery />
+
+      <ResultsGallery
+        eyebrow="Transformações reais"
+        title="Resultados que falam por si."
+        description="Cada caso é único. Aqui você vê a evolução real de pacientes que confiaram em nosso acompanhamento — desde o primeiro dia até a recuperação completa."
+        items={[
+          {
+            title: "Pós-operatório com continuidade",
+            procedure: "Acompanhamento pós-cirúrgico local",
+            timeline: "Evolução: 7 → 30 dias",
+            beforeImage: "/images/results/pos-op-before.jpg",
+            afterImage: "/images/results/pos-op-after.jpg",
+            beforeAlt: "Resultado antes: fase inicial de recuperação pós-operatória",
+            afterAlt: "Resultado após 30 dias: recuperação completa com cicatrização avançada",
+          },
+          {
+            title: "Continuidade corporal",
+            procedure: "Tratamento estético corporal",
+            timeline: "Resultado após 4 sessões",
+            beforeImage: "/images/results/continuidade-before.jpg",
+            afterImage: "/images/results/continuidade-after.jpg",
+            beforeAlt: "Resultado antes: estado inicial sem tratamento",
+            afterAlt: "Resultado após 4 sessões: transformação corporal visível",
+          },
+          {
+            title: "Depilação a laser",
+            procedure: "Laser corporal com tecnologia avançada",
+            timeline: "Progressão: 1ª → 4ª sessão",
+            beforeImage: "/images/results/laser-before.jpg",
+            afterImage: "/images/results/laser-after.jpg",
+            beforeAlt: "Resultado antes: densidade original de pelos",
+            afterAlt: "Resultado após 4 sessões de laser: redução significativa de pelos",
+          },
+        ]}
+      />
+
+      <TestimonialsSection
+        eyebrow="Vozes que confiam"
+        title="O que nossas pacientes dizem."
+        testimonials={[
+          {
+            name: "Marina S.",
+            procedure: "Pós-operatório",
+            quote: "Achei muito importante ter um acompanhamento local depois que voltei de fora. A equipe entendeu exatamente o que eu precisava naquele momento.",
+            avatarInitials: "MS",
+            avatarColor: "bg-gradient-to-br from-accent-deep to-teal-700",
+          },
+          {
+            name: "Aline R.",
+            procedure: "Continuidade Corporal",
+            quote: "Gostei muito da forma como a clínica trabalha. Sem pressão, com muita clareza sobre cada etapa. Sinto que realmente me entendem.",
+            avatarInitials: "AR",
+            avatarColor: "bg-gradient-to-br from-amber-600 to-orange-500",
+          },
+          {
+            name: "Juliana M.",
+            procedure: "Depilação a Laser",
+            quote: "Primeira vez fazendo laser com uma equipe tão atenciosa. O resultado é visível e o atendimento foi impecável do começo ao fim.",
+            avatarInitials: "JM",
+            avatarColor: "bg-gradient-to-br from-rose-500 to-pink-600",
+          },
+          {
+            name: "Beatriz C.",
+            procedure: "Pós-operatório",
+            quote: "Recomendo muito. A gente se sente acolhida, orientada e muito bem cuidada em cada sessão. Isso faz toda a diferença.",
+            avatarInitials: "BC",
+            avatarColor: "bg-gradient-to-br from-violet-600 to-purple-600",
+          },
+          {
+            name: "Fernanda L.",
+            procedure: "Continuidade Corporal",
+            quote: "Achei que não ia funcionar, mas o plano de tratamento fez total sentido. Os resultados vieram progressivamente e de forma natural.",
+            avatarInitials: "FL",
+            avatarColor: "bg-gradient-to-br from-cyan-600 to-blue-600",
+          },
+          {
+            name: "Camila O.",
+            procedure: "Depilação a Laser",
+            quote: "O diferencial é realmente o acompanhamento. Sinto que eles se importam com o resultado e com o meu bem-estar.",
+            avatarInitials: "CO",
+            avatarColor: "bg-gradient-to-br from-green-600 to-emerald-600",
+          },
+        ]}
+      />
+
+      <ClinicEnvironmentGallery
+        eyebrow="Ambiente acolhedor"
+        title="Onde o cuidado acontece."
+        spaces={[
+          {
+            title: "Recepção acolhedora",
+            description: "Espaço calmo e aconchegante para seu primeiro contato com a clínica.",
+            image: "/images/clinic/reception.jpg",
+            imageAlt: "Recepção acolhedora da Luana Carla Dermo Clinic com mobiliário confortável e iluminação natural",
+          },
+          {
+            title: "Sala de atendimento",
+            description: "Ambiente profissional, limpo e bem-organizado para cada procedimento.",
+            image: "/images/clinic/treatment-room.jpg",
+            imageAlt: "Sala de atendimento profissional com equipamentos médicos e maca de atendimento",
+            featured: true,
+          },
+          {
+            title: "Equipamentos de ponta",
+            description: "Tecnologia avançada mantida com rigor profissional.",
+            image: "/images/clinic/equipment.jpg",
+            imageAlt: "Equipamentos de laser e tecnologia estética de ponta em ambiente clínico profissional",
+          },
+          {
+            title: "Detalles que importam",
+            description: "Cada elemento foi pensado para seu conforto e segurança.",
+            image: "/images/clinic/details.jpg",
+            imageAlt: "Detalhes premium da clínica: produtos skincare, toalhas e elementos de bem-estar",
+          },
+        ]}
+      />
 
       <TripleArticleSection
         eyebrow="Quem costuma chegar até aqui"
