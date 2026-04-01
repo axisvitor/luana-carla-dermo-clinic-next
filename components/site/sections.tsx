@@ -64,101 +64,108 @@ export function HeroSection({
   title,
   description,
   primary,
-  secondary,
-  panelLabel,
-  panelTitle,
   image,
-  tone = "light",
-  points,
-  list,
+  credentials,
   mobileTitle,
-  mobilePanelTitle,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   primary: CallToAction;
-  secondary?: CallToAction;
-  panelLabel: string;
-  panelTitle: string;
   image: string;
-  tone?: ImageTone;
-  points?: PointItem[];
-  list?: string[];
+  credentials?: string[];
   mobileTitle?: string;
+  /** @deprecated unused — kept for backwards compat */
+  secondary?: CallToAction;
+  /** @deprecated unused — kept for backwards compat */
+  panelLabel?: string;
+  /** @deprecated unused — kept for backwards compat */
+  panelTitle?: string;
+  /** @deprecated unused — kept for backwards compat */
+  tone?: ImageTone;
+  /** @deprecated unused — kept for backwards compat */
+  points?: PointItem[];
+  /** @deprecated unused — kept for backwards compat */
+  list?: string[];
+  /** @deprecated unused — kept for backwards compat */
   mobilePanelTitle?: string;
 }) {
-  const dark = tone === "dark";
-
-  const overlay = dark
-    ? "linear-gradient(180deg, rgba(15,20,20,0.08) 0%, rgba(15,20,20,0.42) 50%, rgba(15,20,20,0.88) 100%)"
-    : "linear-gradient(180deg, rgba(250,246,241,0.72) 0%, rgba(255,255,255,0.92) 74%)";
-
   return (
-    <section className={cn(sectionClass, "relative isolate overflow-hidden pt-10 md:pt-16 xl:pt-24")}> 
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[-8%] top-[-2%] h-[16rem] w-[16rem] rounded-full bg-[radial-gradient(circle,rgba(220,196,162,0.28)_0%,rgba(220,196,162,0.12)_32%,transparent_72%)] blur-3xl md:h-[24rem] md:w-[24rem]" />
-        <div className="absolute right-[18%] top-[8%] h-[14rem] w-[14rem] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.12)_34%,transparent_76%)] blur-3xl md:h-[20rem] md:w-[20rem]" />
-        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(15,95,99,0.12),transparent)]" />
-      </div>
-      <div className="relative z-10 flex flex-col justify-center xl:col-span-7 xl:pr-8">
-        <Eyebrow>{eyebrow}</Eyebrow>
-        <h1 className="mt-5 max-w-[15ch] font-display text-balance text-[clamp(2.1rem,5.2vw,3.5rem)] leading-[0.98] tracking-[-0.042em] text-ink sm:max-w-[14ch]">
-          <span className="sm:hidden">{mobileTitle ?? title}</span>
-          <span className="hidden sm:inline">{title}</span>
-        </h1>
-        <p className={cn(leadClass, "mt-5 max-w-[52ch] text-ink-soft")}>{description}</p>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <SmartLink cta={primary} className={primaryButtonClass} />
-          {secondary && <SmartLink cta={secondary} className={secondaryButtonClass} />}
-        </div>
-      </div>
+    <section
+      aria-label="Apresentação da clínica"
+      className="relative isolate min-h-[92svh] overflow-hidden md:min-h-[88svh] xl:min-h-[84svh]"
+    >
+      {/* Imagem de fundo */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundPosition: "center 20%",
+          backgroundSize: "cover",
+        }}
+      />
 
-      <aside className="relative z-10 xl:col-span-5 xl:pt-2">
-        <div
-          className={cn(
-            cardClass,
-            "relative isolate flex min-h-[300px] flex-col justify-end overflow-hidden p-7 sm:min-h-[340px] md:min-h-[460px] md:p-9",
-            dark && "border-white/8 text-white shadow-[0_40px_100px_rgba(10,16,16,0.18)]",
-          )}
-          style={{ backgroundImage: `${overlay}, url(${image})`, backgroundPosition: "center", backgroundSize: "cover" }}
-        >
-          {dark ? <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[linear-gradient(180deg,rgba(15,20,20,0)_0%,rgba(15,20,20,0.06)_18%,rgba(15,20,20,0.72)_68%,rgba(15,20,20,0.92)_100%)]" /> : null}
-          <div className="relative z-10 max-w-[26rem]">
-            <p className={dark ? eyebrowInverseClass : eyebrowClass}>{panelLabel}</p>
-            <h2 className={cn("mt-4 max-w-[14ch] font-display text-balance text-[clamp(1.4rem,3.2vw,2.1rem)] leading-[1.04] tracking-[-0.03em]", dark ? "text-white" : "text-ink")}>
-              <span className="sm:hidden">{mobilePanelTitle ?? panelTitle}</span>
-              <span className="hidden sm:inline">{panelTitle}</span>
-            </h2>
+      {/* Overlay multicamada — escurecimento suave no topo, intenso na base */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(170deg,rgba(15,20,20,0.28)_0%,rgba(15,20,20,0.12)_28%,rgba(15,20,20,0.44)_60%,rgba(15,20,20,0.82)_100%)]"
+      />
 
-            {points ? (
-              <div className="mt-7 grid gap-5">
-                {points.map((item, index) => (
-                  <article key={item.title} className="grid grid-cols-[auto_1fr] gap-4">
-                    <span className={cn("grid h-10 w-10 place-items-center rounded-full border text-xs font-bold", dark ? "border-white/12 bg-white/6 text-white/90" : "border-black/8 bg-white/90 text-accent-deep")}>
-                      {item.badge ?? String(index + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <strong className={cn("block text-[0.94rem] font-semibold leading-[1.38] tracking-[-0.01em] md:text-[0.98rem]", dark ? "text-white/95" : "text-ink")}>{item.title}</strong>
-                      <p className={cn("mt-1.5 max-w-[28ch] text-[0.9rem] leading-[1.68] md:text-[0.92rem]", dark ? "text-white/75" : "text-ink-soft")}>{item.body}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            ) : null}
+      {/* Vinheta lateral esquerda — guia o olho ao texto */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-0 w-[55%] bg-[linear-gradient(90deg,rgba(15,20,20,0.52)_0%,transparent_100%)]"
+      />
 
-            {list ? (
-              <ul className="mt-7 grid gap-3">
-                {list.map((item) => (
-                  <li key={item} className={cn("max-w-[30ch] border-b pb-3 text-[0.92rem] leading-[1.7] md:text-[0.95rem]", dark ? "border-white/10 text-white/85" : "border-black/8 text-ink/85")}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+      {/* Conteúdo */}
+      <div className="relative z-10 flex h-full min-h-[inherit] flex-col justify-between px-5 pb-10 pt-14 md:px-8 md:pb-12 md:pt-20 xl:px-[60px] xl:pb-16 xl:pt-24">
+        {/* Eyebrow — topo esquerdo */}
+        <p className={eyebrowInverseClass}>{eyebrow}</p>
+
+        {/* Bloco central: headline + descrição + CTA */}
+        <div className="mt-auto max-w-[36rem] xl:max-w-[44rem]">
+          <h1 className="font-display text-balance text-[clamp(2.6rem,6.4vw,5rem)] leading-[0.95] tracking-[-0.045em] text-white [text-shadow:0_2px_24px_rgba(15,20,20,0.22)]">
+            <span className="sm:hidden">{mobileTitle ?? title}</span>
+            <span className="hidden sm:inline">{title}</span>
+          </h1>
+
+          <p className="mt-5 max-w-[46ch] text-[0.97rem] leading-[1.78] text-white/80 md:mt-6 md:text-[1.02rem] md:leading-[1.84]">
+            {description}
+          </p>
+
+          <div className="mt-8 md:mt-10">
+            <SmartLink
+              cta={primary}
+              className="inline-flex items-center gap-3 rounded-full border border-white/14 bg-white/10 px-7 py-3.5 text-[0.76rem] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-md transition duration-300 ease-out hover:-translate-y-0.5 hover:border-white/22 hover:bg-white/16 active:translate-y-0"
+            />
           </div>
         </div>
-      </aside>
+
+        {/* Rodapé de credenciais — base direita */}
+        {credentials && credentials.length > 0 && (
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 self-end md:mt-0">
+            {credentials.map((item, index) => (
+              <span
+                key={item}
+                className={cn(
+                  "text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-white/55",
+                  index < credentials.length - 1 &&
+                    "after:ml-6 after:inline-block after:h-px after:w-4 after:translate-y-[-1px] after:bg-white/20 after:content-['']",
+                )}
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Linha decorativa inferior */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent)]"
+      />
     </section>
   );
 }

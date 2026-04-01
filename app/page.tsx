@@ -25,28 +25,10 @@ export default function HomePage() {
         eyebrow="Canaã dos Carajás"
         title="Cuidado corporal com atenção, método e continuidade."
         mobileTitle="Cuidado corporal com atenção e continuidade."
-        description="A clínica oferece pós-operatório assistido, continuidade corporal e depilação a laser com a mesma base: atenção ao momento do corpo, orientação clara e acompanhamento personalizado."
-        primary={{ label: "Agendar consulta", href: "/agendamento" }}
-        secondary={{ label: "Conhecer a clínica", href: "/sobre" }}
-        panelLabel="Nossos serviços"
-        panelTitle="Três frentes de atendimento. Um mesmo padrão de excelência."
-        mobilePanelTitle="Três frentes. Um padrão de excelência."
+        description="Pós-operatório assistido, continuidade corporal e depilação a laser — cada atendimento conduzido com atenção ao seu momento e orientação clara desde o primeiro contato."
+        primary={{ label: "Conhecer a clínica", href: "/sobre" }}
         image="/generated/home-hero-v4.jpg"
-        tone="dark"
-        points={[
-          {
-            title: "Pós-operatório assistido",
-            body: "Acompanhamento especializado para uma recuperação segura e bem orientada.",
-          },
-          {
-            title: "Continuidade corporal",
-            body: "Plano de cuidado consistente para resultados duradouros.",
-          },
-          {
-            title: "Depilação a laser",
-            body: "Tecnologia avançada com atendimento claro e profissional.",
-          },
-        ]}
+        credentials={["Atendimento com hora marcada", "Pós-operatório assistido", "Depilação a laser"]}
       />
 
       <TrustStrip

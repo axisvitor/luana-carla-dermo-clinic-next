@@ -69,9 +69,12 @@ export function SiteHeader() {
         ))}
       </nav>
 
-      <Link href="/agendamento" className={cn(primaryCtaClass, "hidden xl:inline-flex") }>
-        Falar no WhatsApp
-        <span aria-hidden>↗</span>
+      <Link
+        href="/contato"
+        className="hidden items-center gap-2 rounded-full border border-black/8 px-5 py-2.5 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink/70 transition duration-300 hover:border-black/14 hover:text-ink xl:inline-flex"
+      >
+        Agendar consulta
+        <span aria-hidden className="text-accent-deep">→</span>
       </Link>
 
       <div
@@ -95,9 +98,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/agendamento" className={cn(primaryCtaClass, "mt-2 justify-center text-center")}>
-            Falar no WhatsApp
-            <span aria-hidden>↗</span>
+          <Link
+            href="/contato"
+            className="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-black/8 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-ink/70 transition duration-300 hover:border-black/14 hover:text-ink"
+          >
+            Agendar consulta
+            <span aria-hidden className="text-accent-deep">→</span>
           </Link>
         </nav>
       </div>
