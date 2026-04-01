@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/cn";
 import { navItems, siteConfig } from "@/lib/site";
-
-const primaryCtaClass =
-  "inline-flex items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-5 py-[1.02rem] text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_48px_rgba(15,95,99,0.24)] active:translate-y-0";
+import { primaryCtaClass } from "@/lib/styles";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -35,7 +33,7 @@ export function SiteHeader() {
           <span className="block font-display text-[clamp(1.68rem,2.2vw,2.18rem)] leading-[0.96] tracking-[-0.04em] text-ink">
             {siteConfig.name}
           </span>
-          <span className="mt-1 block text-[0.69rem] font-medium uppercase tracking-[0.16em] text-ink-faint">
+          <span className="mt-1 block text-xs font-medium uppercase tracking-[0.16em] text-ink-faint">
             {siteConfig.descriptor}
           </span>
         </Link>

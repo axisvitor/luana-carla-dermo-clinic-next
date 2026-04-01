@@ -2,6 +2,20 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
+import {
+  sectionClass,
+  primaryButtonClass,
+  secondaryButtonClass,
+  sectionHeadingClass,
+  mediumHeadingClass,
+  itemHeadingClass,
+  leadClass,
+  bodyClass,
+  eyebrowClass,
+  eyebrowInverseClass,
+  cardClass,
+  softPanelClass,
+} from "@/lib/styles";
 
 export type CallToAction = {
   label: string;
@@ -21,31 +35,6 @@ type ListItem = {
 };
 
 type ImageTone = "dark" | "light";
-
-const sectionClass =
-  "grid grid-cols-1 gap-6 px-5 py-12 md:px-8 md:py-16 xl:grid-cols-12 xl:gap-8 2xl:px-[60px]";
-const primaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-white/12 bg-[linear-gradient(180deg,var(--accent-deep),#0c4d50)] px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-white shadow-[0_18px_40px_rgba(15,95,99,0.2)] transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_46px_rgba(15,95,99,0.24)] active:translate-y-0 sm:w-auto";
-const secondaryButtonClass =
-  "inline-flex w-full items-center justify-center gap-2 rounded-[14px] border border-black/10 bg-white/58 px-6 py-4 text-center text-[0.76rem] font-bold uppercase tracking-[0.15em] text-ink/76 transition duration-200 hover:-translate-y-0.5 hover:border-black/16 hover:bg-white/82 hover:text-ink active:translate-y-0 sm:w-auto";
-const sectionHeadingClass =
-  "font-display text-balance text-[clamp(1.76rem,4vw,2.85rem)] leading-[1.02] tracking-[-0.038em] text-ink";
-const mediumHeadingClass =
-  "font-sans text-balance text-[clamp(1.18rem,2.1vw,1.62rem)] font-semibold leading-[1.32] tracking-[-0.022em] text-ink";
-const itemHeadingClass =
-  "text-pretty text-[1rem] font-semibold leading-[1.45] tracking-[-0.018em] text-ink md:text-[1.07rem]";
-const leadClass =
-  "text-pretty text-[0.98rem] leading-[1.82] md:text-[1.02rem] md:leading-[1.88]";
-const bodyClass =
-  "text-pretty text-[0.96rem] leading-[1.74] md:text-[0.99rem] md:leading-[1.8]";
-const eyebrowClass =
-  "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-accent-deep before:h-px before:w-8 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.35))] before:content-['']";
-const eyebrowInverseClass =
-  "inline-flex items-center gap-3 text-[0.72rem] font-bold uppercase tracking-[0.17em] text-white/82 before:h-px before:w-8 before:bg-[linear-gradient(90deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18))] before:content-['']";
-const cardClass =
-  "rounded-[28px] border border-black/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,244,238,0.82))] shadow-[0_22px_54px_rgba(16,24,24,0.065)]";
-const softPanelClass =
-  "rounded-[24px] border border-black/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(248,244,238,0.78))] shadow-[0_12px_26px_rgba(16,24,24,0.032)]";
 
 function SmartLink({ cta, className }: { cta: CallToAction; className: string }) {
   const content = (
@@ -198,7 +187,7 @@ export function TrustStrip({ items }: { items: ListItem[] }) {
                 "relative flex h-full min-h-[160px] flex-col p-5 md:min-h-[176px] md:p-6 before:absolute before:left-5 before:top-0 before:h-px before:w-11 before:bg-[linear-gradient(90deg,var(--champagne),rgba(15,95,99,0.34))] before:content-[''] md:before:left-6",
               )}
             >
-              <strong className="block text-[0.78rem] font-bold uppercase tracking-[0.13em] text-ink">{item.title}</strong>
+              <strong className="block text-xs font-bold uppercase tracking-[0.13em] text-ink">{item.title}</strong>
               <p className={cn(bodyClass, "mt-3 max-w-[30ch] text-ink-soft")}>{item.body}</p>
             </article>
           ))}
@@ -224,8 +213,10 @@ export function ManifestoBand({ eyebrow, title, body }: { eyebrow: string; title
 
 export function SignatureGallery() {
   return (
-    <section className={sectionClass}>
+    <section className={sectionClass} aria-label="Galeria de imagens da clinica">
       <article
+        role="img"
+        aria-label="Ambiente sereno da clinica com atencao ao detalhe"
         className="relative isolate overflow-hidden rounded-[30px] border border-black/10 p-7 shadow-[0_22px_56px_rgba(16,24,24,0.07)] md:p-8 xl:col-span-7"
         style={{
           backgroundImage:
@@ -249,6 +240,8 @@ export function SignatureGallery() {
 
       <div className="grid gap-6 xl:col-span-5">
         <article
+          role="img"
+          aria-label="Cuidado corporal com constancia e acompanhamento"
           className="relative isolate overflow-hidden rounded-[30px] border border-black/10 p-6 shadow-[0_22px_56px_rgba(16,24,24,0.07)] md:p-7"
           style={{
             backgroundImage:
@@ -268,7 +261,7 @@ export function SignatureGallery() {
         </article>
 
         <article className={cn(cardClass, "p-6 md:p-7")}>
-          <Eyebrow>Memória da marca</Eyebrow>
+          <Eyebrow>Memoria da marca</Eyebrow>
           <h3 className={cn(mediumHeadingClass, "mt-4 max-w-[12ch]")}>Menos ruído estético. Mais clareza sobre o que fazer agora.</h3>
           <p className={cn(bodyClass, "mt-4 max-w-[34ch] text-ink-soft")}>
             Esse é o tipo de calma que transforma percepção em confiança.

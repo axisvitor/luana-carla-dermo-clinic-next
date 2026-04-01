@@ -1,17 +1,112 @@
 import { FaqIntroHub } from "@/components/site/archetypes";
 import { CtaPanel, FaqSection } from "@/components/site/sections";
-import { createPageMetadata } from "@/lib/site";
+import { createPageMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createPageMetadata({
   title: "Perguntas frequentes",
   description:
-    "Respostas claras para dúvidas comuns antes do primeiro contato com a clínica.",
+    "Respostas claras para duvidas comuns antes do primeiro contato com a clinica.",
   path: "/faq",
 });
+
+// FAQ data for schema generation
+const faqData = {
+  contato: [
+    {
+      question: "Preciso preencher formulario antes de falar com a clinica?",
+      answer: "Nao. O primeiro contato e direto com a equipe pelo WhatsApp oficial.",
+    },
+    {
+      question: "O agendamento acontece sozinho pelo site?",
+      answer: "Nao. Quando faz sentido seguir, a marcacao e conduzida pela propria clinica dentro da conversa com a equipe.",
+    },
+    {
+      question: "Posso chamar mesmo sem saber qual atendimento preciso?",
+      answer: "Sim. A conversa inicial existe justamente para ajudar a entender qual frente faz mais sentido para o seu momento.",
+    },
+    {
+      question: "O Instagram substitui o primeiro contato?",
+      answer: "Nao. O Instagram ajuda a acompanhar a marca. A conversa de entrada e a marcacao acontecem com a equipe.",
+    },
+  ],
+  pos: [
+    {
+      question: "Voces atendem pos-operatorio de quem operou em outra cidade?",
+      answer: "Sim. Esse e um dos contextos em que a clinica pode oferecer continuidade local em Canaa dos Carajas.",
+    },
+    {
+      question: "O primeiro contato ja define todo o acompanhamento?",
+      answer: "Nao. A prioridade inicial e entender a fase da recuperacao e orientar o melhor proximo passo a partir desse momento do corpo.",
+    },
+    {
+      question: "Existe acompanhamento alem da sessao?",
+      answer: "Quando o caso pede continuidade, a clinica organiza retorno, reavaliacao e orientacao entre etapas.",
+    },
+    {
+      question: "Isso substitui o acompanhamento do cirurgiao?",
+      answer: "Nao. A clinica atua como apoio local dentro do escopo do atendimento, e a paciente deve manter o contato com o profissional responsavel pela cirurgia quando necessario.",
+    },
+  ],
+  continuidade: [
+    {
+      question: "Continuidade corporal significa um plano fixo para todo mundo?",
+      answer: "Nao. A logica e entender objetivo, momento do corpo e ritmo possivel para construir um plano que faca sentido para a vida real da paciente.",
+    },
+    {
+      question: "Preciso saber exatamente o que quero fazer antes de falar com a clinica?",
+      answer: "Nao. A equipe ajuda a orientar o melhor caminho a partir da sua necessidade principal e da constancia que voce consegue sustentar hoje.",
+    },
+    {
+      question: "A proposta inclui acompanhamento ao longo do processo?",
+      answer: "Sim. Revisao, manutencao e proximos passos fazem parte da logica dessa linha quando existe continuidade.",
+    },
+    {
+      question: "A clinica trabalha so com sessao avulsa?",
+      answer: "Pode haver inicio por avaliacao, mas a forca dessa frente esta em organizar um cuidado que nao fique fragmentado.",
+    },
+  ],
+  laser: [
+    {
+      question: "Posso comecar meu contato com a clinica pela depilacao a laser?",
+      answer: "Sim. Para muitas pacientes, essa e uma forma leve de conhecer a clinica e iniciar a conversa com a equipe.",
+    },
+    {
+      question: "Como funciona a primeira conversa?",
+      answer: "Voce explica sua duvida ou area de interesse pelo WhatsApp, e a equipe orienta a melhor forma de seguir.",
+    },
+    {
+      question: "O que acontece depois da primeira conversa?",
+      answer: "A equipe responde duvidas iniciais, alinha expectativa e organiza com voce o melhor proximo passo antes da marcacao.",
+    },
+    {
+      question: "A agenda e automatica pelo site?",
+      answer: "Nao. O contato e a organizacao da agenda sao conduzidos pela equipe da clinica.",
+    },
+  ],
+};
+
+// Generate FAQPage schema
+const allFaqs = [...faqData.contato, ...faqData.pos, ...faqData.continuidade, ...faqData.laser];
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: allFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 export default function FaqPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
       <FaqIntroHub
         eyebrow="Perguntas frequentes"
         title="As dúvidas mais comuns, organizadas por assunto."
@@ -157,7 +252,7 @@ export default function FaqPage() {
       <CtaPanel
         eyebrow="Se a sua dúvida não apareceu aqui"
         title="A equipe pode orientar seu primeiro passo com base no seu momento atual."
-        body="No WhatsApp, a clínica ajuda a entender qual caminho faz mais sentido para você agora, sem formulário e sem etapas desnecessárias."
+        body="No WhatsApp, a clinica ajuda a entender qual caminho faz mais sentido para voce agora, sem formulario e sem etapas desnecessarias."
         highlight="Próximo passo"
         detail="Perguntas reais • orientação • clareza"
         primary={{ label: "Ver primeiro contato", href: "/agendamento" }}
